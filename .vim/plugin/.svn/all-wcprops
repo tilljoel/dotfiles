@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/18/trunk/.vim/plugin
+END
+vimballPlugin.vim
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3/trunk/.vim/plugin/vimballPlugin.vim
+END
+passwords.vim
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/18/trunk/.vim/plugin/passwords.vim
+END
+taglist.vim
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/3/trunk/.vim/plugin/taglist.vim
+END
+crefvim.vim
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/3/trunk/.vim/plugin/crefvim.vim
+END
+blogit.vim
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/17/trunk/.vim/plugin/blogit.vim
+END
