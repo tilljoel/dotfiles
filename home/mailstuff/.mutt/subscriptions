@@ -1,0 +1,22 @@
+#
+# Annvix
+#
+subscribe announce
+subscribe cvs
+subscribe dev
+subscribe users
+subscribe ports
+#
+# Mandriva
+#
+subscribe security-announce
+subscribe changelog
+subscribe cooker
+subscribe expert
+subscribe security-discuss
+subscribe maintainers
+subscribe kernel
+subscribe webtrans
+#
+# All the rest
+#

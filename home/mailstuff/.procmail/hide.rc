@@ -1,0 +1,65 @@
+#
+# SPAM
+#
+:0
+* ^Subject:.*\[--SPAM--\]
+$MAIL/spam/
+
+:0
+* ^Subject:.*\[SPAM\]
+$MAIL/spam/
+
+# delete message delivery errors
+
+:0
+* ^Subject:.*Undelivered Mail Returned to Sender$
+$MAIL/mail-errors/
+:0
+* ^Subject:.*DELIVERY FAILURE: User.*not listed.*
+$MAIL/mail-errors/
+:0
+* ^Subject:.*Delayed Mail \(still being retried\)$
+$MAIL/mail-errors/
+:0
+* ^Subject:.*Delivery Status Notification \((Failure|Delayed)\)$
+$MAIL/mail-errors/
+:0
+* ^Subject:.*Returned mail: User unknown$
+$MAIL/mail-errors/
+:0
+* ^Subject:.*Mail System Error - Returned Mail$
+$MAIL/mail-errors/
+:0
+* ^Subject:.*Mail delivery failed: returning message to sender
+$MAIL/mail-errors/
+:0
+* ^Subject:.*Returned mail: see the transcript
+$MAIL/mail-errors/
+:0
+* ^Subject:.*ALERT.*Virus.*message has been quarantined
+$MAIL/mail-errors/
+:0
+* ^Subject:.*DELIVERY FAILURE:
+$MAIL/mail-errors/
+:0
+* ^Subject:.*User does not exist
+$MAIL/mail-errors/
+:0
+* ^Subject:.*failure notice
+$MAIL/mail-errors/
+:0
+* ^Subject:.*Google Groups: No such group
+$MAIL/mail-errors/
+:0
+* ^Subject:.*Undeliverable mail
+$MAIL/mail-errors/
+:0
+* ^Subject:.*Mail could not be delivered
+$MAIL/mail-errors/
+:0
+* ^Subject:.*No Subject
+$MAIL/mail-errors/
+:0
+* ^Subject:.*Returned mail: Cannot send message
+$MAIL/mail-errors/
+

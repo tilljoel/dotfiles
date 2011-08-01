@@ -1,0 +1,15 @@
+#
+# CU ELINUX
+#
+:0:
+* ^From:.*cu-elinux@axis.com
+$MAIL/list/cu-elinux/
+
+:0:
+* ^From:.*cu-elinux@axis.com
+$MAIL/list/cu-elinux/
+
+:0:
+* ^From:.*debian-users@axis.com
+$MAIL/list/other/
+

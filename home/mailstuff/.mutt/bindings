@@ -1,0 +1,30 @@
+bind index @ noop               # null out any folder specific keys
+
+bind generic \Cb        half-up
+bind generic \Cf        half-down
+bind pager   \Cb        half-up
+bind pager   \Cf        half-down
+bind index   \Cb        half-up
+bind index   \Cf        half-down
+bind generic G          last-entry
+bind pager   G          bottom
+bind index   G          last-entry
+bind index   r          reply
+bind pager   r          reply
+bind index   g          group-reply
+bind pager   g          group-reply
+bind index   <Delete>   delete-message
+bind index   j          next-entry
+bind index   k          previous-entry
+bind index   <Left>     edit
+bind index   <Right>    display-message
+bind pager   <Left>     exit
+bind pager   <Up>       previous-line
+bind pager   <Down>     next-line
+bind pager   <Right>    view-attachments
+bind attach  <Left>     exit
+bind generic <Home>     first-entry
+bind generic <End>      last-entry
+bind pager   <Home>     top
+bind pager   <End>      bottom
+
