@@ -1,0 +1,4 @@
+screen -t "vim" 1
+stuff "vim ../.vimrc"
+screen -t "git" 2
+stuff "git diff | colordiff"
