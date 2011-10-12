@@ -1,0 +1,2 @@
+source ~/.mutt/defaults			# source the defaults
+set sort=threads			# sort by thread

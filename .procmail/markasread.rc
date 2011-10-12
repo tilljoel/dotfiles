@@ -1,0 +1,14 @@
+#
+# FROM ME (mark as read)
+#
+
+#mbox:
+#:0 fw h
+#* ^From:.*joel@axis\.com
+#| formail -I "X-Status: RO"
+#:0 fw h
+#* ^From:.*joel\.larsson@axis\.com
+#| formail -I "X-Status: RO"
+
+#maildir:
+

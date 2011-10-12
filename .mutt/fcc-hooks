@@ -1,0 +1,2 @@
+# save everything to a dated archive mailbox
+fcc-hook .*							=archives/sent-mail-`date +%Y-%m`
