@@ -25,6 +25,7 @@
 "-- CHANGELOG
 "------------------
 "
+" 2011-11-28: Added closetag
 " 2011-07-30: Really added pathogen
 " 2011-06-30: Added pathogen
 " 2011-05-30: Added syntastic and jshint support
@@ -108,7 +109,7 @@
 " Bundle: git://github.com/dsummersl/vim-fugitive.git
 " Bundle: git://github.com/scrooloose/nerdcommenter.git
 " Bundle: git://github.com/vim-scripts/taglist.vim
-" Bundle: git://github.com/xianlihua/vim-matchit.git
+" Bundle: git://github.com/tsaleh/vim-matchit.git
 " Bundle: git://github.com/vim-scripts/Vimball.git
 " Bundle: git://github.com/vim-scripts/AutoTag.git
 " Bundle: git://github.com/vim-scripts/L9.git
@@ -133,7 +134,7 @@
 " Bundle: git://github.com/dickeytk/status.vim.git
 " Bundle: git://github.com/vim-scripts/open-browser.vim.git
 " Bundle: git://github.com/tpope/vim-surround.git
-"
+" Bundle: git://github.com/vim-scripts/closetag.vim.git
 "
 "#  git://github.com/vim-ruby/vim-ruby.git",
 "#  git://github.com/sjl/gundo.vim.git"],

@@ -148,3 +148,26 @@ Ons 10 Aug 2011 10:20:40 CEST by vim-update-bundles 0.8
  up  |vim-rails|                v4.3-30-gab7e6ab   <- v4.3-22-g332c50b
    1 bundle added, 2 bundles updated
 
+Mån 28 Nov 2011 18:49:38 CET by vim-update-bundles 0.8
+ up  |command-t|                1.3                <- 1.2.1-6-g3c0dc0a
+ up  |vim-coffee-script|        v001-9-g5ea71f6    <- b944e534bd6bb
+ Aborted: 'git fetch -q origin' in /Users/joel/.homesick/repos/tilljoel/dotfiles/home/.vim/bundle/vim-matchit exited with code 128
+
+Mån 28 Nov 2011 18:51:49 CET by vim-update-bundles 0.8
+ bundle for vim-matchit changed from git://github.com/xianlihua/vim-matchit.git to git://github.com/tsaleh/vim-matchit.git
+
+ Del |vim-matchit|              1.13.2
+ Add |vim-matchit|              8f8665e04fe37      git://github.com/tsaleh/vim-matchit.git
+ up  |rails.vim|                4.4                <- 4.3
+ up  |gitv|                     v1.1-2-g39797f0    <- v1.0-64-gf5dfe43
+ up  |vim-session|              1.4.24             <- 1.4.9
+ up  |syntastic|                1.2.0-158-g12c9c33 <- 1.2.0-93-g88dbca8
+ up  |vim-haml|                 vim7.2-58-ga995d4a <- vim7.2-57-gde3e72a
+ up  |vim-markdown|             5a70519e487c6      <- 34e28b3f6f6d7
+ up  |vim-rails|                v4.4-17-ge45164c   <- v4.3-30-gab7e6ab
+ up  |pyflakes-vim|             634ddb795e46e      <- fbe5743e55d18
+ up  |rvm.vim|                  c215fff066cb1      <- f8af571631ee8
+ up  |vim-surround|             v1.90-18-g4eb2cdf  <- v1.90-5-gd9e6bfd
+ Add |closetag.vim|             0.9.1              git://github.com/vim-scripts/closetag.vim.git
+   2 bundles added, 1 bundle removed, and 10 bundles updated
+
