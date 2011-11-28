@@ -1,0 +1,44 @@
+*bundles* *bundles.txt*            Installed Bundles
+
+
+Lists the currently installed bundles. Also see the |bundle-log|.
+Last updated by vim-update-bundles on Ons 10 Aug 2011 10:20:40 CEST.
+
+  PLUGIN                           VERSION                RELEASE DATE
+------------------------------------------------------------------------
+  |gtk-vim-syntax|                 20110314               2011-03-14
+  |vim-custom-bundle|              be27faa35772a          2011-07-30
+  |command-t|                      1.2.1-6-g3c0dc0a       2011-06-30
+  |xoria256.vim|                   1.5                    2011-05-30
+  |vim-vividchalk|                 v2.0                   2010-02-19
+  |vim-coffee-script|              b944e534bd6bb          2011-08-05
+  |vim-rubytest|                   68721a49cbbb2          2011-06-17
+  |blogit.vim|                     1.4.3                  2010-01-02
+  |vim-fugitive|                   v1.1-35-gaffce71       2010-11-13
+  |nerdcommenter|                  2.2.2-55-gb28e7be      2011-07-21
+  |taglist.vim|                    4.5                    2007-09-21
+  |vim-matchit|                    1.13.2                 2008-01-29
+  |Vimball|                        33                     2011-04-02
+  |AutoTag|                        1.11                   2011-02-23
+  |L9|                             1.1                    2010-09-28
+  |FuzzyFinder|                    4.2.2                  2010-09-30
+  |rails.vim|                      4.3                    2010-09-10
+  |gitv|                           v1.0-64-gf5dfe43       2011-07-23
+  |vim-xpath|                      26a7cb7684acc          2011-06-19
+  |LargeFile|                      4@1                    2008-09-23
+  |CRefVim|                        1.0.4                  2004-11-28
+  |vim-trailing-whitespace|        1.0-2-g6bfea00         2010-09-25
+  |jshint.vim|                     0.2                    2011-05-17
+  |vim-session|                    1.4.9                  2011-06-18
+  |syntastic|                      1.2.0-93-g88dbca8      2011-07-23
+  |vim-haml|                       vim7.2-57-gde3e72a     2011-05-11
+  |vim-markdown|                   34e28b3f6f6d7          2010-10-24
+  |vim-rails|                      v4.3-30-gab7e6ab       2011-07-08
+  |vim-pep8|                       1.1-10-g90c2194        2011-01-30
+  |pyflakes-vim|                   fbe5743e55d18          2011-06-28
+  |nginx.vim|                      0.3.2                  2010-11-25
+  |rvm.vim|                        f8af571631ee8          2011-05-23
+  |status.vim|                     1dc6cf44ec63b          2010-12-22
+  |open-browser.vim|               0.0.5                  2011-06-30
+  |vim-surround|                   v1.90-5-gd9e6bfd       2011-01-23
+

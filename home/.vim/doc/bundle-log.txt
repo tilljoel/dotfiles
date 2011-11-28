@@ -1,0 +1,150 @@
+*bundle-log.txt*                   Bundle Install Log
+
+
+Logs bundle install activity. Also see the list of installed |bundles|.
+
+Tis  2 Aug 2011 00:12:30 CEST by vim-update-bundles 0.8
+ bundle for gtk-vim-syntax changed from git@github.com:tilljoel/dotfiles.git to git://github.com/vim-scripts/gtk-vim-syntax.git
+
+ Del |gtk-vim-syntax|           5b264bb15d39f
+ Add |gtk-vim-syntax|           20110314           git://github.com/vim-scripts/gtk-vim-syntax.git
+ bundle for vim-custom-bundle changed from git@github.com:tilljoel/dotfiles.git to git://github.com/tilljoel/vim-custom-bundle.git
+
+ Del |vim-custom-bundle|        5b264bb15d39f
+ Add |vim-custom-bundle|        be27faa35772a      git://github.com/tilljoel/vim-custom-bundle.git
+ bundle for command-t changed from git@github.com:tilljoel/dotfiles.git to git://git.wincent.com/command-t.git
+
+ Del |command-t|                5b264bb15d39f
+ Add |command-t|                1.2.1-6-g3c0dc0a   git://git.wincent.com/command-t.git
+ bundle for xoria256.vim changed from git@github.com:tilljoel/dotfiles.git to https://github.com/vim-scripts/xoria256.vim.git
+
+ Del |xoria256.vim|             5b264bb15d39f
+ Add |xoria256.vim|             1.5                https://github.com/vim-scripts/xoria256.vim.git
+ bundle for vim-vividchalk changed from git@github.com:tilljoel/dotfiles.git to git://github.com/tpope/vim-vividchalk.git
+
+ Del |vim-vividchalk|           5b264bb15d39f
+ Add |vim-vividchalk|           v2.0               git://github.com/tpope/vim-vividchalk.git
+ bundle for vim-coffee-script changed from git@github.com:tilljoel/dotfiles.git to git://github.com/kchmck/vim-coffee-script.git
+
+ Del |vim-coffee-script|        5b264bb15d39f
+ Add |vim-coffee-script|        f4d2fbfc6bf18      git://github.com/kchmck/vim-coffee-script.git
+ bundle for vim-rubytest changed from git@github.com:tilljoel/dotfiles.git to git://github.com/janx/vim-rubytest.git
+
+ Del |vim-rubytest|             5b264bb15d39f
+ Add |vim-rubytest|             68721a49cbbb2      git://github.com/janx/vim-rubytest.git
+ bundle for blogit.vim changed from git@github.com:tilljoel/dotfiles.git to https://github.com/vim-scripts/blogit.vim.git
+
+ Del |blogit.vim|               5b264bb15d39f
+ Add |blogit.vim|               1.4.3              https://github.com/vim-scripts/blogit.vim.git
+ bundle for vim-fugitive changed from git@github.com:tilljoel/dotfiles.git to git://github.com/dsummersl/vim-fugitive.git
+
+ Del |vim-fugitive|             5b264bb15d39f
+ Add |vim-fugitive|             v1.1-35-gaffce71   git://github.com/dsummersl/vim-fugitive.git
+ bundle for nerdcommenter changed from git@github.com:tilljoel/dotfiles.git to git://github.com/scrooloose/nerdcommenter.git
+
+ Del |nerdcommenter|            5b264bb15d39f
+ Add |nerdcommenter|            2.2.2-55-gb28e7be  git://github.com/scrooloose/nerdcommenter.git
+ bundle for taglist.vim changed from git@github.com:tilljoel/dotfiles.git to git://github.com/vim-scripts/taglist.vim
+
+ Del |taglist.vim|              5b264bb15d39f
+ Add |taglist.vim|              4.5                git://github.com/vim-scripts/taglist.vim
+ bundle for vim-matchit changed from git@github.com:tilljoel/dotfiles.git to git://github.com/xianlihua/vim-matchit.git
+
+ Del |vim-matchit|              5b264bb15d39f
+ Add |vim-matchit|              1.13.2             git://github.com/xianlihua/vim-matchit.git
+ bundle for Vimball changed from git@github.com:tilljoel/dotfiles.git to git://github.com/vim-scripts/Vimball.git
+
+ Del |Vimball|                  5b264bb15d39f
+ Add |Vimball|                  33                 git://github.com/vim-scripts/Vimball.git
+ bundle for AutoTag changed from git@github.com:tilljoel/dotfiles.git to git://github.com/vim-scripts/AutoTag.git
+
+ Del |AutoTag|                  5b264bb15d39f
+ Add |AutoTag|                  1.11               git://github.com/vim-scripts/AutoTag.git
+ bundle for L9 changed from git@github.com:tilljoel/dotfiles.git to git://github.com/vim-scripts/L9.git
+
+ Del |L9|                       5b264bb15d39f
+ Add |L9|                       1.1                git://github.com/vim-scripts/L9.git
+ bundle for FuzzyFinder changed from git@github.com:tilljoel/dotfiles.git to git://github.com/vim-scripts/FuzzyFinder.git
+
+ Del |FuzzyFinder|              5b264bb15d39f
+ Add |FuzzyFinder|              4.2.2              git://github.com/vim-scripts/FuzzyFinder.git
+ bundle for rails.vim changed from git@github.com:tilljoel/dotfiles.git to git://github.com/vim-scripts/rails.vim
+
+ Del |rails.vim|                5b264bb15d39f
+ Add |rails.vim|                4.3                git://github.com/vim-scripts/rails.vim
+ bundle for gitv changed from git@github.com:tilljoel/dotfiles.git to git://github.com/gregsexton/gitv.git
+
+ Del |gitv|                     5b264bb15d39f
+ Add |gitv|                     v1.0-64-gf5dfe43   git://github.com/gregsexton/gitv.git
+ bundle for CRefVim changed from git@github.com:tilljoel/dotfiles.git to git://github.com/vim-scripts/CRefVim.git
+
+ Del |CRefVim|                  5b264bb15d39f
+ Add |CRefVim|                  1.0.4              git://github.com/vim-scripts/CRefVim.git
+ bundle for vim-trailing-whitespace changed from git@github.com:tilljoel/dotfiles.git to git://github.com/bronson/vim-trailing-whitespace.git
+
+ Del |vim-trailing-whitespace|  5b264bb15d39f
+ Add |vim-trailing-whitespace|  1.0-2-g6bfea00     git://github.com/bronson/vim-trailing-whitespace.git
+ bundle for jshint.vim changed from git@github.com:tilljoel/dotfiles.git to https://github.com/vim-scripts/jshint.vim.git
+
+ Del |jshint.vim|               5b264bb15d39f
+ Add |jshint.vim|               0.2                https://github.com/vim-scripts/jshint.vim.git
+ bundle for vim-session changed from git@github.com:tilljoel/dotfiles.git to git://github.com/xolox/vim-session.git
+
+ Del |vim-session|              5b264bb15d39f
+ Add |vim-session|              1.4.9              git://github.com/xolox/vim-session.git
+ bundle for syntastic changed from git@github.com:tilljoel/dotfiles.git to git://github.com/scrooloose/syntastic.git
+
+ Del |syntastic|                5b264bb15d39f
+ Add |syntastic|                1.2.0-93-g88dbca8  git://github.com/scrooloose/syntastic.git
+ bundle for vim-haml changed from git@github.com:tilljoel/dotfiles.git to git://github.com/tpope/vim-haml.git
+
+ Del |vim-haml|                 5b264bb15d39f
+ Add |vim-haml|                 vim7.2-57-gde3e72a git://github.com/tpope/vim-haml.git
+ bundle for vim-markdown changed from git@github.com:tilljoel/dotfiles.git to git://github.com/tpope/vim-markdown.git
+
+ Del |vim-markdown|             5b264bb15d39f
+ Add |vim-markdown|             34e28b3f6f6d7      git://github.com/tpope/vim-markdown.git
+ bundle for vim-rails changed from git@github.com:tilljoel/dotfiles.git to git://github.com/tpope/vim-rails.git
+
+ Del |vim-rails|                5b264bb15d39f
+ Add |vim-rails|                v4.3-22-g332c50b   git://github.com/tpope/vim-rails.git
+ bundle for vim-pep8 changed from git@github.com:tilljoel/dotfiles.git to git://github.com/nvie/vim-pep8.git
+
+ Del |vim-pep8|                 5b264bb15d39f
+ Add |vim-pep8|                 1.1-10-g90c2194    git://github.com/nvie/vim-pep8.git
+ bundle for pyflakes-vim changed from git@github.com:tilljoel/dotfiles.git to git://github.com/kevinw/pyflakes-vim
+
+ Del |pyflakes-vim|             5b264bb15d39f
+ Add |pyflakes-vim|             fbe5743e55d18      git://github.com/kevinw/pyflakes-vim
+ bundle for nginx.vim changed from git@github.com:tilljoel/dotfiles.git to git://github.com/vim-scripts/nginx.vim.git
+
+ Del |nginx.vim|                5b264bb15d39f
+ Add |nginx.vim|                0.3.2              git://github.com/vim-scripts/nginx.vim.git
+ bundle for rvm.vim changed from git@github.com:tilljoel/dotfiles.git to git://github.com/csexton/rvm.vim.git
+
+ Del |rvm.vim|                  5b264bb15d39f
+ Add |rvm.vim|                  f8af571631ee8      git://github.com/csexton/rvm.vim.git
+ bundle for status.vim changed from git@github.com:tilljoel/dotfiles.git to git://github.com/dickeytk/status.vim.git
+
+ Del |status.vim|               5b264bb15d39f
+ Add |status.vim|               1dc6cf44ec63b      git://github.com/dickeytk/status.vim.git
+ bundle for open-browser.vim changed from git@github.com:tilljoel/dotfiles.git to git://github.com/vim-scripts/open-browser.vim.git
+
+ Del |open-browser.vim|         5b264bb15d39f
+ Add |open-browser.vim|         0.0.5              git://github.com/vim-scripts/open-browser.vim.git
+ bundle for vim-surround changed from git@github.com:tilljoel/dotfiles.git to git://github.com/tpope/vim-surround.git
+
+ Del |vim-surround|             5b264bb15d39f
+ Add |vim-surround|             v1.90-5-gd9e6bfd   git://github.com/tpope/vim-surround.git
+   33 bundles added, 33 bundles removed
+
+Tor  4 Aug 2011 10:39:55 CEST by vim-update-bundles 0.8
+ Add |vim-xpath|                26a7cb7684acc      git://github.com/actionshrimp/vim-xpath.git
+ Aborted: 'git fetch -q origin' in /Users/joel/.homesick/repos/tilljoel/dotfiles/home/.vim/bundle/jshint.vim exited with code 128
+
+Ons 10 Aug 2011 10:20:40 CEST by vim-update-bundles 0.8
+ up  |vim-coffee-script|        b944e534bd6bb      <- f4d2fbfc6bf18
+ Add |LargeFile|                4@1                git://github.com/vim-scripts/LargeFile.git
+ up  |vim-rails|                v4.3-30-gab7e6ab   <- v4.3-22-g332c50b
+   1 bundle added, 2 bundles updated
+

@@ -115,7 +115,8 @@
 " Bundle: git://github.com/vim-scripts/FuzzyFinder.git
 " Bundle: git://github.com/vim-scripts/rails.vim
 " Bundle: git://github.com/gregsexton/gitv.git
-
+" Bundle: git://github.com/actionshrimp/vim-xpath.git
+" Bundle: git://github.com/vim-scripts/LargeFile.git
 " Bundle: git://github.com/vim-scripts/CRefVim.git
 " Bundle: git://github.com/bronson/vim-trailing-whitespace.git
 " Bundle: jshint.vim
@@ -395,6 +396,10 @@ let g:statusline_fullpath = 0
 nmap <C-c> <Plug>(openbrowser-smart-search)
 vmap <C-c> <Plug>(openbrowser-smart-search)
 
+
+let g:LargeFile = 1024 * 1024 * 2
+let g:loaded_LargeFile = 0
+
 " for rails.vim and Rdoc
 command -bar -nargs=1 OpenURL :OpenBrowser <args>
 
@@ -425,26 +430,27 @@ autocmd FileType java       source ~/.vim/syntax/java.vim
 autocmd FileType tex        source ~/.vim/syntax/tex.vim
 autocmd FileType dot        source ~/.vim/syntax/dot.vim
 autocmd FileType asm,a      source ~/.vim/syntax/asm.vim
-autocmd FileType text       setlocal textwidth=78
 autocmd FileType make       setlocal noexpandtab
 autocmd FileType css        setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html       setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml        setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php        setlocal omnifunc=phpcomplete#CompletePHP
-autocmd FileType txt        setlocal formatoptions=tcrqn textwidth=72
+
 
 autocmd FileType js,javascript call s:MyJavascriptSettings()
 autocmd FileType coffee     call s:MyCoffeeSettings()
 autocmd FileType mail       call s:MyMailSettings()
-autocmd Filetype rb,ruby    call s:MyRubySettings()
-autocmd Filetype rake       call s:MyRubySettings()
-autocmd Filetype eruby,yaml call s:MyRubySettings()
-autocmd Filetype vala,vapi  call s:MyValaSettings()
+autocmd FileType txt        call s:MyTxtSettings()
+autocmd FileType rb,ruby    call s:MyRubySettings()
+autocmd FileType xml        call s:MyXMLSettings()
+autocmd FileType rake       call s:MyRubySettings()
+autocmd FileType eruby,yaml call s:MyRubySettings()
+autocmd FileType vala,vapi  call s:MyValaSettings()
 autocmd FileType c,h,cpp,cc call s:MyCSettings()
 autocmd FileType python     call s:MyPythonSettings()
-autocmd Filetype markdown   call s:MyMarkdownSettings()
-autocmd Filetype css        call s:MyCSSSettings()
-autocmd Filetype scss       call s:MySASSSettings()
+autocmd FileType markdown   call s:MyMarkdownSettings()
+autocmd FileType css        call s:MyCSSSettings()
+autocmd FileType scss       call s:MySASSSettings()
 "
 "FIXME: add colors for some C99 stuff
 let c_C99=1
@@ -695,10 +701,17 @@ function! s:MyCoffeeSettings()
   setlocal nocindent
 endfunction
 
+function! s:MyTxtSettings()
+        autocmd FileType txt        setlocal formatoptions=tcrqn textwidth=72
+  setlocal equalprg=par\ -\ 2>/dev/null
+endfunction
+
 function! s:MyMailSettings()
   setlocal textwidth=72
   setlocal comments+=b:--
-  setlocal formatoptions+=tcqan
+  setlocal formatoptions+=tcqn
+  setlocal equalprg=par\ -\ 2>/dev/null
+  imap <C-F> <ESC>:r!google-contacts-lookup.sh <cword><CR><ESC>
   " setlocal nosi nocin
   " setlocal comments=n:>
   " setlocal equalprg=fmt
@@ -736,6 +749,14 @@ function! s:MyMailSettings()
   "map <buffer> <F3> :%g/^>\( \?>\)\{2}/d<CR>
   "map <buffer> <F4> :%g/^>\( \?>\)\{3}/d<CR>
   map <buffer> <leader>q :%s/=\(\x\x\)/\=nr2char(str2nr(submatch(1),16))/g<CR>
+
+  function! Mail_Begining()
+    exe "normal gg"
+    if getline (line ('.')) =~ '^From: '
+      " if we use edit_headers in Mutt, then go after the headers
+      exe "normal /^$\<CR>"
+    endif
+  endfunction
 
   function! FT_mail_insert_url()
           let l:url = input("URL: ")
@@ -794,6 +815,13 @@ function! s:MySASSSettings()
   setlocal expandtab
   setlocal textwidth=80
   setlocal nocindent
+endfunction
+
+function! s:MyXMLSettings()
+  autocmd FileType text setlocal textwidth=78
+  syntax match StatusLine /\%<80v.\%>79v/
+  syntax match LineEndWS "\s\+$" containedin=ALL
+  setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 endfunction
 
 function! s:MyMarkdownSettings()
@@ -1147,3 +1175,22 @@ endif
 "map pf :call FlyquickfixPrgSet(1)<CR>
 "map p8 :call FlyquickfixPrgSet(8)<CR>
 
+function! XMLMappings()
+        noremap <leader>;xp :call Xpath()<cr>
+endfunction
+function! Xpath()
+        " Needs to get the real file name for the quickfix window
+        let realname = bufname( "%" )
+        " Write the buffer to a temp file
+        let filename = tempname()
+        let lines = getline( 1, "$" )
+        call writefile( lines, filename )
+        let xpath    = input("Enter xpath expression: ")
+        let tmp1=&grepprg
+        let tmp2=&grepformat
+        set grepformat=%f:%l\ %m
+        set grepprg=xpath
+        exe "grep ".escape(filename, ' \')." \"".xpath."\" ".escape(realname, ' \')
+        let &grepprg=tmp1
+        let &grepformat=tmp2
+endfunction
