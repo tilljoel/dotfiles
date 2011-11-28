@@ -1,27 +1,23 @@
-# this is always our primary/default email address
-folder-hook . "send-hook . 			'my_hdr From: Joel Larsson <joel@axis.com>'"
-
-# send mails to these address(es) using our specific address
-folder-hook . "send-hook '~t axis.com'	'my_hdr From: Joel Larsson <joel@axis.com>'"
-
 # send hooks for sending mail out per mailbox; this way you can be in a
 # mailbox and you'll send mail out with the address you would normally use
 # in that mailbox
-#
-### prefixed mailboxes
-#
-### inboxes
-#
+
 
 folder-hook .                  		source ~/.mutt/defaults
 folder-hook "!$"               		source ~/.mutt/defaults
-folder-hook =inbox             		source ~/.mutt/defaults
-folder-hook =mosig       		source ~/.mutt/defaults.maillist
-folder-hook =kernel			source ~/.mutt/defaults.maillist
 
-# =mbox and =Sentmail are symlinks to =history.
-folder-hook =mbox	push # "<limit>!~f\\\"joel@(axis.com)\\\"<enter><last-entry>"
-folder-hook =mbox	source ~/.mutt/defaults
-folder-hook sent-mail	push "<limit>~f\\\"joel@(axis.com)\\\"<enter><last-entry>"
-folder-hook sent-mail 'set simple_search="~t %s | ~s %s"'
-folder-hook sent-mail	source ~/.mutt/defaults
+folder-hook =list/forskningsavd         source ~/.mutt/defaults.maillist
+folder-hook =list/mosig                 source ~/.mutt/defaults.maillist
+folder-hook =list/maktenoppenheten      source ~/.mutt/defaults.maillist
+
+folder-hook =inbox-tilljoel                 'source ~/.mutt/account.tilljoel'
+folder-hook =inbox-popdevelop               'source ~/.mutt/account.popdevelop'
+folder-hook =inbox-weskins                  'source ~/.mutt/account.weskins'
+folder-hook =inbox-large                    'source ~/.mutt/account.popdevelop'
+
+folder-hook =ACTION                         'source ~/.mutt/account.popdevelop'
+folder-hook =RESPOND                        'source ~/.mutt/account.popdevelop'
+folder-hook =WAITING                        'source ~/.mutt/account.popdevelop'
+
+
+

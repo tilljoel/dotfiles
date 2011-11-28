@@ -1,41 +1,17 @@
-#mailboxes ! 
+#mailboxes !
 mailboxes =ACTION
 mailboxes =RESPOND
 mailboxes =WAITING
 
-mailboxes =inbox-axis
-mailboxes =inbox-other
-mailboxes =large
+mailboxes =inbox-tilljoel
+mailboxes =inbox-popdevelop
+mailboxes =inbox-weskins
+mailboxes =inbox-large
 
-mailboxes =ref-sampoiwa
-mailboxes =ref-kaleva
-mailboxes =ref-goals
-mailboxes =ref-summerjob
-mailboxes =ref-techlead
-mailboxes =ref-perd
-mailboxes =ref-intervju
-mailboxes =ref-personal
+mailboxes =list/forskningsavd
+mailboxes =list/mosig
+mailboxes =list/maktenoppenheten
 
-mailboxes =meetings
-mailboxes =tickets
-
-mailboxes =list/cu-elinux
-mailboxes =list/daily-build
-mailboxes =list/exjobb
-mailboxes =list/lunch-se
-mailboxes =list/rec-sport
-
-mailboxes =dev-cvs/prod-camera-P1343
-mailboxes =dev-cvs/prod-camera-P3343
-mailboxes =dev-cvs/prod-camera-P3346
-mailboxes =dev-cvs/prod-camera-other
-mailboxes =dev-cvs/tools-brizz
-mailboxes =dev-cvs/tools-imagetool
-mailboxes =dev-cvs/tools-other
-mailboxes =dev-cvs/tools
-
-mailboxes =test_all
-mailboxes =cron
 mailboxes =mail-errors
 
 mailboxes =archives

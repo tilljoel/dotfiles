@@ -1,12 +1,12 @@
 DATE=`date +%Y-%m`
 SHELL=/bin/sh
 VERBOSE=off
-PMDIR=/home/joel/.procmail
+PMDIR=/Users/joel/.procmail
 LOGFILE=$PMDIR/procmail.log
 # inserts a blank line between log entries
 LOG="
 "
-MAIL=/home/joel/Mail
+MAIL=/Users/joel/Mail
 MLIST=$MAIL
 VERBOSE=ON
 #
@@ -32,8 +32,7 @@ $MAIL/large/
 INCLUDERC=$PMDIR/markasread.rc
 INCLUDERC=$PMDIR/hide.rc
 INCLUDERC=$PMDIR/mailinglists.rc
-INCLUDERC=$PMDIR/dev-cvs.rc
-INCLUDERC=$PMDIR/other.rc
+INCLUDERC=$PMDIR/calendar.rc
 
 
 #
@@ -42,10 +41,34 @@ INCLUDERC=$PMDIR/other.rc
 #INCLUDERC=$PMDIR/spam.rc
 
 
-# final delivery to inbox
 :0:
-* ^From:.*@axis.com
-$MAIL/inbox-axis/
+* ^To:.*joel@popdevelop.com
+$MAIL/inbox-popdevelop/
+
+:0:
+* ^To:.*joel.larsson@popdevelop.com
+$MAIL/inbox-popdevelop/
+
+:0:
+* ^To:.*tilljoel@gmail.com
+$MAIL/inbox-tilljoel/
+
+:0:
+* ^To:.*all@popdevelop.com
+$MAIL/inbox-popdevelop/
+
+:0:
+* ^To:.*contact@popdevelop.com
+$MAIL/inbox-popdevelop/
+
+:0:
+* ^To:.*@popdevelop.com
+$MAIL/inbox-popdevelop/
+
+:0:
+* ^To:.*@weskins.com
+$MAIL/inbox-weskins/
+
 # fix these
 :0
 $MAIL/inbox-other/

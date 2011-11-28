@@ -4,8 +4,8 @@ if [ "$1" = "-v" ]; then
     EXTRAARG="-v"
 fi
 
-fetchmail $EXTRAARG >/dev/null 2>&1
+/opt/local/bin/fetchmail $EXTRAARG >/dev/null 2>&1
 
 if [ "$?" = "0" ]; then
-    /usr/local/bin/growlnotify -n mutt -a Mail.app -m "New mail received" >/dev/null 2>&1
+    echo "New mail received" | ruby -rubygems ~/bin/gnotify.rb
 fi

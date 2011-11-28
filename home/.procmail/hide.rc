@@ -1,14 +1,3 @@
-#
-# SPAM
-#
-:0
-* ^Subject:.*\[--SPAM--\]
-$MAIL/spam/
-
-:0
-* ^Subject:.*\[SPAM\]
-$MAIL/spam/
-
 # delete message delivery errors
 
 :0

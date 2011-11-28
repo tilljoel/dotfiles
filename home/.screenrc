@@ -7,4 +7,4 @@ hardstatus string '%{= wb}[%{k}%H%{b}]%=%{k} %?%-Lw%?%{kb}[%{w}%n*%f %t%? %{r}(%
 attrcolor b ".I"
 term "screen-256color"
 defbce "on"
-termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'

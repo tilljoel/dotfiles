@@ -1,15 +1,12 @@
-#
-# CU ELINUX
-#
 :0:
-* ^From:.*cu-elinux@axis.com
-$MAIL/list/cu-elinux/
+* ^To:.*forskningsavdelningen@kodapan.se
+$MAIL/list/forskningsavd/
 
 :0:
-* ^From:.*cu-elinux@axis.com
-$MAIL/list/cu-elinux/
+* ^To:.*mosig@list.hack.org
+$MAIL/list/mosig/
 
 :0:
-* ^From:.*debian-users@axis.com
-$MAIL/list/other/
+* ^To:.*makten-oppenheten@googlegroups.com
+$MAIL/list/makten_oppenheten/
 

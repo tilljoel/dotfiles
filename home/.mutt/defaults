@@ -10,9 +10,10 @@ unmy_hdr Return-Receipt-To:
 unmy_hdr X-URL:
 
 # Now set the headers.
-my_hdr From: Joel Larsson <joel@axis.com>
+#dont do this, use reverse_name
+#my_hdr From: Joel Larsson <tilljoel@gmail.com>
 #my_hdr X-URL: http://
-my_hdr X-Mailer: Mutt 1.5.18
+my_hdr X-Mailer: Mutt 1.5.21
 #my_hdr X-PGP-Key: http://linsec.ca/vdanen.asc
 #my_hdr X-PGP-Key-ID: 0xFEE30AD4
 #my_hdr X-PGP-Key-Fingerprint: 7F6C A60C 06C2 4811 FA1C  A2BC 2EBC 5E32 FEE3 0AD4

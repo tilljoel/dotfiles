@@ -1,0 +1,6 @@
+source ~/.mutt/defaults			# source the defaults
+set realname="Joel Larsson - Popdevelop"
+set from=joel@popdevelop.com
+set hostname="popdevelop.com"
+set signature="~/.mutt/signature.popdevelop"
+

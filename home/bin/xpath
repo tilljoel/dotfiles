@@ -1,0 +1,28 @@
+#!/usr/bin/env perl
+ 
+use strict;
+use warnings;
+ 
+use XML::LibXML;
+ 
+my ( $filename, $xpath, $rname ) = @ARGV;
+ 
+unless ( defined $rname ) {
+$rname = $filename;
+}
+ 
+my $parser = XML::LibXML->new();
+my $doc = $parser->parse_file( $filename );
+ 
+my $xc = XML::LibXML::XPathContext->new( $doc );
+my $nodes = $xc->findnodes( $xpath );
+ 
+my $found = 0;
+foreach my $node ( $nodes->get_nodelist ) {
+$found++;
+print $rname, ":", $node->line_number(), " ", $node->nodePath( ) ,"\n";
+}
+ 
+unless ( $found ) {
+print "No XML found matching xpath '$xpath'\n";
+}

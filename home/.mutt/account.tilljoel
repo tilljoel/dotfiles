@@ -1,0 +1,7 @@
+source ~/.mutt/defaults			# source the defaults
+set realname="Joel Larsson"
+set from=tilljoel@gmail.com
+set hostname="hackr.se"
+set signature="~/.mutt/signature.tilljoel"
+
+
