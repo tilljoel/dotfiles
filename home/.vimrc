@@ -135,7 +135,7 @@
 " Bundle: git://github.com/vim-scripts/open-browser.vim.git
 " Bundle: git://github.com/tpope/vim-surround.git
 " Bundle: git://github.com/vim-scripts/closetag.vim.git
-"
+" Bundle: git://github.com/ujihisa/rdoc.vim.git
 "#  git://github.com/vim-ruby/vim-ruby.git",
 "#  git://github.com/sjl/gundo.vim.git"],
 "#  git://github.com/dsummersl/vimunit.git"],
@@ -146,6 +146,11 @@
 "#  git://github.com/tsaleh/vim-align.git",
 "#  git://github.com/tsaleh/vim-shoulda.git",
 
+"#TODO
+"# Source: https://github.com/Lokaltog/vim-powerline
+"# https://github.com/altercation/vim-colors-solarized
+"# http://projects.mikewest.org/vimroom/
+"
 "# pydiction
 "# Indexsearch - fixa!
 "# Create passwords.vim for blogit
@@ -425,6 +430,7 @@ autocmd InsertLeave * call s:LeaveInsert()
 autocmd InsertEnter * call s:EnterInsert()
 autocmd BufRead,BufNewFile *.vala setfiletype vala
 autocmd BufRead,BufNewFile *.vapi setfiletype vala
+autocmd BufRead,BufNewFile *.rdoc,*rd setfiletype rdoc
 
 autocmd FileType hs         source ~/.vim/syntax/haskell.vim
 autocmd FileType java       source ~/.vim/syntax/java.vim
@@ -443,6 +449,7 @@ autocmd FileType coffee     call s:MyCoffeeSettings()
 autocmd FileType mail       call s:MyMailSettings()
 autocmd FileType txt        call s:MyTxtSettings()
 autocmd FileType rb,ruby    call s:MyRubySettings()
+autocmd FileType rdoc       call s:MyRDocSettings()
 autocmd FileType xml        call s:MyXMLSettings()
 autocmd FileType rake       call s:MyRubySettings()
 autocmd FileType eruby,yaml call s:MyRubySettings()
@@ -703,6 +710,11 @@ function! s:MyCoffeeSettings()
 endfunction
 
 function! s:MyTxtSettings()
+        autocmd FileType txt        setlocal formatoptions=tcrqn textwidth=72
+  setlocal equalprg=par\ -\ 2>/dev/null
+endfunction
+
+function! s:MyRDocSettings()
         autocmd FileType txt        setlocal formatoptions=tcrqn textwidth=72
   setlocal equalprg=par\ -\ 2>/dev/null
 endfunction

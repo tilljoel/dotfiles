@@ -1,0 +1,56 @@
+:0:
+* ^From:.*notifications@getflow.com
+$MAIL/info/
+
+:0:
+* ^From:.*noreply@letsdeal.se
+$MAIL/info/
+
+:0:
+* ^From:.*noreply@letsdeal.se
+$MAIL/info/
+
+:0:
+* ^From:.*noreply@github.com
+$MAIL/info/
+
+:0:
+* ^From:.*info@news.groupon.se
+$MAIL/info/
+
+:0:
+* ^From:.*noreply@dealie.se
+$MAIL/info/
+
+:0:
+* ^From:.*appsumo@email.appsumo.com
+$MAIL/info/
+
+:0:
+* ^From:.*@members.com
+$MAIL/info/
+
+:0:
+* ^From:.*kulturcentralen@kulturcentralen.nu
+$MAIL/info/
+
+:0:
+* ^From:.*npatel@kissmetrics.com
+$MAIL/info/
+
+:0:
+* ^From:.*issues-noreply@bitbucket.org
+$MAIL/info/
+
+:0:
+* ^From:.*donotreply@airbrake.io
+$MAIL/info/
+
+:0:
+* ^From:.*noreply@newrelic.com
+$MAIL/info/
+
+:0:
+* ^From:.*calendar-notification@google.com
+$MAIL/info/
+

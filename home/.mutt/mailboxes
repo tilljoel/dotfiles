@@ -8,13 +8,18 @@ mailboxes =inbox-popdevelop
 mailboxes =inbox-weskins
 mailboxes =inbox-large
 
-mailboxes =list/forskningsavd
-mailboxes =list/mosig
-mailboxes =list/maktenoppenheten
+mailboxes =list/hack
+mailboxes =list/fb-groups
+mailboxes =list/google-groups
 
 mailboxes =mail-errors
+
+mailboxes =multi
+mailboxes =social
+mailboxes =info
+mailboxes =deals
+mailboxes =meetings
 
 mailboxes =archives
 mailboxes =postponed
 mailboxes =search
-

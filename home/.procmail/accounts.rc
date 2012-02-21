@@ -1,16 +1,25 @@
+:0:
 * ^To:.*joel@popdevelop.com
-:0:
 $MAIL/inbox-popdevelop/
 
+:0:
 * ^To:.*joel.larsson@popdevelop.com
-:0:
 $MAIL/inbox-popdevelop/
 
-* ^To:.*tilljoel@gmail.com
 :0:
+* ^To:.*@popdevelop.com
+$MAIL/inbox-popdevelop/
+
+:0:
+* ^To:.*tilljoel@gmail.com
 $MAIL/inbox-tilljoel/
 
-* ^To:.*joel@weskins.com
 :0:
+* ^To:.*joel@weskins.com
 $MAIL/inbox-weskins/
+
+:0:
+* ^To:.*@weskins.com
+$MAIL/inbox-weskins/
+
 

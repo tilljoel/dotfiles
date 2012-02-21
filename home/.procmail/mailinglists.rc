@@ -1,12 +1,32 @@
 :0:
 * ^To:.*forskningsavdelningen@kodapan.se
-$MAIL/list/forskningsavd/
+$MAIL/list/hack/
 
 :0:
 * ^To:.*mosig@list.hack.org
-$MAIL/list/mosig/
+$MAIL/list/hack/
 
 :0:
-* ^To:.*makten-oppenheten@googlegroups.com
-$MAIL/list/makten_oppenheten/
+* ^To:.*121631981261066.groups.facebook.com
+$MAIL/list/fb-groups/
+
+:0:
+* ^To:.*173161179392034.groups.facebook.com
+$MAIL/list/fb-groups/
+
+:0:
+* ^To:.*193652567323844.groups.facebook.com
+$MAIL/list/fb-groups/
+
+:0:
+* ^To:.*swedishaccelerators.groups.facebook.com
+$MAIL/list/fb-groups/
+
+:0:
+* ^To:.*gtug-malmo.googlegroups.com
+$MAIL/list/google-groups/
+
+:0:
+* ^To:.*makten-oppenheten.googlegroups.com
+$MAIL/list/google-groups/
 

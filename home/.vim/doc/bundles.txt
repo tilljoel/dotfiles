@@ -2,20 +2,20 @@
 
 
 Lists the currently installed bundles. Also see the |bundle-log|.
-Last updated by vim-update-bundles on Mån 28 Nov 2011 18:51:49 CET.
+Last updated by vim-update-bundles on Tis 21 Feb 2012 12:28:05 CET.
 
   PLUGIN                           VERSION                RELEASE DATE
 ------------------------------------------------------------------------
   |gtk-vim-syntax|                 20110314               2011-03-14
   |vim-custom-bundle|              be27faa35772a          2011-07-30
-  |command-t|                      1.3                    2011-11-27
+  |command-t|                      1.3.1-19-gbcd3914      2012-02-20
   |xoria256.vim|                   1.5                    2011-05-30
-  |vim-vividchalk|                 v2.0                   2010-02-19
-  |vim-coffee-script|              v001-9-g5ea71f6        2011-11-27
+  |vim-vividchalk|                 v2.0-1-g22aee9b        2011-12-03
+  |vim-coffee-script|              v002-22-gd7ec146       2012-02-16
   |vim-rubytest|                   68721a49cbbb2          2011-06-17
   |blogit.vim|                     1.4.3                  2010-01-02
   |vim-fugitive|                   v1.1-35-gaffce71       2010-11-13
-  |nerdcommenter|                  2.2.2-55-gb28e7be      2011-07-21
+  |nerdcommenter|                  2.2.2-87-g98cec44      2012-01-30
   |taglist.vim|                    4.5                    2007-09-21
   |vim-matchit|                    8f8665e04fe37          2010-06-04
   |Vimball|                        33                     2011-04-02
@@ -29,17 +29,18 @@ Last updated by vim-update-bundles on Mån 28 Nov 2011 18:51:49 CET.
   |CRefVim|                        1.0.4                  2004-11-28
   |vim-trailing-whitespace|        1.0-2-g6bfea00         2010-09-25
   |jshint.vim|                     0.2                    2011-05-17
-  |vim-session|                    1.4.24                 2011-11-26
-  |syntastic|                      1.2.0-158-g12c9c33     2011-11-27
+  |vim-session|                    1.5                    2012-01-15
+  |syntastic|                      2.2.0-100-gd09c330     2012-02-21
   |vim-haml|                       vim7.2-58-ga995d4a     2011-10-16
-  |vim-markdown|                   5a70519e487c6          2011-11-13
-  |vim-rails|                      v4.4-17-ge45164c       2011-11-25
-  |vim-pep8|                       1.1-10-g90c2194        2011-01-30
-  |pyflakes-vim|                   634ddb795e46e          2011-09-10
+  |vim-markdown|                   fdc0f091c78cd          2011-12-21
+  |vim-rails|                      v4.4-18-g1599eec       2012-01-05
+  |vim-pep8|                       1.1-11-ge8e8cf1        2012-02-13
+  |pyflakes-vim|                   911d9c39cf8d1          2012-02-12
   |nginx.vim|                      0.3.2                  2010-11-25
   |rvm.vim|                        c215fff066cb1          2011-08-31
   |status.vim|                     1dc6cf44ec63b          2010-12-22
-  |open-browser.vim|               0.0.5                  2011-06-30
+  |open-browser.vim|               0.0.7                  2011-12-01
   |vim-surround|                   v1.90-18-g4eb2cdf      2011-11-15
   |closetag.vim|                   0.9.1                  2005-05-24
+  |rdoc.vim|                       0b09f9a97cac9          2010-01-02
 
