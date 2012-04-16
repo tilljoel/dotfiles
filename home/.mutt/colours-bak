@@ -1,0 +1,163 @@
+# 250 ~ lightyellow
+# 124 ~ strong red
+# 142 ~ brown yellow
+# 233 ~ dark grey
+# 34 ~ dark green
+# 118 ~ brigther green
+# 111 ~ blueish
+# 
+# 32 ~ strong blue
+# 28 ~ strong green
+# general-doesn't-fit stuff
+#
+# ~A              all messages
+# ~b EXPR         messages which contain EXPR in the message body
+# ~B EXPR         messages which contain EXPR in the whole message
+# ~c USER         messages carbon-copied to USER
+# ~C EXPR         message is either to: or cc: EXPR
+# ~D              deleted messages
+# ~d [MIN]-[MAX]  messages with ``date-sent'' in a Date range
+# ~E              expired messages
+# ~e EXPR         message which contains EXPR in the ``Sender'' field
+# ~F              flagged messages
+# ~f USER         messages originating from USER
+# ~g              PGP signed messages
+# ~G              PGP encrypted messages
+# ~h EXPR         messages which contain EXPR in the message header
+# ~k              message contains PGP key material
+# ~i ID           message which match ID in the ``Message-ID'' field
+# ~L EXPR         message is either originated or received by EXPR
+# ~l              message is addressed to a known mailing list
+# ~m [MIN]-[MAX]  message in the range MIN to MAX *)
+# ~n [MIN]-[MAX]  messages with a score in the range MIN to MAX *)
+# ~N              new messages
+# ~O              old messages
+# ~p              message is addressed to you (consults $alternates)
+# ~P              message is from you (consults $alternates)
+# ~Q              messages which have been replied to
+# ~R              read messages
+# ~r [MIN]-[MAX]  messages with ``date-received'' in a Date range
+# ~S              superseded messages
+# ~s SUBJECT      messages having SUBJECT in the ``Subject'' field.
+# ~T              tagged messages
+# ~t USER         messages addressed to USER
+# ~U              unread messages
+# ~v              message is part of a collapsed thread.
+# ~x EXPR         messages which contain EXPR in the `References' field
+# ~y EXPR         messages which contain EXPR in the `X-Label' field
+# ~z [MIN]-[MAX]  messages with a size in the range MIN to MAX *)
+# ~=              duplicated messages (see $duplicate_threads)
+
+color normal color250 color233
+color error color250 color124
+color markers color142 color233
+color tilde color142 color233
+color status color142 color233
+
+#Color definitions when on a mono screen
+mono bold      bold
+mono underline underline
+mono indicator reverse
+mono error     bold
+
+# index stuff
+color tree color142 color233
+color indicator color233 color250
+
+
+# misc body stuff
+color attachment color111 color233
+color signature color142 color233
+
+# quote levels
+color quoted color28 color233
+color quoted1 color142 color233
+color quoted2 color28 color233
+color quoted3 color142 color233
+color quoted4 color28 color233
+color quoted5 color142 color233
+color quoted6 color28 color233
+color quoted7 color142 color233
+color quoted8 color28 color233
+color quoted9 color142 color233
+
+
+# header stuff
+color hdrdefault color255 color16
+# Colors for items in the reader
+color header color28   color16 "^(To|Cc):"
+color header color255   color16 "^(From|Subject):"
+#color header color22   color233 ^To:
+#color header color22   color233 ^Cc:
+mono  header bold                 "^(From|Subject):"
+
+# new messages
+color index color250      color22    "~N !~T !~F !~p !~P"
+# tagged messages
+color index color250      color32    "~T !~F !~p !~P"
+# flagged messages
+color index color250      color124   "~F !~p !~P"
+
+# messages to me
+color index color255      color233   "~p !~N !~T !~F !~P"
+color index color255      color22    "~p ~N !~T !~F !~P"
+color index color255      color32    "~p ~T !~F !~P"
+color index color255      color124   "~p ~F !~P"
+# messages from me
+color index color255      color233   "~P !~N !~T !~F"
+color index color255      color22    "~P ~N !~T !~F"
+color index color255      color32    "~P ~T !~F"
+color index color255      color124   "~P ~F"
+# messages which mention my name in the body
+color index color255      color233   "~b \"(joel larsson|joel)\" !~N !~T !~F !~p !~P"
+color index color255      color22    "~b \"(joel larsson|joel)\" ~N !~T !~F !~p !~P"
+color index color255      color32    "~b \"(joel larsson|joel)\" ~T !~F !~p !~P"
+color index color255      color124   "~b \"(joel larsson|joel)\" ~F !~p !~P"
+# messages which are in reference to my mails
+color index color255      color233   "~x \"(joel|joel.larsson)axis\\.com\" !~N !~T !~F !~p !~P"
+color index color255      color16    "~x \"(joel|joel.larsson)axis\\.com\" ~N !~T !~F !~p !~P"
+color index color255      color32    "~x \"(joel|joel.larsson)axis\\.com\" ~T !~F !~p !~P"
+color index color255      color124   "~x \"(joel|joel.larsson)axis\\.com\" ~F !~p !~P"
+# messages to root, etc.
+color index color250      color233   "~C \"(root|postmaster|abuse|mailer-daemon)@\" !~N !~P !~p"
+color index color250      color233   "~C \"(root|postmaster|abuse|mailer-daemon)@\" ~N !~P !~p"
+
+# deleted messages
+color index color236      color233   "!~N ~D"
+color index color236      color34   "~N ~D"
+
+# Highlights inside the body of a message.
+
+# Attribution lines
+#color body color250 color233 "\\* [^<]+ <[^>]+> \\[[^]]+\\]:"
+#color body color250 color233 "(^|[^[:alnum:]])on [a-z0-9 ,]+( at [a-z0-9:,. +-]+)? wrote:"
+
+# url, email and web stuff
+color body color111 color233 "<URL:[^ ]*>"
+color body color111 color233 "www\\.[-.a-z0-9]+\\.[a-z][a-z][a-z]?([-_./~a-z0-9]+)?"
+color body color111 color233 "mailto: *[^ ]+\(\\i?subject=[^ ]+\)?"
+#color body color111 color233 "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+color body color111 color233 "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
+color body color111 color233 "((@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]),)*@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]):)?[0-9a-z_.+%$-]+@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\])"
+
+# gpg stuff
+#color body color34 color233 "^gpg: Good signature.*"
+#color body color250 color124 "^gpg: BAD signature.*"
+#color body color142 color233 "^gpg: Can't check signature.*"
+#color body color142 color233 "^-----BEGIN PGP SIGNED MESSAGE-----"
+#color body color142 color233 "^-----BEGIN PGP SIGNATURE-----"
+#color body color142 color233 "^-----END PGP SIGNED MESSAGE-----"
+#color body color142 color233 "^-----END PGP SIGNATURE-----"
+#color body color142 color233 "^Version: GnuPG.*"
+#color body color142 color233 "^Comment: .*"
+#mono   body            bold                    "^gpg: Good signature"
+#mono   body            bold                    "^gpg: BAD signature from.*"
+
+# *bold*
+color body color111  color233 "(^|[[:space:][:punct:]])\\*[^*]+\\*([[:space:][:punct:]]|$)"
+mono  body bold                "(^|[[:space:][:punct:]])\\*[^*]+\\*([[:space:][:punct:]]|$)"
+# _underline_
+color body color111  color233 "(^|[[:space:][:punct:]])_[^_]+_([[:space:][:punct:]]|$)"
+mono  body underline           "(^|[[:space:][:punct:]])_[^_]+_([[:space:][:punct:]]|$)"
+
+

@@ -131,11 +131,16 @@
 " BundleCommand: git submodule init && git submodule update
 " Bundle: git://github.com/vim-scripts/nginx.vim.git
 " Bundle: git://github.com/csexton/rvm.vim.git
-" Bundle: git://github.com/dickeytk/status.vim.git
+" Bundle: git://github.com/dickeyxxx/status.vim.git
 " Bundle: git://github.com/vim-scripts/open-browser.vim.git
 " Bundle: git://github.com/tpope/vim-surround.git
 " Bundle: git://github.com/vim-scripts/closetag.vim.git
 " Bundle: git://github.com/ujihisa/rdoc.vim.git
+" Bundle: git://github.com/tpope/vim-rake.git
+" Bundle: git://github.com/tsaleh/vim-shoulda.git
+" Bundle: git://github.com/vim-scripts/AnsiEsc.vim
+" Bundle: git://github.com/altercation/vim-colors-solarized.git
+" Bundle: git://github.com/nathanaelkane/vim-indent-guides.git
 "#  git://github.com/vim-ruby/vim-ruby.git",
 "#  git://github.com/sjl/gundo.vim.git"],
 "#  git://github.com/dsummersl/vimunit.git"],
@@ -144,7 +149,6 @@
 "#  git://github.com/tpope/vim-repeat.git",
 "#  git://github.com/tpope/vim-surround.git",
 "#  git://github.com/tsaleh/vim-align.git",
-"#  git://github.com/tsaleh/vim-shoulda.git",
 
 "#TODO
 "# Source: https://github.com/Lokaltog/vim-powerline
@@ -283,7 +287,9 @@ set shell=/bin/sh
 " set colorscheme
 "colorscheme blackdust
 set t_Co=256
-colorscheme xoria256
+"colorscheme xoria256
+set background=dark
+colorscheme solarized
 
 "   always display the statusline
 set laststatus=2
@@ -478,6 +484,11 @@ let c_gnu=1
 let c_syntax_for_h=1
 
 
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 "-------------------------------------------------------------------------------
 "-- GENERAL MAPPINGS
 "-------------------------------------------------------------------------------

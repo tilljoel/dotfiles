@@ -1,6 +1,6 @@
 [user]
-	name = Joel Larsson
-	email = tilljoel@gmail.com
+        name = Joel Larsson
+        email = tilljoel@gmail.com
 [merge]
         tool = vimdiff
 [alias]
@@ -16,10 +16,18 @@
         lg = log -p
         who = shortlog -n -s --no-merges
         today = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
+        pl = log --stat --pretty=format:'[%h] %ae, %ar: %s'
+        d = difftool
 [core]
-	editor = vim
+        editor = vim
+[diff]
+        tool = vimdiff
+[pager]
+        diff =
 [color]
-	ui = true
+        ui = true
 [github]
-	user = tilljoel
-	token = 090630504dffffc1cf0918c1f1051322
+        user = tilljoel
+        token = 090630504dffffc1cf0918c1f1051322
+[difftool]
+        prompt = false

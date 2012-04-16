@@ -3,10 +3,15 @@ mailboxes =ACTION
 mailboxes =RESPOND
 mailboxes =WAITING
 
-mailboxes =inbox-tilljoel
-mailboxes =inbox-popdevelop
-mailboxes =inbox-weskins
-mailboxes =inbox-large
+mailboxes =tilljoel-inbox
+mailboxes =popdevelop-inbox
+mailboxes =popdevelop-multi
+mailboxes =popfaktura-inbox
+mailboxes =popfaktura-multi
+mailboxes =popfaktura-test
+mailboxes =weskins-inbox
+mailboxes =weskins-multi
+
 
 mailboxes =list/hack
 mailboxes =list/fb-groups

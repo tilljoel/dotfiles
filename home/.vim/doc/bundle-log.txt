@@ -186,3 +186,37 @@ Tis 21 Feb 2012 12:28:05 CET by vim-update-bundles 0.8
  Add |rdoc.vim|                 0b09f9a97cac9      git://github.com/ujihisa/rdoc.vim.git
    1 bundle added, 11 bundles updated
 
+Tor  1 Mar 2012 23:39:19 CET by vim-update-bundles 0.8
+ up  |command-t|                1.3.1-21-g07027c3  <- 1.3.1-19-gbcd3914
+ up  |vim-coffee-script|        v002-23-ge630946   <- v002-22-gd7ec146
+ up  |syntastic|                2.2.0-113-gde9f81b <- 2.2.0-100-gd09c330
+ up  |vim-rails|                v4.4-21-g31b5a02   <- v4.4-18-g1599eec
+ Aborted: 'git fetch -q origin' in /Users/joel/.homesick/repos/tilljoel/dotfiles/home/.vim/bundle/status.vim exited with code 128
+
+Tor  1 Mar 2012 23:42:10 CET by vim-update-bundles 0.8
+ bundle for status.vim changed from git://github.com/dickeytk/status.vim.git to git://github.com/dickeyxxx/status.vim.git
+
+ Del |status.vim|               1dc6cf44ec63b
+ Add |status.vim|               1dc6cf44ec63b      git://github.com/dickeyxxx/status.vim.git
+ Add |vim-rake|                 v1.0-13-g8bccbe4   git://github.com/tpope/vim-rake.git
+ Add |vim-shoulda|              3129eb926fdd2      git://github.com/tsaleh/vim-shoulda.git
+ Add |vim-colors-solarized|     528a59f26d122      git://github.com/altercation/vim-colors-solarized.git
+   4 bundles added, 1 bundle removed
+
+Tor  1 Mar 2012 23:43:09 CET by vim-update-bundles 0.8
+   no updates
+
+Tor  8 Mar 2012 11:14:45 CET by vim-update-bundles 0.8
+ up  |vim-vividchalk|           v2.0-2-gfd69606    <- v2.0-1-g22aee9b
+ up  |AutoTag|                  1.13               <- 1.11
+ up  |gitv|                     v1.1-4-g941321b    <- v1.1-2-g39797f0
+ up  |syntastic|                2.2.0-120-g7a5bca3 <- 2.2.0-113-gde9f81b
+ up  |vim-rails|                v4.4-22-gb6720d6   <- v4.4-21-g31b5a02
+ up  |vim-surround|             v1.90-24-gefc017d  <- v1.90-18-g4eb2cdf
+ Add |AnsiEsc.vim|              12                 git://github.com/vim-scripts/AnsiEsc.vim
+ Aborted: 'git clone -q git:///github.com/nathanaelkane/vim-indent-guides.git vim-indent-guides' in /Users/joel/.homesick/repos/tilljoel/dotfiles/home/.vim/bundle exited with code 128
+
+Tor  8 Mar 2012 11:15:46 CET by vim-update-bundles 0.8
+ Add |vim-indent-guides|        1.6                git://github.com/nathanaelkane/vim-indent-guides.git
+   1 bundle added
+
