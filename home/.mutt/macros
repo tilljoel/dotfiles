@@ -3,7 +3,7 @@ macro index "\Cx\Cb" "<change-folder>?"                                   # Fold
 macro index "\Cx\Cs" "<pipe-message>cat > ~/"                             # Save message
 macro index "\'"     "<clear-flag>r"                                      # Mark as un-replied
 macro index "y"      "<sync-mailbox><change-folder>?<toggle-mailboxes>"   # "-y" screen
-macro index "\Cb"    "<pipe-message>urlview<enter>"                       # URL viewer.
+#macro index "\Cb"    "<pipe-message>urlview<enter>"                       # URL viewer.
 macro index "\ea"    "<change-folder>=archives/<tab><tab>"                # List archives
 macro index "\eb"    "<pipe-message>lbdb-fetchaddr<enter>"                # Store address details in lbdb.
 macro index "\eh"    "<pipe-message>mailhops<enter>"                      # View the path of the mail.
@@ -27,7 +27,7 @@ macro pager "\e7"    "<enter-command>set pager_index_lines=7<enter>"      # Chan
 macro pager "\e8"    "<enter-command>set pager_index_lines=8<enter>"      # Change PIL size
 macro pager "\e9"    "<enter-command>set pager_index_lines=9<enter>"      # Change PIL size
 macro pager "\e0"    "<enter-command>set pager_index_lines=0<enter>"      # Change PIL size
-macro pager "\Cb"    "<pipe-message>urlview<enter>"                       # URL viewer.
+#macro pager "\Cb"    "<pipe-message>urlview<enter>"                       # URL viewer.
 macro pager "\Cx\Cb" "<change-folder>?"                                   # Folder list.
 macro pager "\Cx\Cs" "<pipe-message>cat > ~/"                             # Save message
 macro pager "\eb"    "<pipe-message>lbdb-fetchaddr<enter>"                # Store address details in lbdb.
@@ -56,3 +56,10 @@ macro index <F8> "<shell-escape>rm -rf /home/joel/Mail/search; mu -l /home/joel/
 macro pager <F8> "<shell-escape>rm -rf /home/joel/Mail/search; mu -l /home/joel/Mail/search find" "mu-find"
 
 macro browser	"q"	"<exit><quit>"						# allow us to quit in the browser
+
+
+macro index,pager "\cb" "<enter-command> set my_pdsave=\$pipe_decode<enter>\
+<enter-command> unset pipe_decode<enter>\
+<pipe-message>extract_url.pl<enter>\
+<enter-command> set pipe_decode=\$my_pdsave<enter>" "get URLs"
+

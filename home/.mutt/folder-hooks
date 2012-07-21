@@ -6,18 +6,17 @@
 folder-hook .                  		source ~/.mutt/defaults
 folder-hook "!$"               		source ~/.mutt/defaults
 
-folder-hook =list/forskningsavd         source ~/.mutt/defaults.maillist
-folder-hook =list/mosig                 source ~/.mutt/defaults.maillist
-folder-hook =list/maktenoppenheten      source ~/.mutt/defaults.maillist
+folder-hook =list/hacks                 source ~/.mutt/defaults.maillist
+folder-hook =list/fb-groups             source ~/.mutt/defaults.maillist
+folder-hook =list/google-groups         source ~/.mutt/defaults.maillist
 
-folder-hook =inbox-tilljoel                 'source ~/.mutt/account.tilljoel'
-folder-hook =inbox-popdevelop               'source ~/.mutt/account.popdevelop'
-folder-hook =inbox-weskins                  'source ~/.mutt/account.weskins'
-folder-hook =inbox-large                    'source ~/.mutt/account.popdevelop'
-
-folder-hook =ACTION                         'source ~/.mutt/account.popdevelop'
-folder-hook =RESPOND                        'source ~/.mutt/account.popdevelop'
-folder-hook =WAITING                        'source ~/.mutt/account.popdevelop'
+folder-hook =popfaktura-inbox               'source ~/.mutt/account.popfaktura'
+folder-hook =popfaktura-multi               'source ~/.mutt/account.popfaktura'
+folder-hook =popdevelop-inbox               'source ~/.mutt/account.popdevelop'
+folder-hook =popdevelop-multi               'source ~/.mutt/account.popdevelop'
+folder-hook =weskins-inbox                  'source ~/.mutt/account.weskins'
+folder-hook =weskins-multi                  'source ~/.mutt/account.weskins'
+folder-hook =tilljoel-inbox                 'source ~/.mutt/account.tilljoel'
 
 
 

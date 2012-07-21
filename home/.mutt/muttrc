@@ -9,9 +9,10 @@ set reverse_name=yes
 
 macro index <f1> ":source ~/.mutt/account.tilljoel"
 macro index <f2> ":source ~/.mutt/account.popdevelop"
-macro index <f3> ":source ~/.mutt/account.popfaktura"
-macro index <f4> ":source ~/.mutt/account.weskins"
-macro index <f5> ":source ~/.mutt/account.popfaktura-sendgrid"
+macro index <f3> ":source ~/.mutt/account.popgiro"
+macro index <f4> ":source ~/.mutt/account.popfaktura"
+macro index <f5> ":source ~/.mutt/account.weskins"
+macro index <f6> ":source ~/.mutt/account.popfaktura-sendgrid"
 
 # alternates are regexps that match your email address(es)
 #set smtp_url = "smtp://joel@smtp-1.axis.com/"

@@ -141,6 +141,9 @@
 " Bundle: git://github.com/vim-scripts/AnsiEsc.vim
 " Bundle: git://github.com/altercation/vim-colors-solarized.git
 " Bundle: git://github.com/nathanaelkane/vim-indent-guides.git
+" Bundle: git://github.com/suan/vim-instant-markdown.git
+" Bundle: git://github.com/Lokaltog/vim-powerline.git develop
+" #Bundle: git://github.com/Lokaltog/vim-powerline.git
 "#  git://github.com/vim-ruby/vim-ruby.git",
 "#  git://github.com/sjl/gundo.vim.git"],
 "#  git://github.com/dsummersl/vimunit.git"],
@@ -151,10 +154,8 @@
 "#  git://github.com/tsaleh/vim-align.git",
 
 "#TODO
-"# Source: https://github.com/Lokaltog/vim-powerline
-"# https://github.com/altercation/vim-colors-solarized
 "# http://projects.mikewest.org/vimroom/
-"
+"# https://github.com/sunaku/vim-ruby-minitest
 "# pydiction
 "# Indexsearch - fixa!
 "# Create passwords.vim for blogit
@@ -261,8 +262,9 @@ set suffixes-=.h
 set history=1000
 
 "   sharing windows clipboard
-set clipboard+=unnamed
-
+if $TMUX == ''
+        set clipboard+=unnamed
+end
 "   improves performance -- let OS decide when to flush disk
 set nofsync
 

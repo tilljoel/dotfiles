@@ -42,5 +42,7 @@ alias rake='noglob rake'
 alias titanium_iphone1.7.2="/Library/Application\ Support/Titanium/mobilesdk/osx/1.7.2/titanium.py run --platform=iphone"
 alias titanium_android1.7.2="/Library/Application\ Support/Titanium/mobilesdk/osx/1.7.2/titanium.py run --platform=android --android=/Users/joel/android-sdk-mac_x86"
 
-export SSL_CERT_FILE=/path/to/your/new/cacert.pem
+export SSL_CERT_FILE=/Users/joel/.ssh/cacert.pem
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
