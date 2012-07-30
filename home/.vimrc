@@ -106,7 +106,7 @@
 " Bundle: git://github.com/kchmck/vim-coffee-script.git
 " Bundle: git://github.com/janx/vim-rubytest.git
 " Bundle: blogit.vim
-" Bundle: git://github.com/dsummersl/vim-fugitive.git
+" Bundle: git://github.com/tpope/vim-fugitive.git
 " Bundle: git://github.com/scrooloose/nerdcommenter.git
 " Bundle: git://github.com/vim-scripts/taglist.vim
 " Bundle: git://github.com/tsaleh/vim-matchit.git
@@ -136,24 +136,28 @@
 " Bundle: git://github.com/tpope/vim-surround.git
 " Bundle: git://github.com/vim-scripts/closetag.vim.git
 " Bundle: git://github.com/ujihisa/rdoc.vim.git
-" Bundle: git://github.com/tpope/vim-rake.git
 " Bundle: git://github.com/tsaleh/vim-shoulda.git
 " Bundle: git://github.com/vim-scripts/AnsiEsc.vim
 " Bundle: git://github.com/altercation/vim-colors-solarized.git
 " Bundle: git://github.com/nathanaelkane/vim-indent-guides.git
 " Bundle: git://github.com/suan/vim-instant-markdown.git
 " Bundle: git://github.com/Lokaltog/vim-powerline.git develop
-" #Bundle: git://github.com/Lokaltog/vim-powerline.git
-"#  git://github.com/vim-ruby/vim-ruby.git",
+" Bundle: git://github.com/pgr0ss/vimux-ruby-test.git
+" Bundle: git://github.com/benmills/vimux.git
+" Bundle: git://github.com/tpope/vim-bundler.git
+" Bundle: git://github.com/tpope/vim-rake.git
+" Bundle: git://github.com/vim-ruby/vim-ruby.git
+" Bundle: git://github.com/tpope/vim-endwise.git
+" Bundle: git://github.com/tilljoel/vim-automatic-ctags.git
 "#  git://github.com/sjl/gundo.vim.git"],
-"#  git://github.com/dsummersl/vimunit.git"],
+" #Bundle: git://github.com/Lokaltog/vim-powerline.git
 "#  git://github.com/tsaleh/vim-tcomment.git",
-"#  git://github.com/tpope/vim-cucumber.git",
 "#  git://github.com/tpope/vim-repeat.git",
 "#  git://github.com/tpope/vim-surround.git",
 "#  git://github.com/tsaleh/vim-align.git",
 
 "#TODO
+"# Omnicomplete in git commit, https://github.com/tpope/vim-rhubarb.git
 "# http://projects.mikewest.org/vimroom/
 "# https://github.com/sunaku/vim-ruby-minitest
 "# pydiction
@@ -395,13 +399,16 @@ else
         set listchars=tab:>-,trail:-
 endif
 
-
+let g:fugitive_github_domains = ['git.github.com']
 let g:statusline_fugitive = 1
 let g:statusline_rvm = 1
 let g:statusline_syntastic = 1
 ""Turn statusline off
 let g:statusline_enabled = 1
 let g:statusline_fullpath = 0
+
+" Session plugin
+let g:session_autoload = 'no'
 
 " If it looks like URI, Open URI under cursor.
 " Otherwise, Search word under cursor.
@@ -439,7 +446,8 @@ autocmd InsertEnter * call s:EnterInsert()
 autocmd BufRead,BufNewFile *.vala setfiletype vala
 autocmd BufRead,BufNewFile *.vapi setfiletype vala
 autocmd BufRead,BufNewFile *.rdoc,*rd setfiletype rdoc
-
+autocmd BufReadPost fugitive://* set bufhidden=delete
+autocmd BufNewFile,BufRead COMMIT_EDITMSG call EngSpell()
 autocmd FileType hs         source ~/.vim/syntax/haskell.vim
 autocmd FileType java       source ~/.vim/syntax/java.vim
 autocmd FileType tex        source ~/.vim/syntax/tex.vim
@@ -489,6 +497,11 @@ let c_syntax_for_h=1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
+
+let g:VimuxOrientation = "h"
+let g:VimuxUseNearestPane = 1
+let g:VimuxHeight = "28"
+
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 "-------------------------------------------------------------------------------
@@ -552,6 +565,7 @@ map <C-Tab> :tabn <CR>
 map <C-S-Tab> :tabp <CR>
 " map <C-t> :tabnew <CR>
 map <C-o> :FufBuffer <CR>
+map <C-i> :FufTag <CR>
 
 " NERD Commenter stuff
 let NERDShutUp=1
@@ -576,12 +590,8 @@ map <F5> :call ToggleCwindow() <CR>
 imap <F5> <ESC>:call ToggleCwindow() <CR>i
 map <F6> :cnext <CR>
 imap <F6> <ESC>:cnext <CR>i
-map <S-F6> :cprev <CR>
-imap <S-F6> <ESC>:cprev <CR>i
-
-" whitespace toggle
-map <F9> :call Toggle_2_4_8_tab()<CR>
-imap <F9> <ESC>:call Toggle_2_4_8_tab()<CR>i
+map <F7> :cprev <CR>
+imap <F7> <ESC>:cprev <CR>i
 
 map <F10> :call ToggleShowWhitespace()<CR>
 imap <F10> <ESC>:call ToggleShowWhitespace()<CR>i
@@ -624,12 +634,13 @@ let Tlist_Show_One_File             = 1
 let Tlist_Sort_Type                 = "order"
 let Tlist_Use_SingleClick           = 1
 let Tlist_Enable_Fold_Column        = 0
-let Tlist_Ctags_Cmd                 = '/opt/local/bin/ctags'
+let Tlist_Ctags_Cmd                 = 'ctags'
 let tlist_c_settings                = 'c;f:FUNCTIONS'
 let tlist_dtd_settings              = 'dtd;e:elements;a:attributes;n:entities'
 let tlist_make_settings             = 'make;m:makros;t:targets'
 let tlist_markdown_settings         = 'markdown;s:sections'
 let tlist_matlab_settings           = 'matlab;f:functions'
+let tlist_ruby_settings             = 'ruby;f:Methods;m:Module;c:Class;F:Singleton method'
 let tlist_tex_settings              = 'latex;s:sections;g:graphics;l:labels'
 let tlist_vhdl_settings             = 'vhdl;d:package declarations;b:package bodies;e:entities;a:architecture specifications;t:type declarations;p:processes;f:functions;r:procedures'
 let tlist_wikipedia_settings        = 'wikipedia;s:sections;r:references'
@@ -640,7 +651,9 @@ let tlist_wikipedia_settings        = 'wikipedia;s:sections;r:references'
 
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
-
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_ruby_exec = '~/.rvm/bin/ruby-1.9.3-p194'
 "------------------
 "-- RTM
 "------------------
@@ -653,6 +666,14 @@ let g:pydiction_location = $HOME."/.vim/after/ftplugin/pydiction/complete-dict"
 
 let g:browser="firefox-bin"
 let g:pdfviewer="kpdf"
+"
+
+"let g:automatic_ctags_files=".git,Gemfile"
+"let g:automatic_ctags_cmd="ctags"
+"let g:atomatic_ctags_filename="tags"
+
+set tags=./tags;/
+
 "
 "
 "------------------
@@ -667,10 +688,15 @@ map <Up> [s
 imap <Down> ]s
 imap <Up> [s
 
-map <F3> :set spellfile=~/.vim/spellfile.en_us.add<CR>:set spelllang=en_us<CR>:set spell!<CR><Bar>:echo "English spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
-map <F4> :set spellfile=~/.vim/spellfile.sv.add<CR>:set spelllang=sv<CR>:set spell!<CR><Bar>:echo "Swedish spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
-imap <F3> :set spellfile=~/.vim/spellfile.en_us.add<CR>:set spelllang=en_us<CR>:set spell!<CR><Bar>:echo "English spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
-imap <F4> :set spellfile=~/.vim/spellfile.sv.add<CR>:set spelllang=sv<CR>:set spell!<CR><Bar>:echo "Swedish spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
+"map <F3> :set spellfile=~/.vim/spellfile.en_us.add<CR>:set spelllang=en_us<CR>:set spell!<CR><Bar>:echo "English spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
+"map <F4> :set spellfile=~/.vim/spellfile.sv.add<CR>:set spelllang=sv<CR>:set spell!<CR><Bar>:echo "Swedish spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
+"imap <F3> :set spellfile=~/.vim/spellfile.en_us.add<CR>:set spelllang=en_us<CR>:set spell!<CR><Bar>:echo "English spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
+"imap <F4> :set spellfile=~/.vim/spellfile.sv.add<CR>:set spelllang=sv<CR>:set spell!<CR><Bar>:echo "Swedish spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
+
+map <F3> :call SweSpell()<CR>
+imap <F3> <ESC>:call SweSpell()<CR>i
+map <F4> :call EngSpell()<CR>
+imap <F4> <ESC>:call EngSpell()<CR>i
 
 
 " correct the work under the cursor
@@ -683,7 +709,8 @@ set sps=best,15
 
 " mark bad spelled words with red
 highlight SpellErrors gui=underline ctermfg=white ctermbg=black
-" FIXME: there are more hl
+highlight SpellBad cterm=underline,bold
+
 setlocal nospell
 
 "-------------------------------------------------------------------------------
@@ -771,9 +798,6 @@ function! s:MyMailSettings()
   vmap <buffer> . c> [...]<Esc>
   " insert mode mappings
   imap <buffer> <C-l> :call FT_mail_insert_url()<CR>
-  "map <buffer> <F2> :%g/^>\( \?>\)/d<CR>
-  "map <buffer> <F3> :%g/^>\( \?>\)\{2}/d<CR>
-  "map <buffer> <F4> :%g/^>\( \?>\)\{3}/d<CR>
   map <buffer> <leader>q :%s/=\(\x\x\)/\=nr2char(str2nr(submatch(1),16))/g<CR>
 
   function! Mail_Begining()
@@ -855,6 +879,7 @@ function! s:MyMarkdownSettings()
   autocmd FileType text setlocal textwidth=78
   syntax match StatusLine /\%<80v.\%>79v/
   syntax match LineEndWS "\s\+$" containedin=ALL
+  call EngSpell()
   setlocal comments=fb:*,fb:-,fb:+,n:> commentstring=>\ %s
   setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^[-*+]\\s\\+
   setlocal textwidth=78
@@ -863,9 +888,6 @@ function! s:MyMarkdownSettings()
 " vim:set sw=2:
   map <buffer> <F1> yypVr=
   map <buffer> <F2> yypVr-
-"  map <buffer> <F3> :!markdown % > %.html<CR>
-"  vmap <buffer> <F3> :!markdown > %.html<CR>u
-"  map <buffer> <F4> :!firefox %.html<CR>
   map <buffer> <F9> :%!~/.vim/tools/reorder_references.py<CR>
   inoremap <buffer> <leader><CR> <Esc>:call FT_markdown_newline()<CR>A
   function! FT_markdown_newline()
@@ -963,8 +985,16 @@ function! s:MyRubySettings()
   let g:rubycomplete_buffer_loading = 1
   let g:rubycomplete_rails = 1
   set completeopt+=longest,menu,preview
-  map <F4> :call ToggleLwindow() <CR>
-  imap <F4> <ESC>:call ToggleLwindow() <CR>i
+  "  map <F4> :call ToggleLwindow() <CR>
+  "imap <F4> <ESC>:call ToggleLwindow() <CR>i
+"  map <F1> :w<CR>:call RunVimTmuxCommand("clear; ruby -Itest  " . getreg("%") . "")<CR>
+  "map <F2> :RunAllRubyTests
+  map <F1> :w<CR>:call RunVimTmuxCommand("rake test")<CR>
+  "  map <silent> <F2> :wa<CR> :RunAllRubyTests<CR>
+  autocmd BufWritePost *.rb :call AutomaticCtags()
+
+  "map <F2> :w<CR>:call RunVimTmuxCommand("clear; rake test")<CR>
+ ":!python " . getreg("%") . "" <CR>
 endfunction
 
 function! s:SwitchSourceHeader()
@@ -986,15 +1016,17 @@ function! ROColors()
 endfunction
 call ROColors()
 
-function! Vimrc_open()
-    echo "open vimrc"
-tabnew $MYVIMRC
-endfunction
+if !exists("*ReloadConfigs")
+  function ReloadConfigs()
+      echo "source vimrc"
+      :source ~/.vimrc
+      if has("gui_running")
+          :source ~/.gvimrc
+      endif
+  endfunction
+  command! Recfg call ReloadConfigs()
+endif
 
-function! Vimrc_source()
-    echo "source vimrc"
-    source $MYVIMRC
-endfunction
 
 " change background depending on mode
 function! s:EnterInsert()
@@ -1004,24 +1036,6 @@ endfunction
 function! s:LeaveInsert()
     highlight Normal guibg=#000000
 endfunction
-
-" awkward name to avoid clashes
-func!  Toggle_2_4_8_tab()
-  set tabstop=8
-  if &softtabstop==2
-    set softtabstop=4
-    set shiftwidth=4
-    echo "tab 4"
-  elseif &softtabstop==4
-    set softtabstop=8
-    set shiftwidth=8
-    echo "tab 8"
-  else
-    set softtabstop=2
-    set shiftwidth=2
-    echo "tab 2"
-  endif
-endf
 
 func! Prepare_gst()
   setlocal softtabstop=2 shiftwidth=2 expandtab
@@ -1039,22 +1053,6 @@ func! Prepare_kernel()
   setlocal tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
   setlocal softtabstop=2 shiftwidth=2 expandtab
 endf
-
-" create tags...
-function! Ctags_dir()
-  echo "ctags dir"
-  execute '!(cd %:p:h;ctags *.[ch])'
-  echo "rebuilding directory ctags"
-endfunction
-"com! -nargs=* -complete=command Ctags_dir call Ctags_dir()
-
-function! Ctags_all()
-  echo "must be in top dir"
-  execute '!find * -type d -exec dirtags {} \;'
-  execute '!ctags --file-scope=no -R'
-  echo "done building ctags!"
-endfunction
-"com! -nargs=* -complete=command Ctags_all call Ctags_all()
 
 let g:showcw = 0
 function! ToggleCwindow()
@@ -1094,14 +1092,14 @@ function! SyntaxItem()
   return synIDattr(synID(line("."),col("."),1),"name")
 endfunction
 
-if has("cscope")
-  set cscopequickfix=s-,c-,d-,i-,t-,e-
-  set cscopetag
-  set csto=0
-  set cspc=3
-  set cscopetagorder=0
-  set nocsverb
-endif
+"if has("cscope")
+  "set cscopequickfix=s-,c-,d-,i-,t-,e-
+  "set cscopetag
+  "set csto=0
+  "set cspc=3
+  "set cscopetagorder=0
+  "set nocsverb
+"endif
 
 function ModifyByFixJsStyle()
         " save positions
@@ -1204,6 +1202,21 @@ endif
 function! XMLMappings()
         noremap <leader>;xp :call Xpath()<cr>
 endfunction
+
+function! EngSpell()
+        setlocal spellfile=~/.vim/spellfile.en_us.add
+        setlocal spelllang=en_us
+        setlocal spell!
+        echo "English spell check: " . strpart("OffOn", 3 * &spell, 3)
+endfunction
+
+function! SweSpell()
+        setlocal spellfile=~/.vim/spellfile.sv.add
+        setlocal spelllang=sv
+        setlocal spell!
+        echo "Swedish spell check: " . strpart("OffOn", 3 * &spell, 3)
+endfunction
+
 function! Xpath()
         " Needs to get the real file name for the quickfix window
         let realname = bufname( "%" )

@@ -254,3 +254,76 @@ Sön 22 Jul 2012 00:05:52 CEST by vim-update-bundles 0.8
  up  |vim-powerline|            7f53b5c3919bd at develop <- 114f8e5c204f1
    1 bundle updated
 
+Sön 22 Jul 2012 23:40:07 CEST by vim-update-bundles 0.8
+ Add |vimux-ruby-test|          7ae351a988234      git://github.com/pgr0ss/vimux-ruby-test.git
+   1 bundle added
+
+Sön 22 Jul 2012 23:47:16 CEST by vim-update-bundles 0.8
+ Add |vimux|                    0.3.1-5-g6b8d484   git://github.com/benmills/vimux.git
+   1 bundle added
+
+Mån 23 Jul 2012 10:03:00 CEST by vim-update-bundles 0.8
+ Aborted: duplicate entry for git://github.com/xolox/vim-session.git
+
+Mån 23 Jul 2012 10:31:44 CEST by vim-update-bundles 0.8
+ Aborted: duplicate entry for git://github.com/xolox/vim-session.git
+
+Lör 28 Jul 2012 00:25:11 CEST by vim-update-bundles 0.8
+ up  |syntastic|                2.2.0-230-gcfd41f1 <- 2.2.0-222-g6818c45
+ up  |vim-rails|                v4.4-66-g8f4f2f7   <- v4.4-65-gf546d5c
+ up  |vimux-ruby-test|          ec6a77bb7e3dd      <- 7ae351a988234
+ Aborted: duplicate entry for git://github.com/xolox/vim-session.git
+
+Lör 28 Jul 2012 14:33:49 CEST by vim-update-bundles 0.8
+ Aborted: duplicate entry for git://github.com/xolox/vim-session.git
+
+Lör 28 Jul 2012 15:01:21 CEST by vim-update-bundles 0.8
+ Aborted: duplicate entry for git://github.com/xolox/vim-session.git
+
+Lör 28 Jul 2012 15:09:05 CEST by vim-update-bundles 0.8
+ Aborted: duplicate entry for git://github.com/xolox/vim-session.git
+
+Lör 28 Jul 2012 15:10:26 CEST by vim-update-bundles 0.8
+ Aborted: duplicate entry for git://github.com/pgr0ss/vimux-ruby-test.git
+
+Lör 28 Jul 2012 15:11:27 CEST by vim-update-bundles 0.8
+ Add |vim-bundler|              f2abc73969de3      git://github.com/tpope/vim-bundler.git
+ Aborted: duplicate entry for git://github.com/tpope/vim-rake.git
+
+Lör 28 Jul 2012 15:12:38 CEST by vim-update-bundles 0.8
+   no updates
+
+Lör 28 Jul 2012 16:10:34 CEST by vim-update-bundles 0.8
+ Aborted: 'git clone -q git://github.com/vim-ruby/vim-ruby.git", vim-ruby.git",' in /Users/joel/.homesick/repos/tilljoel/dotfiles/home/.vim/bundle exited with code 128
+
+Lör 28 Jul 2012 16:11:54 CEST by vim-update-bundles 0.8
+ Add |vim-ruby|                 vim7.3-121-ga9073e5 git://github.com/vim-ruby/vim-ruby.git
+   1 bundle added
+
+Lör 28 Jul 2012 16:51:40 CEST by vim-update-bundles 0.8
+ Add |vim-endwise|              v1.0-12-g74306aa   git://github.com/tpope/vim-endwise.git
+   1 bundle added
+
+Sön 29 Jul 2012 00:13:52 CEST by vim-update-bundles 0.8
+ Aborted: 'git fetch -q origin' in /Users/joel/.homesick/repos/tilljoel/dotfiles/home/.vim/bundle/syntastic exited with code 128
+
+Sön 29 Jul 2012 00:14:28 CEST by vim-update-bundles 0.8
+ up  |syntastic|                2.2.0-238-g1fb8366 <- 2.2.0-230-gcfd41f1
+ Add |vim-automatic-ctags|      b059b2c90dcf3      git://github.com/tilljoel/vim-automatic-ctags.git
+   1 bundle added, 1 bundle updated
+
+Mån 30 Jul 2012 21:43:59 CEST by vim-update-bundles 0.8
+ bundle for vim-fugitive changed from git://github.com/dsummersl/vim-fugitive.git to git://github.com/tpope/vim-fugitive.git
+
+ Del |vim-fugitive|             v1.1-35-gaffce71
+ Add |vim-fugitive|             v1.2-152-gb0c74e2  git://github.com/tpope/vim-fugitive.git
+ up  |gitv|                     v1.1-17-g582e32b   <- v1.1-11-gc39aa33
+ up  |vimux|                    0.3.1-7-gdc4a45d   <- 0.3.1-5-g6b8d484
+ up  |vim-bundler|              7e651445ea759      <- f2abc73969de3
+ up  |vim-rake|                 v1.0-19-gfd4cadb   <- v1.0-17-gaf98f57
+ bundle for vim-automatic-ctags changed from git@github.com:tilljoel/vim-automatic-ctags.git to git://github.com/tilljoel/vim-automatic-ctags.git
+
+ Del |vim-automatic-ctags|      cedd2320dfc06
+ Add |vim-automatic-ctags|      cedd2320dfc06      git://github.com/tilljoel/vim-automatic-ctags.git
+   2 bundles added, 2 bundles removed, and 4 bundles updated
+

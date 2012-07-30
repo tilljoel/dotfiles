@@ -2,7 +2,7 @@
 
 
 Lists the currently installed bundles. Also see the |bundle-log|.
-Last updated by vim-update-bundles on Sön 22 Jul 2012 00:05:52 CEST.
+Last updated by vim-update-bundles on Mån 30 Jul 2012 21:43:59 CEST.
 
   PLUGIN                           VERSION                RELEASE DATE
 ------------------------------------------------------------------------
@@ -14,7 +14,7 @@ Last updated by vim-update-bundles on Sön 22 Jul 2012 00:05:52 CEST.
   |vim-coffee-script|              v002-29-gd6dcb9b       2012-05-08
   |vim-rubytest|                   68721a49cbbb2          2011-06-17
   |blogit.vim|                     1.4.3                  2010-01-02
-  |vim-fugitive|                   v1.1-35-gaffce71       2010-11-13
+  |vim-fugitive|                   v1.2-152-gb0c74e2      2012-07-28
   |nerdcommenter|                  2.2.2-118-gbaa453a     2012-06-19
   |taglist.vim|                    4.5                    2007-09-21
   |vim-matchit|                    8f8665e04fe37          2010-06-04
@@ -23,17 +23,17 @@ Last updated by vim-update-bundles on Sön 22 Jul 2012 00:05:52 CEST.
   |L9|                             1.1                    2010-09-28
   |FuzzyFinder|                    4.2.2                  2010-09-30
   |rails.vim|                      4.4                    2011-08-27
-  |gitv|                           v1.1-11-gc39aa33       2012-07-14
+  |gitv|                           v1.1-17-g582e32b       2012-07-29
   |vim-xpath|                      26a7cb7684acc          2011-06-19
   |LargeFile|                      4@1                    2008-09-23
   |CRefVim|                        1.0.4                  2004-11-28
   |vim-trailing-whitespace|        1.0-2-g6bfea00         2010-09-25
   |jshint.vim|                     0.2                    2011-05-17
   |vim-session|                    1.5                    2012-01-15
-  |syntastic|                      2.2.0-222-g6818c45     2012-07-19
+  |syntastic|                      2.2.0-238-g1fb8366     2012-07-28
   |vim-haml|                       vim7.2-63-g9a891ed     2012-07-12
   |vim-markdown|                   7b747d0aa4f2f          2012-07-08
-  |vim-rails|                      v4.4-65-gf546d5c       2012-07-17
+  |vim-rails|                      v4.4-66-g8f4f2f7       2012-07-13
   |vim-pep8|                       1.1-11-ge8e8cf1        2012-02-13
   |pyflakes-vim|                   911d9c39cf8d1          2012-02-12
   |nginx.vim|                      0.3.2                  2010-11-25
@@ -43,11 +43,17 @@ Last updated by vim-update-bundles on Sön 22 Jul 2012 00:05:52 CEST.
   |vim-surround|                   v1.90-27-g1a73f60      2012-06-07
   |closetag.vim|                   0.9.1                  2005-05-24
   |rdoc.vim|                       0b09f9a97cac9          2010-01-02
-  |vim-rake|                       v1.0-17-gaf98f57       2012-04-11
   |vim-shoulda|                    3129eb926fdd2          2010-04-01
   |AnsiEsc.vim|                    12                     2010-12-13
   |vim-colors-solarized|           528a59f26d122          2011-05-09
   |vim-indent-guides|              1.6-5-g5bc809d         2012-07-15
   |vim-instant-markdown|           v0.0.3                 2012-04-26
   |vim-powerline|                  7f53b5c3919bd          2012-06-25
+  |vimux-ruby-test|                ec6a77bb7e3dd          2012-07-24
+  |vimux|                          0.3.1-7-gdc4a45d       2012-07-29
+  |vim-bundler|                    7e651445ea759          2012-06-22
+  |vim-rake|                       v1.0-19-gfd4cadb       2012-07-30
+  |vim-ruby|                       vim7.3-121-ga9073e5    2012-07-18
+  |vim-endwise|                    v1.0-12-g74306aa       2011-12-11
+  |vim-automatic-ctags|            cedd2320dfc06          2012-07-29
 
