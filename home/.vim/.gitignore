@@ -1,3 +1,6 @@
 .netrwhist
 sessions
 Trashed-Bundles
+bundle/*
+doc/bundle-log.txt
+doc/bundles.txt
