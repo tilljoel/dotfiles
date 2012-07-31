@@ -593,8 +593,8 @@ imap <F6> <ESC>:cnext <CR>i
 map <F7> :cprev <CR>
 imap <F7> <ESC>:cprev <CR>i
 
-map <F10> :call ToggleShowWhitespace()<CR>
-imap <F10> <ESC>:call ToggleShowWhitespace()<CR>i
+map <F10> :Gstatus <CR>
+imap <F10> <ESC> :Gstatus <CR>
 "    wrap toggle
 map <F11> :set wrap!<CR>:set wrap?<CR>
 imap <F11> <ESC> :set wrap!<CR>:set wrap?<CR>i
