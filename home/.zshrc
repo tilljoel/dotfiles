@@ -11,7 +11,7 @@ ZSH_THEME="tilljoel"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby rails3 gem git-flow github bundler rvm npm macports vi-mode)
+plugins=(git osx ruby rails3 gem git github bundler rvm npm macports vi-mode brew heroku osx rake)
 
 source $ZSH/oh-my-zsh.sh
 # Fix search like ctrl-r for vim
@@ -45,6 +45,7 @@ ZSH_THEME_GIT_TIME_SHORT_COMMIT_MEDIUM="%{$fg[yellow]%}"
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_LONG="%{$fg[red]%}"
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL="%{$fg[cyan]%}"
 DISABLE_AUTO_TITLE=true
+DISABLE_AUTO_UPDATE="true"
 
 # Determine the time since last commit. If branch is clean,
 # use a neutral color, otherwise colors will vary according to time.

@@ -11,7 +11,11 @@ $MAIL/social/
 $MAIL/social/
 
 :0:
-* ^From:.*update@facebookmail.com
+* ^From:.*@facebookmail.com
+$MAIL/social/
+
+:0:
+* ^From:.*update@em.facebookmail.com
 $MAIL/social/
 
 :0:
@@ -19,7 +23,23 @@ $MAIL/social/
 $MAIL/social/
 
 :0:
+* ^From:.*updates@linkedin.com
+$MAIL/social/
+
+:0:
+* ^From:.*news@linkedin.com
+$MAIL/social/
+
+:0:
+* ^From:.*donotreply@e.linkedin.com
+$MAIL/social/
+
+:0:
 * ^From:.*group-digests@linkedin.com
+$MAIL/social/
+
+:0:
+* ^From:.*connections@linkedin.com
 $MAIL/social/
 
 :0:
@@ -27,8 +47,9 @@ $MAIL/social/
 $MAIL/social/
 
 :0:
-* ^From:.*connections@linkedin.com
+* ^From:.*doreply@zerply.com
 $MAIL/social/
+
 
 :0:
 * ^From:.*@plus.google.com
