@@ -8,7 +8,12 @@ def err_exit(msg)
   exit 1
 end
 
+def line_is_comment?(line)
+  / *#/ === line
+end
+
 def check_line_length(line, count=73)
+  return if line_is_comment? line
   err_exit "To long line found, #{line.length}>#{count}" if line.size > count
 end
 

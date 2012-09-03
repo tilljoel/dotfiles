@@ -25,6 +25,7 @@
 "-- CHANGELOG
 "------------------
 "
+" 2012-09-01: Tmux support, ruby support etc.
 " 2011-11-28: Added closetag
 " 2011-07-30: Really added pathogen
 " 2011-06-30: Added pathogen
@@ -44,20 +45,11 @@
 "-- TODO
 "------------------
 "
-"           - Make all stuff work in gvim, check meta-key
 "           - Fix \cr c ref
-"           - Add "make" for work
 "           - Add %m to printf format
-"           - Use marklines with quickfix from make?
-"           - Display function name in the title bar and/or the
-"             status line
 "           - Add note about: create spell dir, copy files from
-"             ftp://ftp.vim.org/pub/vim/runtime/spell/
 "           - add space counter (odd number?)
 "           - add bidning to par-format and nerd commentator
-"           - get cscope settings from jens
-"           - syntax match or just match?
-"           - git config --global merge.tool vimdiff
 "           - ipython support
 "           - http://code.google.com/p/conque/
 "           - fix "paste" button?
@@ -66,11 +58,9 @@
 "           - make words stop at camelcase, for cw, etc
 "           - flymake and http://cx4a.org/software/gccsense/manual.html
 "           - http://stackoverflow.com/questions/4027222/vim-use-shorter-textwidth-in-comments-and-docstrings
-"           - http://henrik.nyh.se/2011/03/vim-ruby-runner use ctrl-r to run
 "           - colorize rgb colors,  http://www.vim.org/scripts/script.php?script_id=3567
 "           - add more jshint stuff, https://github.com/oryband/dotfiles/blob/master/jshintrc
 "           - Check out https://github.com/factorylabs/vimfiles
-"           - fix git flow,  http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/
 "           - FIX coffescript -> show js
 "           - ADD getflow or some todo management for each file?
 "           - Sort/Comment bundles, add full urls for all
@@ -98,19 +88,18 @@
 "
 
 " Bundle: git://github.com/vim-scripts/gtk-vim-syntax.git
+" Bundle: git://github.com/vim-scripts/Vimball.git
 " Bundle: git://github.com/tilljoel/vim-custom-bundle.git
-" Bundle: git://git.wincent.com/command-t.git
-" BundleCommand: rvm use && rake make
+" Bundle: git://github.com/wincent/Command-T
+" BundleCommand: rvm use ruby-1.8.7-p352 && rake make
 " Bundle: xoria256.vim
 " Bundle: git://github.com/tpope/vim-vividchalk.git
 " Bundle: git://github.com/kchmck/vim-coffee-script.git
-" Bundle: git://github.com/janx/vim-rubytest.git
 " Bundle: blogit.vim
 " Bundle: git://github.com/tpope/vim-fugitive.git
 " Bundle: git://github.com/scrooloose/nerdcommenter.git
 " Bundle: git://github.com/vim-scripts/taglist.vim
 " Bundle: git://github.com/tsaleh/vim-matchit.git
-" Bundle: git://github.com/vim-scripts/Vimball.git
 " Bundle: git://github.com/vim-scripts/AutoTag.git
 " Bundle: git://github.com/vim-scripts/L9.git
 " Bundle: git://github.com/vim-scripts/FuzzyFinder.git
@@ -149,15 +138,16 @@
 " Bundle: git://github.com/vim-ruby/vim-ruby.git
 " Bundle: git://github.com/tpope/vim-endwise.git
 " Bundle: git://github.com/tilljoel/vim-automatic-ctags.git
-"#  git://github.com/sjl/gundo.vim.git"],
-" #Bundle: git://github.com/Lokaltog/vim-powerline.git
+" Bundle: git://github.com/epeli/slimux.git
+" Bundle: git://github.com/sunaku/vim-ruby-minitest.git
+" Bundle: git://github.com/skalnik/vim-vroom.git
+
+"#TODO
+"# Omnicomplete in git commit, https://github.com/tpope/vim-rhubarb.git
 "#  git://github.com/tsaleh/vim-tcomment.git",
 "#  git://github.com/tpope/vim-repeat.git",
 "#  git://github.com/tpope/vim-surround.git",
 "#  git://github.com/tsaleh/vim-align.git",
-
-"#TODO
-"# Omnicomplete in git commit, https://github.com/tpope/vim-rhubarb.git
 "# http://projects.mikewest.org/vimroom/
 "# https://github.com/sunaku/vim-ruby-minitest
 "# pydiction
@@ -166,25 +156,10 @@
 "# Blogit does not work
 "# Cscope
 "
-"
-"------------------
-"-- SECTIONS
-"------------------
-"
-"  General settings
-"    Text Options
-"    Visual options
-"  Autocommands
-"  General Mappings
-"  Plugins
-"  Functions
-"
-
 
 "-------------------------------------------------------------------------------
 " GENERAL SETTINGS
 "-------------------------------------------------------------------------------
-
 
 
 "   pathogen
@@ -316,6 +291,14 @@ set numberwidth=3
 "   many 'hit-enter'
 set cmdheight=2
 
+set winwidth=84
+" We have to have a winheight bigger than we want to set winminheight. But if
+" " we set winheight to be huge before winminheight, the winminheight set will
+" " fail.
+set winheight=5
+set winminheight=5
+set winheight=999
+
 "   set how tabs, eols look when you use :set list
 set lcs=tab:>-,eol:$,nbsp:%,trail:X,extends:>,precedes:<
 
@@ -410,6 +393,10 @@ let g:statusline_fullpath = 0
 " Session plugin
 let g:session_autoload = 'no'
 
+
+let g:vroom_use_vimux = 1
+
+let g:vroom_map_keys = 0
 " If it looks like URI, Open URI under cursor.
 " Otherwise, Search word under cursor.
 " for open-browser.vim
@@ -459,6 +446,8 @@ autocmd FileType html       setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml        setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php        setlocal omnifunc=phpcomplete#CompletePHP
 
+autocmd! CmdwinEnter * :unmap <cr>
+autocmd! CmdwinLeave * :call MapCR()
 
 autocmd FileType js,javascript call s:MyJavascriptSettings()
 autocmd FileType coffee     call s:MyCoffeeSettings()
@@ -504,11 +493,25 @@ let g:VimuxHeight = "28"
 
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+function! MapCR()
+        nnoremap <cr> :nohlsearch<cr>
+endfunction
+call MapCR()
+
 "-------------------------------------------------------------------------------
 "-- GENERAL MAPPINGS
 "-------------------------------------------------------------------------------
 
 "   unmap arrows/pgdn/pgup so you learn to use hjkl
+
+imap <c-c> <esc>
+let mapleader=","
+
 map <Left> \
 map <Right> \
 map <Up> \
@@ -522,6 +525,9 @@ imap <Up> <nop>
 imap <Down> <nop>
 imap <PageUp> <nop>
 imap <PageDown> <nop>
+
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
 
 nnoremap L :tabnext<CR>
 nnoremap H :tabprev<CR>
@@ -573,7 +579,21 @@ vmap c :call NERDComment(1, 'toggle')<CR>
 vmap f :!par<CR>
 
 " command-t
-nmap <Leader>o :CommandT<CR>
+"nmap <Leader>o :CommandT<CR>
+map <leader>gR :call ShowRoutes()<cr>
+map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
+map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets/sass<cr>
+map <leader>gf :CommandTFlush<cr>\|:CommandT features<cr>
+map <leader>gg :topleft 100 :split Gemfile<cr>
+map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
+map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+
 
 " unused
 "map <F1>
@@ -987,9 +1007,10 @@ function! s:MyRubySettings()
   set completeopt+=longest,menu,preview
   "  map <F4> :call ToggleLwindow() <CR>
   "imap <F4> <ESC>:call ToggleLwindow() <CR>i
-"  map <F1> :w<CR>:call RunVimTmuxCommand("clear; ruby -Itest  " . getreg("%") . "")<CR>
   "map <F2> :RunAllRubyTests
-  map <F1> :w<CR>:call RunVimTmuxCommand("rake test")<CR>
+  map <leader>a :w<CR>:call RunVimTmuxCommand("rake test")<CR>
+  map <leader>t :VroomRunTestFile<cr>
+  map <leader>T :VroomRunNearestTestFile<cr>
   "  map <silent> <F2> :wa<CR> :RunAllRubyTests<CR>
   autocmd BufWritePost *.rb :call AutomaticCtags()
 
@@ -1215,6 +1236,15 @@ function! SweSpell()
         setlocal spelllang=sv
         setlocal spell!
         echo "Swedish spell check: " . strpart("OffOn", 3 * &spell, 3)
+endfunction
+
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
 endfunction
 
 function! Xpath()

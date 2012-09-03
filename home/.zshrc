@@ -111,6 +111,8 @@ alias rake='noglob rake'
 alias titanium_iphone1.7.2="/Library/Application\ Support/Titanium/mobilesdk/osx/1.7.2/titanium.py run --platform=iphone"
 alias titanium_android1.7.2="/Library/Application\ Support/Titanium/mobilesdk/osx/1.7.2/titanium.py run --platform=android --android=/Users/joel/android-sdk-mac_x86"
 
+alias titanium='~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.1.GA/titanium.py'
+
 export SSL_CERT_FILE=/Users/joel/.ssh/cacert.pem
 
 alias rc="bundle exec pry -r ./config/environment"
