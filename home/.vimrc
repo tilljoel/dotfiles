@@ -141,7 +141,7 @@
 " Bundle: git://github.com/epeli/slimux.git
 " Bundle: git://github.com/sunaku/vim-ruby-minitest.git
 " Bundle: git://github.com/skalnik/vim-vroom.git
-
+" https://github.com/vim-scripts/YankRing.vim
 "#TODO
 "# Omnicomplete in git commit, https://github.com/tpope/vim-rhubarb.git
 "#  git://github.com/tsaleh/vim-tcomment.git",
@@ -233,6 +233,11 @@ set undolevels=500
 
 "   used to determine which files should be excluded from listings.
 set wildignore+=*.o,*.obj,.git
+set wildignore+=*vim/backups*
+set wildignore+=*DS_Store*
+set wildignore+=*.gem
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif
 
 "   skip suffixes for filename completation
 set suffixes+=.class,.hi,.o,.so,.a,.pyc,.la
@@ -295,8 +300,8 @@ set winwidth=84
 " We have to have a winheight bigger than we want to set winminheight. But if
 " " we set winheight to be huge before winminheight, the winminheight set will
 " " fail.
-set winheight=5
-set winminheight=5
+set winheight=10
+set winminheight=10
 set winheight=999
 
 "   set how tabs, eols look when you use :set list
@@ -341,8 +346,8 @@ set nofoldenable
 "   make folding indent sensitive
 set foldmethod=indent
 set wildmenu
-set wildmode=list:longest,full
-
+"set wildmode=list:longest,full
+set wildmode=longest,list
 "   set 7 lines to the curors - when moving vertical..
 set so=7
 
@@ -498,10 +503,11 @@ autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
-function! MapCR()
-        nnoremap <cr> :nohlsearch<cr>
-endfunction
-call MapCR()
+"function! MapCR()
+        "nnoremap <cr> :nohlsearch<cr>
+"endfunction
+"call MapCR()
+
 
 "-------------------------------------------------------------------------------
 "-- GENERAL MAPPINGS
@@ -570,8 +576,8 @@ map 9 :tabn 9<CR>
 map <C-Tab> :tabn <CR>
 map <C-S-Tab> :tabp <CR>
 " map <C-t> :tabnew <CR>
-map <C-o> :FufBuffer <CR>
-map <C-i> :FufTag <CR>
+"map <C-o> :FufBuffer <CR>
+"map <C-i> :FufTag <CR>
 
 " NERD Commenter stuff
 let NERDShutUp=1
@@ -580,6 +586,7 @@ vmap f :!par<CR>
 
 " command-t
 "nmap <Leader>o :CommandT<CR>
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>gR :call ShowRoutes()<cr>
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
 map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
@@ -594,6 +601,11 @@ map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>e :edit %%
+map <leader>v :view %%
+
+nnoremap <leader><leader> <c-^>
 
 " unused
 "map <F1>
@@ -1012,7 +1024,7 @@ function! s:MyRubySettings()
   map <leader>t :VroomRunTestFile<cr>
   map <leader>T :VroomRunNearestTestFile<cr>
   "  map <silent> <F2> :wa<CR> :RunAllRubyTests<CR>
-  autocmd BufWritePost *.rb :call AutomaticCtags()
+  "  autocmd BufWritePost *.rb :call AutomaticCtags()
 
   "map <F2> :w<CR>:call RunVimTmuxCommand("clear; rake test")<CR>
  ":!python " . getreg("%") . "" <CR>
@@ -1263,3 +1275,14 @@ function! Xpath()
         let &grepprg=tmp1
         let &grepformat=tmp2
 endfunction
+
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>n :call RenameFile()<cr>
