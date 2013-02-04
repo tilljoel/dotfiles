@@ -4,28 +4,26 @@ mailboxes =RESPOND
 mailboxes =WAITING
 
 mailboxes =tilljoel-inbox
+mailboxes =sites
+mailboxes =meetings
+mailboxes =junk
+mailboxes =large
+
+mailboxes =list/malmo-ruby
+mailboxes =list/rubyparley
+mailboxes =list/groups
+mailboxes =list/hack
+
 mailboxes =popdevelop-inbox
 mailboxes =popdevelop-multi
-mailboxes =popfaktura-inbox
-mailboxes =popfaktura-multi
-mailboxes =popfaktura-test
+
 mailboxes =popgiro-inbox
 mailboxes =popgiro-multi
-mailboxes =popgiro-test
+
 mailboxes =weskins-inbox
 mailboxes =weskins-multi
 
-mailboxes =list/hack
-mailboxes =list/fb-groups
-mailboxes =list/google-groups
-
 mailboxes =mail-errors
-
-mailboxes =multi
-mailboxes =social
-mailboxes =info
-mailboxes =deals
-mailboxes =meetings
 
 mailboxes =archives
 mailboxes =postponed

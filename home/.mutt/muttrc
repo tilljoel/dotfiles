@@ -10,9 +10,7 @@ set reverse_name=yes
 macro index <f1> ":source ~/.mutt/account.tilljoel"
 macro index <f2> ":source ~/.mutt/account.popdevelop"
 macro index <f3> ":source ~/.mutt/account.popgiro"
-macro index <f4> ":source ~/.mutt/account.popfaktura"
-macro index <f5> ":source ~/.mutt/account.weskins"
-macro index <f6> ":source ~/.mutt/account.popfaktura-sendgrid"
+macro index <f4> ":source ~/.mutt/account.weskins"
 
 # alternates are regexps that match your email address(es)
 #set smtp_url = "smtp://joel@smtp-1.axis.com/"
@@ -20,14 +18,14 @@ macro index <f6> ":source ~/.mutt/account.popfaktura-sendgrid"
 #set sendmail="/usr/bin/nbsmtp -U joel -P jaja -d axis.com -h smtp-1.axis.com -f joel@axis.com"
 #set sendmail="/usr/sbin/sendmail"
 set sendmail="/opt/local/bin/msmtp"
-
+set sendmail_wait = 0
 set certificate_file="~/Mail/certs"
 #set hostname=none                        # local host.
 set hidden_host                           # uide host details.
 set envelope_from                         # set the envelope-from information
 set reverse_name=yes                      # build From: in the reply based on the To: address (must have
                                           # a working 'alternates' line above
-set spoolfile=/home/manulito/Mail/inbox   # default location of new mail
+#set spoolfile=/Users/joel/Mail/inbox      # default location of new mail
 #set alias_file=~/.mutt/aliases           # keep aliases in this file.
 set postpone=ask-yes                      # ask about postponing.
 set postponed=+postponed                  # where postponed messages live.
@@ -88,6 +86,7 @@ set mailcap_path="~/.mailcap"
 set quote_regexp="^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 set to_chars=" +TCF "                     # Drop the "L".
 set auto_tag                              # Operate on all tagged messages, no need for ; before s when saveto mailbox
+unset collapse_unread
 #source ~/.mutt/gpg.rc                     # Use GPG
 source ~/.mutt/auto_views                 # Define auto_views.
 #source ~/.mutt/aliases                    # Load in my aliases.

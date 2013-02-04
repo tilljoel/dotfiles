@@ -1,22 +1,44 @@
-# send hooks for sending mail out per mailbox; this way you can be in a
-# mailbox and you'll send mail out with the address you would normally use
+#m send hooks for sending mail out per mailbox; this way you can be in a
+# mailbox and youll send mail out with the address you would normally use
 # in that mailbox
 
+# CHECK
+# http://rc.vc/files/mutt/folderhooks.html
 
-folder-hook .                  		source ~/.mutt/defaults
-folder-hook "!$"               		source ~/.mutt/defaults
+folder-hook .                         source ~/.mutt/defaults
+folder-hook .                         source ~/.mutt/account.tilljoel
+folder-hook "!$"                      source ~/.mutt/defaults
 
-folder-hook =list/hacks                 source ~/.mutt/defaults.maillist
-folder-hook =list/fb-groups             source ~/.mutt/defaults.maillist
-folder-hook =list/google-groups         source ~/.mutt/defaults.maillist
+folder-hook =list/groups              source ~/.mutt/defaults.maillist
+folder-hook =list/groups              source ~/.mutt/account.tilljoel
+folder-hook =list/hack                source ~/.mutt/defaults.maillist
+folder-hook =list/hack                source ~/.mutt/account.tilljoel
 
-folder-hook =popfaktura-inbox               'source ~/.mutt/account.popfaktura'
-folder-hook =popfaktura-multi               'source ~/.mutt/account.popfaktura'
-folder-hook =popdevelop-inbox               'source ~/.mutt/account.popdevelop'
-folder-hook =popdevelop-multi               'source ~/.mutt/account.popdevelop'
-folder-hook =weskins-inbox                  'source ~/.mutt/account.weskins'
-folder-hook =weskins-multi                  'source ~/.mutt/account.weskins'
-folder-hook =tilljoel-inbox                 'source ~/.mutt/account.tilljoel'
+folder-hook =tilljoel-inbox           source ~/.mutt/account.tilljoel
+folder-hook =tilljoel-inbox           source ~/.mutt/defaults
+folder-hook =sites                    source ~/.mutt/account.tilljoel
+folder-hook =sites                    source ~/.mutt/defaults
+folder-hook =meetings                 source ~/.mutt/account.tilljoel
+folder-hook =meetings                 source ~/.mutt/defaults
+folder-hook =junk                     source ~/.mutt/account.tilljoel
+folder-hook =junk                     source ~/.mutt/defaults
 
 
+folder-hook =popdevelop-inbox         source ~/.mutt/account.popdevelop
+folder-hook =popdevelop-inbox         source ~/.mutt/defaults
+folder-hook =popdevelop-multi         source ~/.mutt/account.popdevelop
+folder-hook =popdevelop-multi         source ~/.mutt/defaults
+
+folder-hook =popgiro-inbox            source ~/.mutt/account.popgiro
+folder-hook =popgiro-inbox            source ~/.mutt/defaults
+folder-hook =popgiro-multi            source ~/.mutt/account.popgiro
+folder-hook =popgiro-multi            source ~/.mutt/defaults
+
+#folder-hook ==popfaktura-inbox        source ~/.mutt/account.popfaktura-sendgrid
+#folder-hook ==popfaktura-multi        source ~/.mutt/account.popfaktura-sendgrid
+
+folder-hook =weskins-inbox            source ~/.mutt/account.weskins
+folder-hook =weskins-inbox            source ~/.mutt/defaults
+folder-hook =weskins-multi            source ~/.mutt/account.weskins
+folder-hook =weskins-multi            source ~/.mutt/defaults
 

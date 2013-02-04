@@ -1,2 +1,5 @@
-source ~/.mutt/defaults			# source the defaults
-set sort=threads			# sort by thread
+set index_format="%4C %Z %{%b %d %H:%M:%S} %-20.20L [%5c] %s %?M? (%M)&?"
+set sort=threads
+set strict_threads=yes
+set sort_browser=reverse-date
+set sort_aux=last-date-received

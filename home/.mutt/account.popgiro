@@ -1,8 +1,5 @@
-source ~/.mutt/defaults			# source the defaults
 set realname="Joel Larsson - Popgiro"
 set from=joel@popgiro.se
 set hostname="popgiro.se"
 set signature="~/.mutt/signature.popgiro"
 set sendmail="/opt/local/bin/msmtp -a popgiro
-
-

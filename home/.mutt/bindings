@@ -27,4 +27,5 @@ bind generic <Home>     first-entry
 bind generic <End>      last-entry
 bind pager   <Home>     top
 bind pager   <End>      bottom
-
+bind index - collapse-thread
+bind index _ collapse-all
