@@ -42,7 +42,7 @@ $MAIL/popdevelop-inbox/
 
 :0:
 * ^List-Id:.*beta.popfaktura.se
-$MAIL/popfaktura-beta/
+$MAIL/popfaktura-multi/
 
 :0:
 * ^List-Id:.*support.popfaktura.se
@@ -50,10 +50,6 @@ $MAIL/popfaktura-multi/
 
 :0:
 * ^List-Id:.*feedback.popfaktura.se
-$MAIL/popfaktura-multi/
-
-:0:
-* ^List-Id:.*jobs.popfaktura.se
 $MAIL/popfaktura-multi/
 
 :0:
@@ -75,23 +71,15 @@ $MAIL/popfaktura-inbox/
 # Popgiro
 
 :0:
-* ^List-Id:.*beta.popgiro.se
-$MAIL/popgiro-beta/
-
-:0:
 * ^List-Id:.*support.popgiro.se
 $MAIL/popgiro-multi/
 
 :0:
-* ^List-Id:.*feedback.popgiro.se
+* ^List-Id:.*feedback@popgiro.se
 $MAIL/popgiro-multi/
 
 :0:
-* ^List-Id:.*jobs.popgiro.se
-$MAIL/popgiro-multi/
-
-:0:
-* ^To:.*admin.popgiro.se
+* ^To:.*admin@popgiro.se
 $MAIL/popgiro-multi/
 
 :0:
@@ -135,6 +123,4 @@ $MAIL/weskins-inbox/
 :0:
 * ^To:.*tilljoel@gmail.com
 $MAIL/tilljoel-inbox/
-
-
 

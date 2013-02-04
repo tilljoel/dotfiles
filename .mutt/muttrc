@@ -4,8 +4,9 @@ alternates ^joel@axis\.com$
 #set smtp_pass = "sosenossralj"
 #set sendmail="/usr/bin/nbsmtp -U joel -P sosenossralj -d axis.com -h smtp-1.axis.com -f joel@axis.com"
 set sendmail="/usr/sbin/sendmail"
+set sendmail_wait = 0
 set realname="Joel Larsson"               # real name
-set from=joel@axis.com                    # default email address
+set from=tilljoel@gmail.com                    # default email address
 set certificate_file="~/Mail/certs" 
 #set hostname=none                        # local host.
 set hidden_host                           # uide host details.

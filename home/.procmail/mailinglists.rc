@@ -7,26 +7,26 @@ $MAIL/list/hack/
 $MAIL/list/hack/
 
 :0:
-* ^To:.*121631981261066.groups.facebook.com
-$MAIL/list/fb-groups/
-
-:0:
-* ^To:.*173161179392034.groups.facebook.com
-$MAIL/list/fb-groups/
-
-:0:
-* ^To:.*193652567323844.groups.facebook.com
-$MAIL/list/fb-groups/
-
-:0:
-* ^To:.*swedishaccelerators.groups.facebook.com
-$MAIL/list/fb-groups/
-
-:0:
 * ^To:.*gtug-malmo.googlegroups.com
-$MAIL/list/google-groups/
+$MAIL/list/groups/
 
 :0:
-* ^To:.*makten-oppenheten.googlegroups.com
-$MAIL/list/google-groups/
+* ^To:.*rails-se.googlegroups.com
+$MAIL/list/groups/
+
+:0:
+* ^To:.*lean-startup-circle@googlegroups.com
+$MAIL/list/groups/
+
+:0:
+* ^To:.*malmo-ruby@googlegroups.com
+$MAIL/list/malmo-ruby/
+
+:0:
+* ^To:.*rubyparley@googlegroups.com
+$MAIL/list/groups/
+
+:0:
+* ^To:.*copenhagen-ruby-user-group.googlegroups.com
+$MAIL/list/groups/
 

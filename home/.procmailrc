@@ -31,10 +31,11 @@ $MAIL/large/
 #
 INCLUDERC=$PMDIR/markasread.rc
 INCLUDERC=$PMDIR/hide.rc
-INCLUDERC=$PMDIR/mailinglists.rc
+INCLUDERC=$PMDIR/meetings.rc
 INCLUDERC=$PMDIR/calendar.rc
-INCLUDERC=$PMDIR/social.rc
-INCLUDERC=$PMDIR/dealsandinfo.rc
+INCLUDERC=$PMDIR/sites.rc
+INCLUDERC=$PMDIR/junk.rc
+INCLUDERC=$PMDIR/mailinglists.rc
 INCLUDERC=$PMDIR/accounts.rc
 
 

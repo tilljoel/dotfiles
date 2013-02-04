@@ -1,9 +1,0 @@
-source ~/.mutt/defaults			# source the defaults
-set realname="Joel Larsson - Popfaktura"
-set from=joel@popfaktura.se
-set hostname="popfaktura.se"
-set signature="~/.mutt/signature.popfaktura"
-set sendmail="/opt/local/bin/msmtp -a popfaktura-sendgrid
-
-
-
