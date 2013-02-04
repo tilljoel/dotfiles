@@ -45,7 +45,6 @@
 "-- TODO
 "------------------
 "
-"           - Fix \cr c ref
 "           - Add %m to printf format
 "           - Add note about: create spell dir, copy files from
 "           - add space counter (odd number?)
@@ -91,7 +90,7 @@
 " Bundle: git://github.com/vim-scripts/Vimball.git
 " Bundle: git://github.com/tilljoel/vim-custom-bundle.git
 " Bundle: git://github.com/wincent/Command-T
-" BundleCommand: rvm use ruby-1.8.7-p352 && rake make
+" BundleCommand: rake-ruby-1.8.7-p352 make
 " Bundle: xoria256.vim
 " Bundle: git://github.com/tpope/vim-vividchalk.git
 " Bundle: git://github.com/kchmck/vim-coffee-script.git
@@ -129,7 +128,6 @@
 " Bundle: git://github.com/vim-scripts/AnsiEsc.vim
 " Bundle: git://github.com/altercation/vim-colors-solarized.git
 " Bundle: git://github.com/nathanaelkane/vim-indent-guides.git
-" Bundle: git://github.com/suan/vim-instant-markdown.git
 " Bundle: git://github.com/Lokaltog/vim-powerline.git develop
 " Bundle: git://github.com/pgr0ss/vimux-ruby-test.git
 " Bundle: git://github.com/benmills/vimux.git
@@ -140,8 +138,10 @@
 " Bundle: git://github.com/tilljoel/vim-automatic-ctags.git
 " Bundle: git://github.com/epeli/slimux.git
 " Bundle: git://github.com/sunaku/vim-ruby-minitest.git
-" Bundle: git://github.com/skalnik/vim-vroom.git
+"# Without zeus: Bundle: git://github.com/skalnik/vim-vroom.git
+" Bundle: git://github.com/carlwoodward/vim-vroom.git
 " https://github.com/vim-scripts/YankRing.vim
+" slow git://github.com/suan/vim-instant-markdown.git
 "#TODO
 "# Omnicomplete in git commit, https://github.com/tpope/vim-rhubarb.git
 "#  git://github.com/tsaleh/vim-tcomment.git",
@@ -247,7 +247,7 @@ set history=1000
 
 "   sharing windows clipboard
 if $TMUX == ''
-        set clipboard+=unnamed
+   set clipboard+=unnamed
 end
 "   improves performance -- let OS decide when to flush disk
 set nofsync
@@ -400,8 +400,13 @@ let g:session_autoload = 'no'
 
 
 let g:vroom_use_vimux = 1
-
+let g:vroom_use_zeus = 0
+let g:vroom_clear_screen = 1
 let g:vroom_map_keys = 0
+let g:vroom_spec_command = "rspec"
+let g:vroom_test_unit_command = "ruby -Itest"
+let g:vroom_detect_spec_helper = 1
+"
 " If it looks like URI, Open URI under cursor.
 " Otherwise, Search word under cursor.
 " for open-browser.vim
@@ -492,9 +497,10 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
 
-let g:VimuxOrientation = "h"
+let g:VimuxOrientation = "v"
 let g:VimuxUseNearestPane = 1
-let g:VimuxHeight = "28"
+let g:VimuxHeight = "24"
+
 
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
@@ -587,17 +593,21 @@ vmap f :!par<CR>
 " command-t
 "nmap <Leader>o :CommandT<CR>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>gR :call ShowRoutes()<cr>
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
 map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
 map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+map <leader>gM :CommandTFlush<cr>\|:CommandT app/mailers<cr>
 map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+map <leader>gS :CommandTFlush<cr>\|:CommandT app/services<cr>
 map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+map <leader>gt :CommandTFlush<cr>\|:CommandT test<cr>
 map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets/sass<cr>
+map <leader>gs :CommandTFlush<cr>\|:CommandT spec<cr>
 map <leader>gf :CommandTFlush<cr>\|:CommandT features<cr>
+map <leader>gr :topleft 100 :split README.md<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
-map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
+map <leader>gT :topleft 100 :split TODO.txt<cr>
+"map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 
@@ -1022,7 +1032,8 @@ function! s:MyRubySettings()
   "map <F2> :RunAllRubyTests
   map <leader>a :w<CR>:call RunVimTmuxCommand("rake test")<CR>
   map <leader>t :VroomRunTestFile<cr>
-  map <leader>T :VroomRunNearestTestFile<cr>
+  map <leader>T :VroomRunNearestTest<cr>
+  set colorcolumn=80
   "  map <silent> <F2> :wa<CR> :RunAllRubyTests<CR>
   "  autocmd BufWritePost *.rb :call AutomaticCtags()
 
