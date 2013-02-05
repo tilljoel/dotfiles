@@ -25,6 +25,7 @@
 "-- CHANGELOG
 "------------------
 "
+" 2013-01-01: Ruby tuneup
 " 2012-09-01: Tmux support, ruby support etc.
 " 2011-11-28: Added closetag
 " 2011-07-30: Really added pathogen
@@ -141,7 +142,7 @@
 "# Without zeus: Bundle: git://github.com/skalnik/vim-vroom.git
 " Bundle: git://github.com/carlwoodward/vim-vroom.git
 " https://github.com/vim-scripts/YankRing.vim
-" slow git://github.com/suan/vim-instant-markdown.git
+
 "#TODO
 "# Omnicomplete in git commit, https://github.com/tpope/vim-rhubarb.git
 "#  git://github.com/tsaleh/vim-tcomment.git",
