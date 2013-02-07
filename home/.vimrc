@@ -87,11 +87,12 @@
 " Plugins are handled with pathogen and vim-update-bundle
 "
 
+" rake-ruby-1.8.7-p352 make
 " Bundle: git://github.com/vim-scripts/gtk-vim-syntax.git
 " Bundle: git://github.com/vim-scripts/Vimball.git
 " Bundle: git://github.com/tilljoel/vim-custom-bundle.git
 " Bundle: git://github.com/wincent/Command-T
-" BundleCommand: rake-ruby-1.8.7-p352 make
+" BundleCommand: rake-ruby-1.9.3-p194 make
 " Bundle: xoria256.vim
 " Bundle: git://github.com/tpope/vim-vividchalk.git
 " Bundle: git://github.com/kchmck/vim-coffee-script.git
@@ -111,12 +112,11 @@
 " Bundle: git://github.com/bronson/vim-trailing-whitespace.git
 " Bundle: jshint.vim
 " Bundle: git://github.com/xolox/vim-session.git
-" Bundle: git://github.com/scrooloose/syntastic.git
+" Bundle: git://github.com/Valloric/syntastic.git
 " Bundle: git://github.com/tpope/vim-haml.git
 " Bundle: git://github.com/tpope/vim-markdown.git
 " Bundle: git://github.com/tpope/vim-rails.git
 " Bundle: git://github.com/nvie/vim-pep8.git
-" Bundle: git://github.com/kevinw/pyflakes-vim
 " BundleCommand: git submodule init && git submodule update
 " Bundle: git://github.com/vim-scripts/nginx.vim.git
 " Bundle: git://github.com/csexton/rvm.vim.git
@@ -139,9 +139,11 @@
 " Bundle: git://github.com/tilljoel/vim-automatic-ctags.git
 " Bundle: git://github.com/epeli/slimux.git
 " Bundle: git://github.com/sunaku/vim-ruby-minitest.git
+" Bundle: 'Valloric/YouCompleteMe'
 "# Without zeus: Bundle: git://github.com/skalnik/vim-vroom.git
 " Bundle: git://github.com/carlwoodward/vim-vroom.git
 " https://github.com/vim-scripts/YankRing.vim
+"git://github.com/kevinw/pyflakes-vim
 
 "#TODO
 "# Omnicomplete in git commit, https://github.com/tpope/vim-rhubarb.git
@@ -387,6 +389,8 @@ if $LANG =~ ".*\.UTF-8$" || $LANG =~ ".*utf8$" || $LANG =~ ".*utf-8$"
 else
         set listchars=tab:>-,trail:-
 endif
+
+let g:ycm_min_num_of_chars_for_completion = 4
 
 let g:fugitive_github_domains = ['git.github.com']
 let g:statusline_fugitive = 1

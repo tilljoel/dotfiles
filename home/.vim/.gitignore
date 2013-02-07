@@ -2,5 +2,6 @@
 sessions
 Trashed-Bundles
 bundle/*
+bundle/command-t/ruby/command-t/mak
 doc/bundle-log.txt
 doc/bundles.txt
