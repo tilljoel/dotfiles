@@ -1,0 +1,4 @@
+SHORTCUT
+COMMAND /usr/bin/open -a "/Applications/Google Chrome.app" '%s'
+HTML_TAGS a,link
+ALTSELECT Q

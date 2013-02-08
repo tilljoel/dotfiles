@@ -1,0 +1,20 @@
+# Images
+#text/*; cat - | open %s > /dev/null
+#text/html; /Users/joel/.mutt/view_attachment.sh %s -
+#text/html; open -a Safari %s
+image/jpeg; /Users/joel/.mutt/view_attachment.sh %s -
+image/pjpeg; /Users/joel/.mutt/view_attachment.sh %s -
+image/png; /Users/joel/.mutt/view_attachment.sh %s -
+image/gif; /Users/joel/.mutt/view_attachment.sh %s -
+video/*; view_attachment.sh %s -
+image/*; view_attachment.sh %s -
+application/*; view_attachment.sh %s -
+
+# PDF
+application/pdf; /Users/joel/.mutt/view_attachment.sh %s pdf
+document/pdf; view_attachment.sh %s -
+
+# HTML
+#text/html; elinks -force-html %s;needsterminal
+#text/html; withstdin --keep --ext=.html open -a Chrome <%s
+text/html; /usr/bin/open -a "/Applications/Google Chrome.app" '%s';needsterminal; description=HTML Text; 
