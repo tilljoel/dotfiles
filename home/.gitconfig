@@ -49,7 +49,6 @@
         ui = true
 [github]
         user = tilljoel
-        token = 090630504dffffc1cf0918c1f1051322
 [difftool]
         prompt = false
 [init]
