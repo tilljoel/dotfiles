@@ -10,3 +10,4 @@ export rvm_path="/Users/joel/.rvm"
 if [[ `uname -v` =~ "Darwin Kernel Version 11" ]] ; then
   export CC=/usr/bin/gcc-4.2
 fi
+#rvm_configure_env=(CFLAGS="-march=native -O2 -pipe -fomit-frame-pointer")
