@@ -116,6 +116,10 @@ export PATH=${PATH}:/Developer/android-sdk-mac_x86/tools
 export PATH=/opt/local/bin:${PATH}
 export PATH=~/bin:${PATH}
 export EDITOR=vim
+
+alias rvim="vim app/**/*.rb spec/**/*.rb test/**/*.rb"
+alias git='nocorrect git'
+
 alias rake='noglob rake'
 alias titanium_iphone1.7.2="/Library/Application\ Support/Titanium/mobilesdk/osx/1.7.2/titanium.py run --platform=iphone"
 alias titanium_android1.7.2="/Library/Application\ Support/Titanium/mobilesdk/osx/1.7.2/titanium.py run --platform=android --android=/Users/joel/android-sdk-mac_x86"
