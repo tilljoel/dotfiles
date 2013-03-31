@@ -90,9 +90,7 @@
 " rake-ruby-1.8.7-p352 make
 " Bundle: git://github.com/vim-scripts/gtk-vim-syntax.git
 " Bundle: git://github.com/vim-scripts/Vimball.git
-" Bundle: git://github.com/tilljoel/vim-custom-bundle.git
-" Bundle: git://github.com/wincent/Command-T
-" BundleCommand: rake-ruby-1.9.3-p194 make
+"# BundleCommand: rake-ruby-1.9.3-p194 make
 " Bundle: xoria256.vim
 " Bundle: git://github.com/tpope/vim-vividchalk.git
 " Bundle: git://github.com/kchmck/vim-coffee-script.git
@@ -140,12 +138,14 @@
 " Bundle: git://github.com/epeli/slimux.git
 " Bundle: git://github.com/sunaku/vim-ruby-minitest.git
 " Bundle: 'Valloric/YouCompleteMe'
+" Bundle: git://github.com/kien/ctrlp.vim.git
 "# Without zeus: Bundle: git://github.com/skalnik/vim-vroom.git
 " Bundle: git://github.com/carlwoodward/vim-vroom.git
 " https://github.com/vim-scripts/YankRing.vim
 "git://github.com/kevinw/pyflakes-vim
 
 "#TODO
+"# Bundle: git://github.com/wincent/Command-T
 "# Omnicomplete in git commit, https://github.com/tpope/vim-rhubarb.git
 "#  git://github.com/tsaleh/vim-tcomment.git",
 "#  git://github.com/tpope/vim-repeat.git",
@@ -293,13 +293,13 @@ set matchtime=2
 set number
 
 "   set the line number col to 3 number
-set numberwidth=3
+set numberwidth=2
 
 "   number of lines for the command area; more eliminates
 "   many 'hit-enter'
 set cmdheight=2
 
-set winwidth=84
+set winwidth=80
 " We have to have a winheight bigger than we want to set winminheight. But if
 " " we set winheight to be huge before winminheight, the winminheight set will
 " " fail.
@@ -598,23 +598,27 @@ vmap f :!par<CR>
 " command-t
 "nmap <Leader>o :CommandT<CR>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gM :CommandTFlush<cr>\|:CommandT app/mailers<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gS :CommandTFlush<cr>\|:CommandT app/services<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gt :CommandTFlush<cr>\|:CommandT test<cr>
-map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT spec<cr>
-map <leader>gf :CommandTFlush<cr>\|:CommandT features<cr>
+"map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+"map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+"map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+"map <leader>gM :CommandTFlush<cr>\|:CommandT app/mailers<cr>
+"map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+"map <leader>gS :CommandTFlush<cr>\|:CommandT app/services<cr>
+"map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+"map <leader>gt :CommandTFlush<cr>\|:CommandT test<cr>
+"map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
+"map <leader>gs :CommandTFlush<cr>\|:CommandT spec<cr>
+"map <leader>gf :CommandTFlush<cr>\|:CommandT features<cr>
 map <leader>gr :topleft 100 :split README.md<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 map <leader>gT :topleft 100 :split TODO.txt<cr>
 "map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+"map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+"map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+map <leader>gq :CtrlPQuickfix<cr>
+map <leader>gt :CtrlPTag<cr>
+map <leader>f :CtrlP<cr>
+map <leader>b :CtrlPBuffer<cr>
 
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
@@ -1025,7 +1029,7 @@ endfunction
 
 function! s:MyRubySettings()
   " load matchit (% to bounce from do to end, etc.)
-  set wildignore+=vendor/rails/**,logs,tmp
+  set wildignore+=vendor/rails/**,logs,tmp,spec/fixture/raw_mails
   set ai sw=2 sts=2 expandtab nowrap syntax=ruby
   let g:statusline_rvm = 1
   set omnifunc=rubycomplete#Complete
@@ -1038,6 +1042,7 @@ function! s:MyRubySettings()
   map <leader>a :w<CR>:call RunVimTmuxCommand("rake test")<CR>
   map <leader>t :VroomRunTestFile<cr>
   map <leader>T :VroomRunNearestTest<cr>
+  nmap <leader>s :call VimuxRunCommand(@" . "\n", 0)<CR> 
   set colorcolumn=80
   "  map <silent> <F2> :wa<CR> :RunAllRubyTests<CR>
   "  autocmd BufWritePost *.rb :call AutomaticCtags()
@@ -1045,15 +1050,6 @@ function! s:MyRubySettings()
   "map <F2> :w<CR>:call RunVimTmuxCommand("clear; rake test")<CR>
  ":!python " . getreg("%") . "" <CR>
 endfunction
-
-function! s:SwitchSourceHeader()
-    if (expand ("%:t") == expand ("%:t:r") . ".c")
-        find %:t:r.h
-    else
-        find %:t:r.c
-    endif
-endfunction
-nmap ,s :call <SID>SwitchSourceHeader()<CR>
 
 " readonly files get green foreground, other files get white fg
 function! ROColors()
