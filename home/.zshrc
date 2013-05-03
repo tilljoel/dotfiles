@@ -115,6 +115,7 @@ export PATH=${PATH}:/Developer/android-sdk-mac_x86/platform-tools/
 export PATH=${PATH}:/Developer/android-sdk-mac_x86/tools
 export PATH=/opt/local/bin:${PATH}
 export PATH=~/bin:${PATH}
+export PATH=/Applications/Postgres.app/Contents/MacOS/bin:${PATH}
 export EDITOR=vim
 
 alias rvim="vim app/**/*.rb spec/**/*.rb test/**/*.rb"
