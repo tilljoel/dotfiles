@@ -11,7 +11,7 @@ ZSH_THEME="tilljoel"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby rails3 gem git github bundler rvm npm macports vi-mode brew heroku osx rake)
+plugins=(git osx ruby rails3 gem git github bundler npm macports vi-mode brew heroku osx rake)
 
 source $ZSH/oh-my-zsh.sh
 # Fix search like ctrl-r for vim
@@ -109,7 +109,7 @@ function git_time_since_commit() {
 # Just add $(git_time_since_commit) to your ZSH PROMPT and you're set
 
 # Customize to your needs...
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 export PATH=${PATH}:/Developer/android-sdk-mac_x86/platform-tools/
 export PATH=${PATH}:/Developer/android-sdk-mac_x86/tools
@@ -132,7 +132,8 @@ export SSL_CERT_FILE=/Users/joel/.ssh/cacert.pem
 alias rc="bundle exec pry -r ./config/environment"
 
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
