@@ -31,23 +31,23 @@
 #
 # Examples:  These are typical .mailcap entries which use this program.
 #
-#     Image/JPEG; /home/manulito/.mutt/view_attachment %s
-#     Image/PNG; /home/manulito/.mutt/view_attachment %s
-#     Image/GIF; /home/manulito/.mutt/view_attachment %s
+#     Image/JPEG; /Users/vdanen/.mutt/view_attachment %s
+#     Image/PNG; /Users/vdanen/.mutt/view_attachment %s
+#     Image/GIF; /Users/vdanen/.mutt/view_attachment %s
 # 
-#     Application/PDF; /home/manulito/.mutt/view_attachment %s
+#     Application/PDF; /Users/vdanen/.mutt/view_attachment %s
 #
 #         #This HTML example passes the type because file doesn't always work and 
 #         #there aren't always extensions.
 #
-#     text/html; /home/manulito/.mutt/view_attachment %s html
+#     text/html; /Users/vdanen/.mutt/view_attachment %s html
 #
 #         # If your Start OpenOffice.org.app is spelled with a space like this one, <--
 #         # then you'll need to precede the space with a \ .  I found that too painful
 #         # and renamed it with an _.   
 #
-#     Application/vnd.ms-excel; /home/manulito/.mutt/view_attachment %s "-" '/Applications/OpenOffice.org1.1.2/Start_OpenOffice.org.app'
-#     Application/msword; /home/manulito/.mutt/view_attachment %s "-" '/Applications/OpenOffice.org1.1.2/Start_OpenOffice.org.app'
+#     Application/vnd.ms-excel; /Users/vdanen/.mutt/view_attachment %s "-" '/Applications/OpenOffice.org1.1.2/Start_OpenOffice.org.app'
+#     Application/msword; /Users/vdanen/.mutt/view_attachment %s "-" '/Applications/OpenOffice.org1.1.2/Start_OpenOffice.org.app'
 # 
 #
 # Debugging:  If you have problems set debug to 'yes'.  That will cause a debug file
@@ -92,7 +92,7 @@ fi
 
 # if the type is empty then try to figure it out.
 if [ -z $type ]; then
-    type=`file -bi $1 | cut -d"/" -f2`
+    type=`file $1 | cut -d" " -f2`
 fi
 
 # if the type is '-' then we don't want to mess with type.
@@ -108,6 +108,8 @@ newfile=$tmpdir/$newfile
 
 # Copy the file to our new spot so mutt can't delete it
 # before the app has a chance to view it.
+echo $1
+echo $newfile
 cp $1 $newfile
 
 if [ $debug = "yes" ]; then

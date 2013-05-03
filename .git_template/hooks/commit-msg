@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+# https://github.com/blog/926-shiny-new-commit-styles
+
+message_file = ARGV[0]
+
+def err_exit(msg)
+  puts "[INVALID COMMIT] #{msg}"
+  exit 1
+end
+
+def line_is_comment?(line)
+  / *#/ === line
+end
+
+def check_line_length(line, count=73)
+  return if line_is_comment? line
+  err_exit "To long line found, #{line.length}>#{count}" if line.size > count
+end
+
+def check_for_template_leftovers(line)
+  found = case line
+    when /^.*Add:$/ then true
+    when /^.*Fix:$/ then true
+    when /^.*Del:$/ then true
+    else false
+  end
+  err_exit "Tempalte leftovers, #{line}" if found
+end
+
+def check_summary(line)
+  check_line_length(line, 50)
+  err_exit "Summery starts with lowercase letter" unless /^[A-Z]/ === line
+end
+
+begin
+
+  f = File.open(message_file, "r")
+
+  f.each do |line|
+    check_summary(line) if f.lineno == 1
+    check_line_length(line)
+    check_for_template_leftovers(line)
+  end
+
+ensure
+  f.close if f
+end

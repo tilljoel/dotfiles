@@ -1,0 +1,61 @@
+:0:
+* ^From:.*notification@facebookmail.com
+$MAIL/sites/
+
+:0:
+* ^From:.*@postmaster.twitter.com
+$MAIL/sites/
+
+:0:
+* ^From:.*googlealerts-noreply@google.com
+$MAIL/sites/
+
+:0:
+* ^From:.*@facebookmail.com
+$MAIL/sites/
+
+:0:
+* ^From:.*update@em.facebookmail.com
+$MAIL/sites/
+
+:0:
+* ^From:.*groups-noreply@linkedin.com
+$MAIL/sites/
+
+:0:
+* ^From:.*updates@linkedin.com
+$MAIL/sites/
+
+:0:
+* ^From:.*news@linkedin.com
+$MAIL/sites/
+
+:0:
+* ^From:.*donotreply@e.linkedin.com
+$MAIL/sites/
+
+:0:
+* ^From:.*group-digests@linkedin.com
+$MAIL/sites/
+
+:0:
+* ^From:.*connections@linkedin.com
+$MAIL/sites/
+
+:0:
+* ^From:.*wordpress@hackr.se
+$MAIL/sites/
+
+:0:
+* ^From:.*doreply@zerply.com
+$MAIL/sites/
+
+
+:0:
+* ^From:.*@plus.google.com
+$MAIL/sites/
+
+:0:
+* ^From:.*team@summify.com
+$MAIL/sites/
+

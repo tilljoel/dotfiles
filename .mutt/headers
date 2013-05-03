@@ -11,6 +11,7 @@ unignore CC:
 unignore BCC:
 unignore User-Agent:
 unignore X-Spam-Status::
+unignore List-Id:
 
 # Now order the visable header lines
-hdr_order Date: From: To: CC: BCC: Reply-To: Mail-Followup-To: Subject: User-Agent:
+hdr_order Date: From: To: List-Id: CC: BCC: Reply-To: Mail-Followup-To: Subject: User-Agent:

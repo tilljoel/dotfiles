@@ -1,22 +1,15 @@
-#
-# Annvix
-#
-subscribe announce
-subscribe cvs
-subscribe dev
-subscribe users
-subscribe ports
-#
-# Mandriva
-#
-subscribe security-announce
-subscribe changelog
-subscribe cooker
-subscribe expert
-subscribe security-discuss
-subscribe maintainers
-subscribe kernel
-subscribe webtrans
-#
-# All the rest
-#
+subscribe mosig@list.hack.org
+subscribe forskningsavdelningen@kodapan.se
+subscribe all@popdevelop.com
+subscribe homies@popdevelop.com
+subscribe contact@popdevelop.com
+subscribe admin@popdevelop.com
+subscribe support@weskins.com
+subscribe business@weskins.com
+subscribe popdevelop@github.com
+subscribe beta@popgiro.se
+subscribe admin@popgiro.se
+subscribe feedback@popgiro.se
+subscribe jobs@popgiro.se
+subscribe support@popgiro.se
+
