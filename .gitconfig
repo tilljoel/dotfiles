@@ -40,7 +40,7 @@
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 [core]
         editor = vim
-	excludesfile = /Users/joel/.gitignore
+	excludesfile = /opt/boxen/config/git/gitignore
 [diff]
         tool = vimdiff
 [pager]
@@ -57,3 +57,11 @@
     template = ~/.git_template/commit-template
 [pull]
 	rebase = true
+
+[hub]
+protocol = https
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+[push]
+	default = simple

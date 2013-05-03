@@ -137,3 +137,4 @@ alias rc="bundle exec pry -r ./config/environment"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
+source /opt/boxen/env.sh
