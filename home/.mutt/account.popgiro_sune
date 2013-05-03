@@ -1,4 +1,0 @@
-set realname="Sune Salgman"
-set from=sune.salgman@popgiro.se
-set hostname="popgiro.se"
-set sendmail="/opt/local/bin/msmtp -a popgiro_sune
