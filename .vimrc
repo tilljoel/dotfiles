@@ -86,63 +86,66 @@
 "
 " Plugins are handled with pathogen and vim-update-bundle
 "
+set nocompatible               " be iMproved
+filetype off                   " required!
 
-" rake-ruby-1.8.7-p352 make
-" Bundle: git://github.com/vim-scripts/gtk-vim-syntax.git
-" Bundle: git://github.com/vim-scripts/Vimball.git
-"# BundleCommand: rake-ruby-1.9.3-p194 make
-" Bundle: xoria256.vim
-" Bundle: git://github.com/tpope/vim-vividchalk.git
-" Bundle: git://github.com/kchmck/vim-coffee-script.git
-" Bundle: blogit.vim
-" Bundle: git://github.com/tpope/vim-fugitive.git
-" Bundle: git://github.com/scrooloose/nerdcommenter.git
-" Bundle: git://github.com/vim-scripts/taglist.vim
-" Bundle: git://github.com/tsaleh/vim-matchit.git
-" Bundle: git://github.com/vim-scripts/AutoTag.git
-" Bundle: git://github.com/vim-scripts/L9.git
-" Bundle: git://github.com/vim-scripts/FuzzyFinder.git
-" Bundle: git://github.com/vim-scripts/rails.vim
-" Bundle: git://github.com/gregsexton/gitv.git
-" Bundle: git://github.com/actionshrimp/vim-xpath.git
-" Bundle: git://github.com/vim-scripts/LargeFile.git
-" Bundle: git://github.com/vim-scripts/CRefVim.git
-" Bundle: git://github.com/bronson/vim-trailing-whitespace.git
-" Bundle: jshint.vim
-" Bundle: git://github.com/xolox/vim-session.git
-" Bundle: git://github.com/Valloric/syntastic.git
-" Bundle: git://github.com/tpope/vim-haml.git
-" Bundle: git://github.com/tpope/vim-markdown.git
-" Bundle: git://github.com/tpope/vim-rails.git
-" Bundle: git://github.com/nvie/vim-pep8.git
-" BundleCommand: git submodule init && git submodule update
-" Bundle: git://github.com/vim-scripts/nginx.vim.git
-" Bundle: git://github.com/csexton/rvm.vim.git
-" Bundle: git://github.com/dickeyxxx/status.vim.git
-" Bundle: git://github.com/vim-scripts/open-browser.vim.git
-" Bundle: git://github.com/tpope/vim-surround.git
-" Bundle: git://github.com/vim-scripts/closetag.vim.git
-" Bundle: git://github.com/ujihisa/rdoc.vim.git
-" Bundle: git://github.com/tsaleh/vim-shoulda.git
-" Bundle: git://github.com/vim-scripts/AnsiEsc.vim
-" Bundle: git://github.com/altercation/vim-colors-solarized.git
-" Bundle: git://github.com/nathanaelkane/vim-indent-guides.git
-" Bundle: git://github.com/Lokaltog/vim-powerline.git develop
-" Bundle: git://github.com/pgr0ss/vimux-ruby-test.git
-" Bundle: git://github.com/benmills/vimux.git
-" Bundle: git://github.com/tpope/vim-bundler.git
-" Bundle: git://github.com/tpope/vim-rake.git
-" Bundle: git://github.com/vim-ruby/vim-ruby.git
-" Bundle: git://github.com/tpope/vim-endwise.git
-" Bundle: git://github.com/tilljoel/vim-automatic-ctags.git
-" Bundle: git://github.com/epeli/slimux.git
-" Bundle: git://github.com/sunaku/vim-ruby-minitest.git
-" Bundle: 'Valloric/YouCompleteMe'
-" Bundle: git://github.com/kien/ctrlp.vim.git
-"# Without zeus: Bundle: git://github.com/skalnik/vim-vroom.git
-" Bundle: git://github.com/carlwoodward/vim-vroom.git
-" https://github.com/vim-scripts/YankRing.vim
-"git://github.com/kevinw/pyflakes-vim
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'git://github.com/vim-scripts/gtk-vim-syntax.git'
+Bundle 'git://github.com/vim-scripts/Vimball.git'
+Bundle 'xoria256.vim'
+Bundle 'git://github.com/tpope/vim-vividchalk.git'
+Bundle 'git://github.com/kchmck/vim-coffee-script.git'
+Bundle 'blogit.vim'
+Bundle 'git://github.com/tpope/vim-fugitive.git'
+Bundle 'git://github.com/scrooloose/nerdcommenter.git'
+Bundle 'git://github.com/vim-scripts/taglist.vim'
+Bundle 'git://github.com/tsaleh/vim-matchit.git'
+Bundle 'git://github.com/vim-scripts/AutoTag.git'
+Bundle 'git://github.com/vim-scripts/L9.git'
+Bundle 'git://github.com/vim-scripts/FuzzyFinder.git'
+Bundle 'git://github.com/vim-scripts/rails.vim'
+Bundle 'git://github.com/gregsexton/gitv.git'
+Bundle 'git://github.com/actionshrimp/vim-xpath.git'
+Bundle 'git://github.com/vim-scripts/LargeFile.git'
+"Bundle 'git://github.com/vim-scripts/CRefVim.git'
+Bundle 'git://github.com/bronson/vim-trailing-whitespace.git'
+Bundle 'jshint.vim'
+Bundle 'git://github.com/xolox/vim-session.git'
+"Bundle 'git://github.com/Valloric/syntastic.git'
+Bundle 'git://github.com/scrooloose/syntastic.git'
+Bundle 'git://github.com/tpope/vim-haml.git'
+Bundle 'git://github.com/tpope/vim-markdown.git'
+Bundle 'git://github.com/tpope/vim-rails.git'
+Bundle 'git://github.com/nvie/vim-pep8.git'
+"'BundleCommand: git submodule init && git submodule update'
+Bundle 'git://github.com/vim-scripts/nginx.vim.git'
+Bundle 'git://github.com/csexton/rvm.vim.git'
+"Bundle 'git://github.com/dickeyxxx/status.vim.git'
+Bundle 'git://github.com/vim-scripts/open-browser.vim.git'
+Bundle 'git://github.com/tpope/vim-surround.git'
+Bundle 'git://github.com/vim-scripts/closetag.vim.git'
+Bundle 'git://github.com/ujihisa/rdoc.vim.git'
+Bundle 'git://github.com/tsaleh/vim-shoulda.git'
+Bundle 'git://github.com/vim-scripts/AnsiEsc.vim'
+Bundle 'git://github.com/altercation/vim-colors-solarized.git'
+Bundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
+"Bundle 'git://github.com/Lokaltog/vim-powerline.git develop'
+Bundle 'git://github.com/pgr0ss/vimux-ruby-test.git'
+Bundle 'git://github.com/benmills/vimux.git'
+Bundle 'git://github.com/tpope/vim-bundler.git'
+Bundle 'git://github.com/tpope/vim-rake.git'
+Bundle 'git://github.com/vim-ruby/vim-ruby.git'
+Bundle 'git://github.com/tpope/vim-endwise.git'
+Bundle 'git://github.com/tilljoel/vim-automatic-ctags.git'
+Bundle 'git://github.com/epeli/slimux.git'
+Bundle 'git://github.com/sunaku/vim-ruby-minitest.git'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'git://github.com/kien/ctrlp.vim.git'
+Bundle 'git://github.com/carlwoodward/vim-vroom.git'
+Bundle 'git://github.com/gmarik/vundle.git'
+"'git://github.com/kevinw/pyflakes-vim'
 
 "#TODO
 "# Bundle: git://github.com/wincent/Command-T
@@ -166,10 +169,10 @@
 
 
 "   pathogen
-filetype off
-call pathogen#infect()
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+"filetype off
+"call pathogen#infect()
+"call pathogen#helptags()
+"call pathogen#runtime_append_all_bundles()
 
 " enable some important things
 syntax on
@@ -392,13 +395,14 @@ endif
 
 let g:ycm_min_num_of_chars_for_completion = 4
 
+set rtp+=/opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/vim
 let g:fugitive_github_domains = ['git.github.com']
-let g:statusline_fugitive = 1
-let g:statusline_rvm = 1
-let g:statusline_syntastic = 1
+"let g:statusline_fugitive = 1
+"let g:statusline_rvm = 1
+"let g:statusline_syntastic = 1
 ""Turn statusline off
-let g:statusline_enabled = 1
-let g:statusline_fullpath = 0
+"let g:statusline_enabled = 1
+"let g:statusline_fullpath = 0
 
 " Session plugin
 let g:session_autoload = 'no'
@@ -1031,7 +1035,7 @@ function! s:MyRubySettings()
   " load matchit (% to bounce from do to end, etc.)
   set wildignore+=vendor/rails/**,logs,tmp,spec/fixture/raw_mails
   set ai sw=2 sts=2 expandtab nowrap syntax=ruby
-  let g:statusline_rvm = 1
+  "let g:statusline_rvm = 1
   set omnifunc=rubycomplete#Complete
   let g:rubycomplete_buffer_loading = 1
   let g:rubycomplete_rails = 1
