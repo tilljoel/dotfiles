@@ -129,6 +129,7 @@ alias titanium='~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.1.GA/t
 
 export SSL_CERT_FILE=/Users/joel/.ssh/cacert.pem
 
+alias tmux="TERM=screen-256color-bce tmux"
 alias rc="bundle exec pry -r ./config/environment"
 
 

@@ -396,6 +396,7 @@ endif
 let g:ycm_min_num_of_chars_for_completion = 4
 
 set rtp+=/opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/vim
+let g:Powerline_symbols = 'fancy'
 let g:fugitive_github_domains = ['git.github.com']
 "let g:statusline_fugitive = 1
 "let g:statusline_rvm = 1
