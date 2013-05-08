@@ -281,8 +281,10 @@ set shell=/bin/sh
 set t_Co=256
 "colorscheme xoria256
 set background=dark
+let g:solarized_termcolors = 256
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
 colorscheme solarized
-
 "   always display the statusline
 set laststatus=2
 
@@ -395,7 +397,7 @@ endif
 
 let g:ycm_min_num_of_chars_for_completion = 4
 
-set rtp+=/opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/vim
+set rtp+=/opt/boxen/homebrew/lib/python2.7/site-packages/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
 let g:fugitive_github_domains = ['git.github.com']
 "let g:statusline_fugitive = 1

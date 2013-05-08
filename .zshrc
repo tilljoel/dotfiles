@@ -129,13 +129,15 @@ alias titanium='~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.1.GA/t
 
 export SSL_CERT_FILE=/Users/joel/.ssh/cacert.pem
 
-alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="TERM=screen-256color-bce tmux -2"
 alias rc="bundle exec pry -r ./config/environment"
-
-
+alias rspec="nocorrect rspec"
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
 source /opt/boxen/env.sh
