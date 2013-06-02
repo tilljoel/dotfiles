@@ -1,5 +1,5 @@
 [user]
-        name = Joel Larsson
+	name = Joel Larsson
         email = tilljoel@gmail.com
 [merge]
         tool = vimdiff

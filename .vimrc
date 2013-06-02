@@ -144,7 +144,9 @@ Bundle 'git://github.com/sunaku/vim-ruby-minitest.git'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'git://github.com/kien/ctrlp.vim.git'
 Bundle 'git://github.com/carlwoodward/vim-vroom.git'
+Bundle 'git://github.com/itspriddle/vim-marked.git'
 Bundle 'git://github.com/gmarik/vundle.git'
+
 "'git://github.com/kevinw/pyflakes-vim'
 
 "#TODO
@@ -664,7 +666,6 @@ set pastetoggle=<F12>
 " ctags maps, remap goto, go back
 nnoremap <C-Y> <C-]>
 nnoremap <C-U> <C-T>
-
 
 "-------------------------------------------------------------------------------
 "-- PLUGINS
@@ -1305,3 +1306,4 @@ function! RenameFile()
     endif
 endfunction
 map <leader>n :call RenameFile()<cr>
+

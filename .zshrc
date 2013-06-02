@@ -141,3 +141,11 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 source /opt/boxen/env.sh
+alias git='noglob git'
+alias rake='noglob rake'
+alias rspec='nocorrect rspec'
+alias bundle='nocorrect bundle'
+alias rspec='nocorrect rspec'
+alias pry='nocorrect pry'
+alias reload="source ~/.zshrc"
+alias pt=papertrail
