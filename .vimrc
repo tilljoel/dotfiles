@@ -112,7 +112,7 @@ Bundle 'git://github.com/vim-scripts/LargeFile.git'
 "Bundle 'git://github.com/vim-scripts/CRefVim.git'
 Bundle 'git://github.com/bronson/vim-trailing-whitespace.git'
 Bundle 'jshint.vim'
-Bundle 'git://github.com/xolox/vim-session.git'
+"Bundle 'git://github.com/xolox/vim-session.git'
 "Bundle 'git://github.com/Valloric/syntastic.git'
 Bundle 'git://github.com/scrooloose/syntastic.git'
 Bundle 'git://github.com/tpope/vim-haml.git'
@@ -146,7 +146,7 @@ Bundle 'git://github.com/kien/ctrlp.vim.git'
 Bundle 'git://github.com/carlwoodward/vim-vroom.git'
 Bundle 'git://github.com/itspriddle/vim-marked.git'
 Bundle 'git://github.com/gmarik/vundle.git'
-
+Bundle 'git://github.com/walm/jshint.vim.git'
 "'git://github.com/kevinw/pyflakes-vim'
 
 "#TODO
@@ -410,7 +410,7 @@ let g:fugitive_github_domains = ['git.github.com']
 "let g:statusline_fullpath = 0
 
 " Session plugin
-let g:session_autoload = 'no'
+"let g:session_autoload = 'no'
 
 
 let g:vroom_use_vimux = 1
@@ -697,7 +697,7 @@ let Tlist_Ctags_Cmd                 = 'ctags'
 let tlist_c_settings                = 'c;f:FUNCTIONS'
 let tlist_dtd_settings              = 'dtd;e:elements;a:attributes;n:entities'
 let tlist_make_settings             = 'make;m:makros;t:targets'
-let tlist_markdown_settings         = 'markdown;s:sections'
+"let tlist_markdown_settings         = 'markdown;s:sections'
 let tlist_matlab_settings           = 'matlab;f:functions'
 let tlist_ruby_settings             = 'ruby;f:Methods;m:Module;c:Class;F:Singleton method'
 let tlist_tex_settings              = 'latex;s:sections;g:graphics;l:labels'
@@ -947,7 +947,6 @@ function! s:MyMarkdownSettings()
 " vim:set sw=2:
   map <buffer> <F1> yypVr=
   map <buffer> <F2> yypVr-
-  map <buffer> <F9> :%!~/.vim/tools/reorder_references.py<CR>
   inoremap <buffer> <leader><CR> <Esc>:call FT_markdown_newline()<CR>A
   function! FT_markdown_newline()
           let l:pattern = @/

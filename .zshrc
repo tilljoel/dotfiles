@@ -11,7 +11,7 @@ ZSH_THEME="tilljoel"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby rails3 gem git github bundler npm macports vi-mode brew heroku osx rake)
+plugins=(git osx ruby rails3 rails4 gem git github bundler npm macports vi-mode brew heroku osx rake coffee tmux tmuxinator rbenv)
 
 source $ZSH/oh-my-zsh.sh
 # Fix search like ctrl-r for vim
@@ -20,7 +20,7 @@ export RUBY_HEAP_FREE_MIN=500000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=100000000
-
+export REDISCLOUD_URL=$BOXEN_REDIS_URL
 bindkey -v
 bindkey -M vicmd '/' history-incremental-search-backward
 
