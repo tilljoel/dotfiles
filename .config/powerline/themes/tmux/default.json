@@ -1,24 +1,12 @@
 {
 	"default_module": "powerline.segments.common",
 	"segment_data": {
-		"version": {
-			"before": "ⓔ	"
-		},
 		"external_ip": {
 			"before": "ⓦ	"
 		}
 	},
 	"segments": {
 		"right": [
-			{
-				"module": "powerlinex.segment.plenv",
-				"name": "version"
-			},
-			{
-				"name": "file_directory",
-				"priority": 40,
-				"draw_divider": false
-			},
 			{
 				"name": "external_ip",
 				"priority": 50

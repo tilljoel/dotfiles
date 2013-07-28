@@ -23,6 +23,10 @@
 				"name": "user"
 			},
 			{
+				"module": "powerlinex.segment.rbenv",
+				"name": "version"
+			},
+			{
 				"name": "virtualenv"
 			},
 			{
