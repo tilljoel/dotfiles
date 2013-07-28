@@ -149,3 +149,5 @@ alias rspec='nocorrect rspec'
 alias pry='nocorrect pry'
 alias reload="source ~/.zshrc"
 alias pt=papertrail
+
+. /opt/boxen/homebrew/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh

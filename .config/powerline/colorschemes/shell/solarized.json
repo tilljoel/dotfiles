@@ -1,7 +1,7 @@
 {
 	"name": "Solarized Dark",
 	"groups": {
-		"user":               { "fg": "oldlace", "bg": "blue", "attr": ["bold"] },
+		"user":               { "fg": "oldlace", "bg": "yellow", "attr": ["bold"] },
 		"superuser":          { "fg": "oldlace", "bg": "red", "attr": ["bold"] },
 		"virtualenv":         { "fg": "oldlace", "bg": "green" },
 		"branch":             { "fg": "gray61", "bg": "royalblue5" },
