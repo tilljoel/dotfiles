@@ -92,6 +92,7 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle 'git://github.com/tpope/vim-pathogen.git'
 Bundle 'git://github.com/vim-scripts/gtk-vim-syntax.git'
 Bundle 'git://github.com/vim-scripts/Vimball.git'
 Bundle 'xoria256.vim'
@@ -172,8 +173,8 @@ Bundle 'git://github.com/walm/jshint.vim.git'
 
 "   pathogen
 "filetype off
-"call pathogen#infect()
-"call pathogen#helptags()
+call pathogen#infect()
+call pathogen#helptags()
 "call pathogen#runtime_append_all_bundles()
 
 " enable some important things
