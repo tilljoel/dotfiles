@@ -96,7 +96,6 @@ Bundle 'git://github.com/vim-scripts/Vimball.git'
 Bundle 'xoria256.vim'
 Bundle 'git://github.com/tpope/vim-vividchalk.git'
 Bundle 'git://github.com/kchmck/vim-coffee-script.git'
-Bundle 'blogit.vim'
 Bundle 'git://github.com/tpope/vim-fugitive.git'
 Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 Bundle 'git://github.com/vim-scripts/taglist.vim'
@@ -393,7 +392,8 @@ endif
 
 let g:ycm_min_num_of_chars_for_completion = 4
 
-set rtp+=/opt/boxen/homebrew/lib/python2.7/site-packages/powerline/bindings/vim
+"set rtp+=/opt/boxen/homebrew/lib/python2.7/site-packages/powerline/bindings/vim
+set rtp+=/opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
 let g:fugitive_github_domains = ['git.github.com']
 "let g:statusline_fugitive = 1

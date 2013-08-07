@@ -150,4 +150,5 @@ alias pry='nocorrect pry'
 alias reload="source ~/.zshrc"
 alias pt=papertrail
 
-. /opt/boxen/homebrew/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+. /opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+#. /opt/boxen/homebrew/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
