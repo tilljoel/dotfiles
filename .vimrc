@@ -25,6 +25,7 @@
 "-- CHANGELOG
 "------------------
 "
+" 2013-08-05: New powerline stuff
 " 2013-07-10: Remove pathogen
 " 2013-01-01: Ruby tuneup
 " 2012-09-01: Tmux support, ruby support etc.
@@ -107,11 +108,8 @@ Bundle 'git://github.com/vim-scripts/rails.vim'
 Bundle 'git://github.com/gregsexton/gitv.git'
 Bundle 'git://github.com/actionshrimp/vim-xpath.git'
 Bundle 'git://github.com/vim-scripts/LargeFile.git'
-"Bundle 'git://github.com/vim-scripts/CRefVim.git'
 Bundle 'git://github.com/bronson/vim-trailing-whitespace.git'
 Bundle 'jshint.vim'
-"Bundle 'git://github.com/xolox/vim-session.git'
-"Bundle 'git://github.com/Valloric/syntastic.git'
 Bundle 'git://github.com/scrooloose/syntastic.git'
 Bundle 'git://github.com/tpope/vim-haml.git'
 Bundle 'git://github.com/tpope/vim-markdown.git'
@@ -120,8 +118,6 @@ Bundle 'git://github.com/nvie/vim-pep8.git'
 "'BundleCommand: git submodule init && git submodule update'
 Bundle 'git://github.com/vim-scripts/nginx.vim.git'
 Bundle 'git://github.com/csexton/rvm.vim.git'
-"Bundle 'git://github.com/dickeyxxx/status.vim.git'
-Bundle 'git://github.com/vim-scripts/open-browser.vim.git'
 Bundle 'git://github.com/tpope/vim-surround.git'
 Bundle 'git://github.com/vim-scripts/closetag.vim.git'
 Bundle 'git://github.com/ujihisa/rdoc.vim.git'
@@ -129,7 +125,6 @@ Bundle 'git://github.com/tsaleh/vim-shoulda.git'
 Bundle 'git://github.com/vim-scripts/AnsiEsc.vim'
 Bundle 'git://github.com/altercation/vim-colors-solarized.git'
 Bundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
-"Bundle 'git://github.com/Lokaltog/vim-powerline.git develop'
 Bundle 'git://github.com/pgr0ss/vimux-ruby-test.git'
 Bundle 'git://github.com/benmills/vimux.git'
 Bundle 'git://github.com/tpope/vim-bundler.git'
@@ -145,7 +140,12 @@ Bundle 'git://github.com/carlwoodward/vim-vroom.git'
 Bundle 'git://github.com/itspriddle/vim-marked.git'
 Bundle 'git://github.com/gmarik/vundle.git'
 Bundle 'git://github.com/walm/jshint.vim.git'
+Bundle 'git://github.com/vim-scripts/open-browser.vim.git'
 "'git://github.com/kevinw/pyflakes-vim'
+"Bundle 'git://github.com/vim-scripts/CRefVim.git'
+"Bundle 'git://github.com/xolox/vim-session.git'
+"Bundle 'git://github.com/Valloric/syntastic.git'
+"Bundle 'git://github.com/dickeyxxx/status.vim.git'
 
 "#TODO
 "# Bundle: git://github.com/wincent/Command-T
@@ -392,7 +392,6 @@ endif
 
 let g:ycm_min_num_of_chars_for_completion = 4
 
-"set rtp+=/opt/boxen/homebrew/lib/python2.7/site-packages/powerline/bindings/vim
 set rtp+=/opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
 let g:fugitive_github_domains = ['git.github.com']
