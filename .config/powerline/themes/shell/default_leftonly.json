@@ -27,6 +27,10 @@
 				"name": "version"
 			},
 			{
+				"module": "powerlinex.segment.ci-status",
+				"name": "version"
+			},
+			{
 				"name": "virtualenv"
 			},
 			{
