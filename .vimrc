@@ -14,10 +14,11 @@
 " deserve credit for anything in here please let me know and i will add
 " it.
 "
-" For the latest version, check out my blog at
-" http://hackr.se/vim/vimrc
+" For the latest version, check out my github account under .dotfiles
 "
 " Joel Larsson,
+" http://github.com/tilljoel
+" http://twitter.com/tilljoel
 " http://hackr.se/joellarsson
 " http://popdevelop.com
 "
@@ -25,6 +26,7 @@
 "-- CHANGELOG
 "------------------
 "
+" 2013-08-12: Vim 7.4 released
 " 2013-08-05: New powerline stuff
 " 2013-07-10: Remove pathogen
 " 2013-01-01: Ruby tuneup
@@ -56,7 +58,6 @@
 "           - http://code.google.com/p/conque/
 "           - fix "paste" button?
 "           - fix spell "add word"
-"           - neocomplcache
 "           - make words stop at camelcase, for cw, etc
 "           - flymake and http://cx4a.org/software/gccsense/manual.html
 "           - http://stackoverflow.com/questions/4027222/vim-use-shorter-textwidth-in-comments-and-docstrings
@@ -64,6 +65,7 @@
 "           - add more jshint stuff, https://github.com/oryband/dotfiles/blob/master/jshintrc
 "           - Check out https://github.com/factorylabs/vimfiles
 "           - FIX coffescript -> show js
+"           - Coffee2Js, Js2Coffee
 "           - ADD getflow or some todo management for each file?
 "           - Sort/Comment bundles, add full urls for all
 "
