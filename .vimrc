@@ -75,19 +75,17 @@
 "
 "  SYSTEM:
 "
-"
-"  vim      - vim 7.3 compiled with huge, python, ruby, check vim --version
+"  vim      - vim 7.4 compiled with huge, python, ruby, check vim --version
 "
 "  ctags    - Generates a tagsfile of language objects found in source files
 "             http://ctags.sourceforge.net/
 "
-"  Spell    - FIXME: add info
+"  spell    - FIXME: add info
 "             ftp://ftp.vim.org/pub/vim/runtime/spell/
 "
 "  jshint   - Install jshint and put a .jshintrc file there
 "
-"  PLUGINS: "
-"
+
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -117,7 +115,6 @@ Bundle 'git://github.com/tpope/vim-haml.git'
 Bundle 'git://github.com/tpope/vim-markdown.git'
 Bundle 'git://github.com/tpope/vim-rails.git'
 Bundle 'git://github.com/nvie/vim-pep8.git'
-"'BundleCommand: git submodule init && git submodule update'
 Bundle 'git://github.com/vim-scripts/nginx.vim.git'
 Bundle 'git://github.com/csexton/rvm.vim.git'
 Bundle 'git://github.com/tpope/vim-surround.git'
@@ -152,17 +149,14 @@ Bundle 'git://github.com/vim-scripts/open-browser.vim.git'
 "#TODO
 "# Bundle: git://github.com/wincent/Command-T
 "# Omnicomplete in git commit, https://github.com/tpope/vim-rhubarb.git
-"#  git://github.com/tsaleh/vim-tcomment.git",
-"#  git://github.com/tpope/vim-repeat.git",
-"#  git://github.com/tpope/vim-surround.git",
-"#  git://github.com/tsaleh/vim-align.git",
+"# git://github.com/tsaleh/vim-tcomment.git",
+"# git://github.com/tpope/vim-repeat.git",
+"# git://github.com/tpope/vim-surround.git",
+"# git://github.com/tsaleh/vim-align.git",
 "# http://projects.mikewest.org/vimroom/
 "# https://github.com/sunaku/vim-ruby-minitest
 "# pydiction
 "# Indexsearch - fixa!
-"# Create passwords.vim for blogit
-"# Blogit does not work
-"# Cscope
 "
 
 "-------------------------------------------------------------------------------
@@ -1138,15 +1132,6 @@ endfunction
 function! SyntaxItem()
   return synIDattr(synID(line("."),col("."),1),"name")
 endfunction
-
-"if has("cscope")
-  "set cscopequickfix=s-,c-,d-,i-,t-,e-
-  "set cscopetag
-  "set csto=0
-  "set cspc=3
-  "set cscopetagorder=0
-  "set nocsverb
-"endif
 
 function ModifyByFixJsStyle()
         " save positions
