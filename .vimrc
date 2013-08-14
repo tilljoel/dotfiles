@@ -873,16 +873,6 @@ function! s:MyMailSettings()
   endfunction
 endfunction
 
-" filetype markdown {{{
-"  au! BufRead,BufNewFile *.mkd.*    setfiletype mkd
-"  au! BufRead,BufNewFile *.mkd      setfiletype mkd
-"  autocmd FileType mkd
-"        \ setlocal autoindent |
-"        \ setlocal textwidth=75 |
-"        \ setlocal formatoptions+=tcan2wro |
-"        \ setlocal comments=n:>
-  " }}} filetype markdown
-
 function! s:MyCSettings()
 
   source ~/.vim/syntax/c.vim
@@ -1002,27 +992,6 @@ function! s:MyPythonSettings()
   endfunction
 endfunction
 
-function! s:MyValaSettings()
-  setlocal efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-  setlocal efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-  setfiletype vala
-  " Disable valadoc syntax highlight
-  " let vala_ignore_valadoc = 1
-  "
-  "   Enable comment strings
-  let vala_comment_strings = 1
-
-  " Highlight space errors
-  " let vala_space_errors = 1
-  " Disable trailing space errors
-  " let vala_no_trail_space_error = 1
-  " Disable space-tab-space errors
-  " let vala_no_tab_space_error = 1
-  "
-  " Minimum lines used for comment syncing (default 50)
-  " let vala_minlines = 120
-endfunction
-
 function! s:MyRubySettings()
   " load matchit (% to bounce from do to end, etc.)
   set wildignore+=vendor/rails/**,logs,tmp,spec/fixture/raw_mails
@@ -1083,16 +1052,6 @@ func! Prepare_gst()
   setlocal cinoptions=(4,u0:2
   highlight MissingMellanslag ctermbg=red guibg=red
   match MissingMellanslag /\(#\s*define.\{-}\)\@<![^!( ](/
-endf
-
-func! Prepare_kernel()
-  "FIXME
-  syn keyword cType uint ubyte ulong uint64_t uint32_t uint16_t uint8_t boolean_t int64_t int32_t int16_t int8_t u_int64_t u_int32_t u_int16_t u_int8_t
-  syn keyword cOperator likely unlikely
-  match Error80 /\%>80v.\+/
-  setlocal cinoptions=:0,l1,t0,g0
-  setlocal tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
-  setlocal softtabstop=2 shiftwidth=2 expandtab
 endf
 
 let g:showcw = 0
