@@ -26,6 +26,8 @@
 "-- CHANGELOG
 "------------------
 "
+" 2013-10-30: Unmap capital Q, Entering Ex mode. Type "visual" to go to Normal
+"             Unmap backspace!
 " 2013-08-12: Vim 7.4 released
 " 2013-08-05: New powerline stuff
 " 2013-07-10: Remove pathogen
@@ -242,6 +244,10 @@ set suffixes-=.h
 
 set history=1000
 
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+set undoreload=10000
+
 "   sharing windows clipboard
 if $TMUX == ''
    set clipboard+=unnamed
@@ -276,6 +282,7 @@ let g:solarized_termcolors = 256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 colorscheme solarized
+
 "   always display the statusline
 set laststatus=2
 
@@ -380,27 +387,13 @@ else
   hi ErrorTailSpace cterm=NONE   ctermfg=white   ctermbg=red
 endif
 
-if $LANG =~ ".*\.UTF-8$" || $LANG =~ ".*utf8$" || $LANG =~ ".*utf-8$"
-        set listchars+=tab:»·,trail:·,precedes:…,extends:…
-else
-        set listchars=tab:>-,trail:-
-endif
+set listchars+=tab:»·,trail:·,precedes:…,extends:…
 
 let g:ycm_min_num_of_chars_for_completion = 4
 
 set rtp+=/opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
 let g:fugitive_github_domains = ['git.github.com']
-"let g:statusline_fugitive = 1
-"let g:statusline_rvm = 1
-"let g:statusline_syntastic = 1
-""Turn statusline off
-"let g:statusline_enabled = 1
-"let g:statusline_fullpath = 0
-
-" Session plugin
-"let g:session_autoload = 'no'
-
 
 let g:vroom_use_vimux = 1
 let g:vroom_use_zeus = 0
@@ -440,7 +433,6 @@ command -bar -nargs=1 OpenURL :OpenBrowser <args>
 
 filetype plugin indent on
 " FIXME comment
-autocmd BufEnter * call ROColors()
 autocmd InsertLeave * call s:LeaveInsert()
 autocmd InsertEnter * call s:EnterInsert()
 autocmd BufRead,BufNewFile *.vala setfiletype vala
@@ -470,6 +462,7 @@ autocmd FileType rb,ruby    call s:MyRubySettings()
 autocmd FileType rdoc       call s:MyRDocSettings()
 autocmd FileType xml        call s:MyXMLSettings()
 autocmd FileType rake       call s:MyRubySettings()
+autocmd FileType R          call s:MyRSettings()
 autocmd FileType eruby,yaml call s:MyRubySettings()
 autocmd FileType vala,vapi  call s:MyValaSettings()
 autocmd FileType c,h,cpp,cc call s:MyCSettings()
@@ -522,11 +515,14 @@ autocmd BufReadPost *
 "-- GENERAL MAPPINGS
 "-------------------------------------------------------------------------------
 
-"   unmap arrows/pgdn/pgup so you learn to use hjkl
 
+" unmap capital Q, Entering Ex mode. Type "visual" to go to Normal
+nnoremap Q <Nop>
+imap <BS> <Nop>
 imap <c-c> <esc>
 let mapleader=","
 
+" unmap arrows/pgdn/pgup so you learn to use hjkl
 map <Left> \
 map <Right> \
 map <Up> \
@@ -702,19 +698,10 @@ let g:syntastic_auto_loc_list=2
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_ruby_exec = '~/.rvm/bin/ruby-1.9.3-p194'
-"------------------
-"-- RTM
-"------------------
-
-let rtm_api_key='90fe02c60705a95efd2f06d9b385b1c4'
-let rtm_shared_secret='25446d314649a615'
-let rtm_token='71c5ece5d3800be0362d2442ec7af751c3a2b3d4'
 
 let g:pydiction_location = $HOME."/.vim/after/ftplugin/pydiction/complete-dict"
-
 let g:browser="firefox-bin"
 let g:pdfviewer="kpdf"
-"
 
 "let g:automatic_ctags_files=".git,Gemfile"
 "let g:automatic_ctags_cmd="ctags"
@@ -722,7 +709,6 @@ let g:pdfviewer="kpdf"
 
 set tags=./tags;/
 
-"
 "
 "------------------
 "-- VIM SPELL
@@ -735,11 +721,6 @@ map <Down> ]s
 map <Up> [s
 imap <Down> ]s
 imap <Up> [s
-
-"map <F3> :set spellfile=~/.vim/spellfile.en_us.add<CR>:set spelllang=en_us<CR>:set spell!<CR><Bar>:echo "English spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
-"map <F4> :set spellfile=~/.vim/spellfile.sv.add<CR>:set spelllang=sv<CR>:set spell!<CR><Bar>:echo "Swedish spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
-"imap <F3> :set spellfile=~/.vim/spellfile.en_us.add<CR>:set spelllang=en_us<CR>:set spell!<CR><Bar>:echo "English spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
-"imap <F4> :set spellfile=~/.vim/spellfile.sv.add<CR>:set spelllang=sv<CR>:set spell!<CR><Bar>:echo "Swedish spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
 
 map <F3> :call SweSpell()<CR>
 imap <F3> <ESC>:call SweSpell()<CR>i
@@ -757,8 +738,7 @@ set sps=best,15
 
 " mark bad spelled words with red
 highlight SpellErrors gui=underline ctermfg=white ctermbg=black
-highlight SpellBad cterm=underline,bold
-
+highlight SpellBad cterm=underline,bold ctermfg=red ctermbg=black
 setlocal nospell
 
 "-------------------------------------------------------------------------------
@@ -798,12 +778,12 @@ function! s:MyCoffeeSettings()
 endfunction
 
 function! s:MyTxtSettings()
-        autocmd FileType txt        setlocal formatoptions=tcrqn textwidth=72
+  setlocal formatoptions=tcrqn textwidth=72
   setlocal equalprg=par\ -\ 2>/dev/null
 endfunction
 
 function! s:MyRDocSettings()
-        autocmd FileType txt        setlocal formatoptions=tcrqn textwidth=72
+  setlocal formatoptions=tcrqn textwidth=72
   setlocal equalprg=par\ -\ 2>/dev/null
 endfunction
 
@@ -813,9 +793,6 @@ function! s:MyMailSettings()
   setlocal formatoptions+=tcqn
   setlocal equalprg=par\ -\ 2>/dev/null
   imap <C-F> <ESC>:r!google-contacts-lookup.sh <cword><CR><ESC>
-  " setlocal nosi nocin
-  " setlocal comments=n:>
-  " setlocal equalprg=fmt
   " remove the quoted signature, also positions cursor after quoted text
   " autocmd BufReadPost /tmp/mutt* :g/^> -- $/.;/^$/-d
   " try to remove signature from quoted text
@@ -829,7 +806,7 @@ function! s:MyMailSettings()
   try | %s/\(^>\n\)\{2,}/>\r/g | catch | endtry
   " go to start
   normal gg
-  " settings
+
   setlocal ignorecase infercase
   let @/ = '^>[ \t]*$'
   " do not set the file encoding -> use whatever $LANG is set to; mutt will assume it's that one too
@@ -880,12 +857,9 @@ function! s:MyCSettings()
   " make unclosed parantheses new line start at first
   " whitspace after paren
   setlocal cinoptions=(0,u0:0
-
   setlocal comments=sl:/*,mb:\ *,elx:\ */
-
   " mark lines over 80 chars with grey
   hi rightMargin guibg=slategray | match rightMargin /\%79v.*$/
-
   " autocmd FileType c,h setlocal tags+=~/.vim/systags
   setlocal tags=./tags,tags
   setlocal omnifunc=ccomplete#Complete
@@ -893,7 +867,6 @@ function! s:MyCSettings()
   setlocal complete=.,w,b,u,t,i
 
   autocmd BufEnter *gst*.[ch] :call Prepare_gst()
-  " FIXME add some more paths
 endfunction
 
 function! s:MySASSSettings()
@@ -923,7 +896,6 @@ function! s:MyMarkdownSettings()
   setlocal textwidth=78
   setlocal formatoptions=tcq2ln
 
-" vim:set sw=2:
   map <buffer> <F1> yypVr=
   map <buffer> <F2> yypVr-
   inoremap <buffer> <leader><CR> <Esc>:call FT_markdown_newline()<CR>A
@@ -976,20 +948,16 @@ function! s:MyPythonSettings()
   let b:interpreter="ipython"
   let b:interpreter_args="-profile vim" " vim profile has autoindent 0
 
-  map <buffer><silent> <S-F1> :setlocal iskeyword+=.<CR>:let b:pydoc_word = expand("<cword>")<CR>:setlocal iskeyword-=.<CR>:call FT_python_showdoc(b:pydoc_word)<CR>
-  "map <buffer> <leader>d V:!~/.vim/tools/pydocstring.py<CR>jjA
+endfunction
 
-  " pydoc integration
-  command! -nargs=1 Pydoc call FT_python_showdoc("<args>")
-  function! FT_python_showdoc(name)
-          new
-          execute "read !pydoc " . a:name
-          setlocal nomodifiable
-          setlocal nomodified
-          setlocal nobuflisted
-          set filetype=man
-          normal 1G
-  endfunction
+function! s:MyRSettings()
+  set ai sw=2 sts=2 expandtab nowrap syntax=R
+  set completeopt+=longest,menu,preview
+  map <leader>a :w<CR>:call RunVimTmuxCommand("rake test")<CR>
+  map <leader>t :VroomRunTestFile<cr>
+  map <leader>T :VroomRunNearestTest<cr>
+  nmap <leader>s :call VimuxRunCommand(@" . "\n", 0)<CR> 
+  set colorcolumn=80
 endfunction
 
 function! s:MyRubySettings()
@@ -1013,18 +981,9 @@ function! s:MyRubySettings()
   "  autocmd BufWritePost *.rb :call AutomaticCtags()
 
   "map <F2> :w<CR>:call RunVimTmuxCommand("clear; rake test")<CR>
- ":!python " . getreg("%") . "" <CR>
 endfunction
 
 " readonly files get green foreground, other files get white fg
-function! ROColors()
-  if &ro
-    highlight Normal guifg=Green
-  else
-    highlight Normal guifg=#ffffff
-  endif
-endfunction
-call ROColors()
 
 if !exists("*ReloadConfigs")
   function ReloadConfigs()
@@ -1092,30 +1051,6 @@ function! SyntaxItem()
   return synIDattr(synID(line("."),col("."),1),"name")
 endfunction
 
-function ModifyByFixJsStyle()
-        " save positions
-        let pos = s:SavePositions()
-
-        let tempfile = tempname() . '.js'
-        silent call writefile(getbufline(bufname('%'), 1, '$'), tempfile)
-
-        try
-            " use fixjsstyle as filter
-            silent! execute '!fixjsstyle --strict --nojsdoc' tempfile
-
-            1,$delete "_
-            execute 'read' tempfile
-            1delete "_
-
-            " restore positions
-            call s:RestorePositions(pos)
-        catch
-            echoerr v:exception
-        finally
-            call delete(tempfile)
-        endtry
-endfunction
-
 " save cursor and screen positions
 " pair up this function with s:RestorePositions
 if !exists('*s:SavePositions')
@@ -1145,51 +1080,6 @@ if !exists('*s:RestorePositions')
 endif
 
 
-"" flyquickfixmake.vim (Modified to Python)
-"function! FlyquickfixPrgSet(mode)
-    "if a:mode == 0
-        """" setting for pylint
-        "setlocal makeprg=/usr/bin/pylint\ --rcfile=$HOME/.pylint\ -e\ %
-        "setlocal errorformat=%t:%l:%m
-        "echo "flymake prg: pylint"
-    "elseif a:mode == 1
-        """" setting for pyflakes
-        "setlocal makeprg=/usr/local/bin/pyflakes\ %
-        "setlocal errorformat=%f:%l:%m
-        "echo "flymake prg: pyflakes"
-    "else
-        """" setting for pep8.py
-        "setlocal makeprg=/usr/local/bin/pep8.py\ %
-        "setlocal errorformat=%f:%l:%c:%m
-        "echo "flymake prg: pep8.py"
-    "endif
-"endfunction
-
-"function! FlyquickfixToggleSet()
-    "if g:python_flyquickfixmake == 1
-        "au! BufWritePost
-        "echo "not-used flymake"
-        "let g:python_flyquickfixmake = 0
-    "else
-        "echo "used flymake"
-        "let g:python_flyquickfixmake = 1
-        "au BufWritePost *.py make
-    "endif
-"endfunction
-
-"if !exists("g:python_flyquickfixmake")
-    "let g:python_flyquickfixmake = 1
-    "call FlyquickfixPrgSet(8)
-    ""au BufWritePost *.py silent make
-    "au BufWritePost *.py make
-
-"endif
-
-"map fs :call FlyquickfixToggleSet()<CR>
-"map pl :call FlyquickfixPrgSet(0)<CR>
-"map pf :call FlyquickfixPrgSet(1)<CR>
-"map p8 :call FlyquickfixPrgSet(8)<CR>
-
 function! XMLMappings()
         noremap <leader>;xp :call Xpath()<cr>
 endfunction
@@ -1203,7 +1093,7 @@ endfunction
 
 function! SweSpell()
         setlocal spellfile=~/.vim/spellfile.sv.add
-        setlocal spelllang=sv
+        setlocal spelllang=sv_se
         setlocal spell!
         echo "Swedish spell check: " . strpart("OffOn", 3 * &spell, 3)
 endfunction
