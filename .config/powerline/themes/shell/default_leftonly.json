@@ -23,10 +23,6 @@
 				"name": "user"
 			},
 			{
-				"module": "powerlinex.segment.rbenv",
-				"name": "version"
-			},
-			{
 				"module": "powerlinex.segment.ci-status",
 				"name": "version"
 			},
