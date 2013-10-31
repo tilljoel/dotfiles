@@ -37,3 +37,11 @@ pretty_git_log() {
         # Page only if we need to
         less -FXRS
 }
+
+previous_commit() { # git diff of commit
+    if [[ -z "$1" ]]; then
+        echo 'Pass a git commit hash as a parameter to see the diff for that commit.'
+        return
+    fi
+    git diff $1^1 $1
+}

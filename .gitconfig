@@ -36,13 +36,14 @@
         r = !git l -30
         ra = !git r --all
         l = "!source ~/.githelpers && pretty_git_log"
+        pc = "!source ~/.githelpers && previous_commit"
         la = !git l --all
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+        ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 [core]
         editor = vim
         excludesfile = /opt/boxen/config/git/gitignore
 [diff]
-        tool = vimdiff
+	tool = vimdiff
 [pager]
         diff =
 [color]
@@ -50,7 +51,7 @@
 [github]
         user = tilljoel
 [difftool]
-        prompt = false
+	prompt = false
 [init]
 	templatedir = ~/.git_template
 [commit]
