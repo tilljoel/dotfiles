@@ -3,6 +3,8 @@ var hyper = function (key) {
   return key + ":cmd,ctrl,alt,shift";
 };
 
+var focusITerm = slate.operation("focus", { "app" : "iTerm" });
+
 var fullscreen = slate.operation("move", {
   "x": "screenOriginX",
   "y": "screenOriginY",
@@ -89,20 +91,35 @@ var cycleRight = function (win) {
   }
 };
 
+var half_iterm_half_browser = slate.layout("half_iterm_half_browser", {
+    "_after_" : { "operations" : focusIterm },
+
+    "focusITerm" : {
+        "operations" : halfLeft,
+        "repeat" : true
+    },
+
+    "Google Chrome" : {
+        "operations" : halfRight,
+        "repeat" : true,
+        "ignore-fail" : true
+    }
+});
 
 // PUSH
 
 //slate.bind(hyper("j"), cycleLeft);
 //slate.bind(hyper("k"), cycleRight);
 
-slate.bind(hyper("j"), fullscreen);
+slate.bind(hyper("space"), fullscreen);
 slate.bind(hyper("h"), pushLeft);
 slate.bind(hyper("l"), pushRight);
+slate.bind(hyper("i"), focusITerm);
 
 
 // FOCUS
-//slate.bind("h:cmd", slate.operation("focus", {"direction": "left"}));
-//slate.bind("l:cmd", slate.operation("focus", {"direction": "right"}));
+slate.bind("h:cmd", slate.operation("focus", {"direction": "left"}));
+slate.bind("l:cmd", slate.operation("focus", {"direction": "right"}));
 //slate.bind("j:cmd", slate.operation("focus", {"direction": "up"}));
 //slate.bind("k:cmd", slate.operation("focus", {"direction": "down"}));
 
@@ -132,5 +149,5 @@ slate.bind("1:ctrl", function(win) {
   slate.log('app name="'+app.name()+'"');
 });
 
-slate.bind("0:ctrl", slate.operation("relaunch"));
 // */
+slate.bind("0:ctrl", slate.operation("relaunch"));
