@@ -1,29 +1,10 @@
 #mailboxes !
-mailboxes =ACTION
-mailboxes =RESPOND
-mailboxes =WAITING
-
-mailboxes =tilljoel-inbox
-mailboxes =sites
-mailboxes =meetings
-mailboxes =junk
-mailboxes =large
-
-mailboxes =list/malmo-ruby
-mailboxes =list/rubyparley
-mailboxes =list/groups
-mailboxes =list/hack
-
-mailboxes =popdevelop-inbox
-mailboxes =popdevelop-multi
-
-mailboxes =popgiro-inbox
-mailboxes =popgiro-multi
-
-mailboxes =weskins-inbox
-mailboxes =weskins-multi
-
-mailboxes =mail-errors
+mailboxes =tilljoel/sent
+mailboxes =tilljoel/drafts
+mailboxes =tilljoel/archive
+mailboxes =tilljoel/[Mailbox].Later
+mailboxes =tilljoel/[Mailbox]
+mailboxes =tilljoel/INBOX
 
 mailboxes =archives
 mailboxes =postponed
