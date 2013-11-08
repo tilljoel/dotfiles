@@ -92,15 +92,15 @@ var cycleRight = function (win) {
 };
 
 var half_iterm_half_browser = slate.layout("half_iterm_half_browser", {
-    "_after_" : { "operations" : focusIterm },
+    "_after_" : { "operations" : focusITerm },
 
     "focusITerm" : {
-        "operations" : halfLeft,
+        "operations" : pushLeft,
         "repeat" : true
     },
 
     "Google Chrome" : {
-        "operations" : halfRight,
+        "operations" : pushRight,
         "repeat" : true,
         "ignore-fail" : true
     }
