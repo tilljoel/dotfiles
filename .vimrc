@@ -468,7 +468,6 @@ autocmd FileType vala,vapi  call s:MyValaSettings()
 autocmd FileType c,h,cpp,cc call s:MyCSettings()
 autocmd FileType python     call s:MyPythonSettings()
 autocmd FileType markdown   call s:MyMarkdownSettings()
-autocmd FileType css        call s:MyCSSSettings()
 autocmd FileType scss       call s:MySASSSettings()
 "
 "FIXME: add colors for some C99 stuff
