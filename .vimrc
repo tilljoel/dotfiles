@@ -142,6 +142,8 @@ Bundle 'git://github.com/itspriddle/vim-marked.git'
 Bundle 'git://github.com/gmarik/vundle.git'
 Bundle 'git://github.com/walm/jshint.vim.git'
 Bundle 'git://github.com/vim-scripts/open-browser.vim.git'
+Bundle 'git://github.com/vim-scripts/Vim-R-plugin.git'
+"
 "'git://github.com/kevinw/pyflakes-vim'
 "Bundle 'git://github.com/vim-scripts/CRefVim.git'
 "Bundle 'git://github.com/xolox/vim-session.git'
