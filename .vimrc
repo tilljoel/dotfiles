@@ -143,6 +143,7 @@ Bundle 'git://github.com/gmarik/vundle.git'
 Bundle 'git://github.com/walm/jshint.vim.git'
 Bundle 'git://github.com/vim-scripts/open-browser.vim.git'
 Bundle 'git://github.com/vim-scripts/Vim-R-plugin.git'
+Bundle 'airblade/vim-gitgutter'
 "
 "'git://github.com/kevinw/pyflakes-vim'
 "Bundle 'git://github.com/vim-scripts/CRefVim.git'
