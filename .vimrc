@@ -142,7 +142,9 @@ Bundle 'git://github.com/itspriddle/vim-marked.git'
 Bundle 'git://github.com/gmarik/vundle.git'
 Bundle 'git://github.com/walm/jshint.vim.git'
 Bundle 'git://github.com/vim-scripts/open-browser.vim.git'
-Bundle 'git://github.com/vim-scripts/Vim-R-plugin.git'
+"Bundle 'git://github.com/vim-scripts/Vim-R-plugin.git'
+Bundle 'junegunn/goyo.vim'
+Bundle 'bilalq/lite-dfm'
 Bundle 'airblade/vim-gitgutter'
 "
 "'git://github.com/kevinw/pyflakes-vim'
@@ -729,6 +731,11 @@ imap <F3> <ESC>:call SweSpell()<CR>i
 map <F4> :call EngSpell()<CR>
 imap <F4> <ESC>:call EngSpell()<CR>i
 
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" bind \ (backward slash) to grep shortcut
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<SPACE>
 
 " correct the work under the cursor
 " imap <leader>mm <Esc>z=
@@ -1137,3 +1144,14 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
