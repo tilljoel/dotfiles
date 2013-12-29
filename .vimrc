@@ -146,6 +146,9 @@ Bundle 'git://github.com/vim-scripts/open-browser.vim.git'
 Bundle 'junegunn/goyo.vim'
 Bundle 'bilalq/lite-dfm'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'Shougo/unite.vim'
+Bundle 'alpaca-tc/vim-unite-watson.vim'
+
 "
 "'git://github.com/kevinw/pyflakes-vim'
 "Bundle 'git://github.com/vim-scripts/CRefVim.git'
@@ -1155,3 +1158,20 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+
+function! s:goyo_before()
+  silent !tmux set status off
+  set noshowmode
+  set noshowcmd
+endfunction
+
+function! s:goyo_after()
+  silent !tmux set status on
+  set showmode
+  set showcmd
+endfunction
+let g:goyo_width = 100
+let g:goyo_margin_top = 1
+let g:goyo_margin_bottom = 1
+let g:goyo_linenr = 0
+let g:goyo_callbacks = [function('s:goyo_before'), function('s:goyo_after')]
