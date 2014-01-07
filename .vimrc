@@ -148,7 +148,7 @@ Bundle 'bilalq/lite-dfm'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Shougo/unite.vim'
 Bundle 'alpaca-tc/vim-unite-watson.vim'
-
+Bundle 'othree/html5.vim'
 "
 "'git://github.com/kevinw/pyflakes-vim'
 "Bundle 'git://github.com/vim-scripts/CRefVim.git'
@@ -470,6 +470,7 @@ autocmd FileType rb,ruby    call s:MyRubySettings()
 autocmd FileType rdoc       call s:MyRDocSettings()
 autocmd FileType xml        call s:MyXMLSettings()
 autocmd FileType rake       call s:MyRubySettings()
+autocmd FileType html       call s:MyHTMLSettings()
 autocmd FileType R          call s:MyRSettings()
 autocmd FileType eruby,yaml call s:MyRubySettings()
 autocmd FileType vala,vapi  call s:MyValaSettings()
@@ -970,6 +971,11 @@ function! s:MyRSettings()
   map <leader>T :VroomRunNearestTest<cr>
   nmap <leader>s :call VimuxRunCommand(@" . "\n", 0)<CR> 
   set colorcolumn=80
+endfunction
+
+function! s:MyHTMLSettings()
+  " load matchit (% to bounce from do to end, etc.)
+  set ai sw=2 sts=2 expandtab nowrap syntax=html
 endfunction
 
 function! s:MyRubySettings()
