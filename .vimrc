@@ -149,6 +149,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'Shougo/unite.vim'
 Bundle 'alpaca-tc/vim-unite-watson.vim'
 Bundle 'othree/html5.vim'
+Bundle 'aurigadl/vim-angularjs.git'
 "
 "'git://github.com/kevinw/pyflakes-vim'
 "Bundle 'git://github.com/vim-scripts/CRefVim.git'
