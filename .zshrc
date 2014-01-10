@@ -136,7 +136,7 @@ alias rspec="nocorrect rspec"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
-
+export PATH="/opt/boxen/nodenv/versions/v0.10/bin:$PATH"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 source /opt/boxen/env.sh

@@ -153,6 +153,8 @@ Bundle 'othree/html5.vim'
 Bundle 'aurigadl/vim-angularjs.git'
 Bundle 'einars/js-beautify'
 Bundle 'maksimr/vim-jsbeautify'
+Bundle 'git://github.com/miripiruni/CSScomb-for-Vim.git'
+
 "
 "
 "
