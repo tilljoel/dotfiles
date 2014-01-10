@@ -148,8 +148,13 @@ Bundle 'bilalq/lite-dfm'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Shougo/unite.vim'
 Bundle 'alpaca-tc/vim-unite-watson.vim'
+Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'othree/html5.vim'
 Bundle 'aurigadl/vim-angularjs.git'
+Bundle 'einars/js-beautify'
+Bundle 'maksimr/vim-jsbeautify'
+"
+"
 "
 "'git://github.com/kevinw/pyflakes-vim'
 "Bundle 'git://github.com/vim-scripts/CRefVim.git'
@@ -776,6 +781,20 @@ function! s:MyJavascriptSettings()
   "setlocal errorformat=%m:%l:%c
   "nnoremap <F3> :call ModifyByFixJsStyle()<CR>
   "nnoremap <buffer> <F4> :make<CR>
+
+  "https://github.com/teramako/jscomplete-vim
+  autocmd FileType javascript set omnifunc=nodejscomplete#CompleteJS
+  ""autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
+  autocmd  CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+
+  "https://github.com/othree/javascript-libraries-syntax.vim
+  autocmd BufReadPre *.js let b:javascript_lib_use_jquery     = 1
+  autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 1
+  autocmd BufReadPre *.js let b:javascript_lib_use_backbone   = 0
+  autocmd BufReadPre *.js let b:javascript_lib_use_prelude    = 0
+  autocmd BufReadPre *.js let b:javascript_lib_use_angularjs  = 1
+  endif
 endfunction
 
 function! s:MyCoffeeSettings()
