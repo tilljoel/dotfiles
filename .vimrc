@@ -1005,9 +1005,10 @@ function! s:MyRubySettings()
   set wildignore+=vendor/rails/**,logs,tmp,spec/fixture/raw_mails
   set ai sw=2 sts=2 expandtab nowrap syntax=ruby
   "let g:statusline_rvm = 1
-  set omnifunc=rubycomplete#Complete
-  let g:rubycomplete_buffer_loading = 1
-  let g:rubycomplete_rails = 1
+  "set omnifunc=rubycomplete#Complete
+  "let g:rubycomplete_buffer_loading = 1
+  "let g:rubycomplete_classes_in_global = 1
+  "let g:rubycomplete_rails = 1
   set completeopt+=longest,menu,preview
   "  map <F4> :call ToggleLwindow() <CR>
   "imap <F4> <ESC>:call ToggleLwindow() <CR>i
@@ -1024,6 +1025,23 @@ function! s:MyRubySettings()
 endfunction
 
 " readonly files get green foreground, other files get white fg
+
+ " This rewires n and N to do the highlighing...
+nnoremap <silent> n   n:call HLNext(0.3)<cr>
+nnoremap <silent> N   N:call HLNext(0.3)<cr>
+
+function! HLNext (blinktime)
+    highlight WhiteOnRed ctermfg=white ctermbg=red
+    let [bufnum, lnum, col, off] = getpos('.')
+    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    let target_pat = '\c\%#'.@/
+    let ring = matchadd('WhiteOnRed', target_pat, 101)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    call matchdelete(ring)
+    redraw
+endfunction
+
 
 if !exists("*ReloadConfigs")
   function ReloadConfigs()
